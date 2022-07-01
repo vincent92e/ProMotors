@@ -1,0 +1,8 @@
+uuid: cae46ef2-f497-4902-8fbc-e9a63fefa418
+langcode: en
+status: true
+dependencies: {  }
+id: popular-services
+label: 'Popular services'
+description: 'Popular services footer menu'
+locked: false
