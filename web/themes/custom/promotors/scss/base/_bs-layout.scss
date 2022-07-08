@@ -1,0 +1,204 @@
+/**
+ * @file
+ * Layout.
+ *
+ * Variables for the grid system is set in _variables.scss under Grid.
+ */
+
+// Page container.
+// This is the main container to be used.
+%layout-container,
+.layout-container {
+  @include container();
+}
+
+// Overrides for the padding.
+// Used for special case layouts, such as full width images extending to the full screen.
+// There's potentially multiple ways to achieve these desired effets, this is just one of them.
+%layout-container--full-right,
+.layout-container--full-right {
+  padding-right: 0;
+}
+
+%layout-container--full-left,
+.layout-container--full-left {
+  padding-left: 0;
+}
+
+// Used for narrower width article container.
+// keeps the content more central and narrow so you can read it like an article.
+%layout-container-narrow,
+.layout-container-narrow {
+  @include container($max-width: 720px, $narrow-layout: true);
+}
+
+// Grid row.
+%row,
+.row {
+  @include row;
+}
+
+
+// ===========================================================================
+// Below here you can use if it's easier to add the classes to the markup
+// rather than creating a component class only to give it some grid settings
+// ===========================================================================
+
+// Predefined grid columns:
+
+// 12 column (fullwidth) central grid container
+%central-col-12,
+.central-col-12 {
+  @include col(12);
+}
+
+// 10 column central grid container
+%central-col-10,
+.central-col-10 {
+  @include skip(1);
+  @include col(10);
+}
+
+// 8 column central grid container
+%central-col-8,
+.central-col-8 {
+  @include skip(2);
+  @include col(8);
+}
+
+// Mobile full width class(es)
+%col-sm-fullwidth,
+.col-sm-fullwidth {
+  @include upto-breakpoint($bp-sm) {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+%col-md-fullwidth,
+.col-md-fullwidth {
+  @include upto-breakpoint($bp-md) {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+%col-lg-fullwidth,
+.col-lg-fullwidth {
+  @include upto-breakpoint($bp-lg) {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+// Left right content padding
+%col-left,
+.col-left {
+  @include from-md {
+    padding-right: 50px;
+  }
+}
+
+%col-right,
+.col-right {
+  @include from-md {
+    padding-left: 50px;
+  }
+}
+
+// column classes
+%col-1-fw,
+.col-1-fw {
+  @extend %col-md-fullwidth;
+  @include from-md {
+    @include col(1);
+  }
+}
+
+%col-2-fw,
+.col-2-fw {
+  @extend %col-md-fullwidth;
+  @include from-md {
+    @include col(2);
+  }
+}
+
+%col-3-fw,
+.col-3-fw {
+  @extend %col-md-fullwidth;
+  @include from-md {
+    @include col(3);
+  }
+}
+
+%col-4-fw,
+.col-4-fw {
+  @extend %col-md-fullwidth;
+  @include from-md {
+    @include col(4);
+  }
+}
+
+%col-5-fw,
+.col-5-fw {
+  @extend %col-md-fullwidth;
+  @include from-md {
+    @include col(5);
+  }
+}
+
+%col-6-fw,
+.col-6-fw {
+  @extend %col-md-fullwidth;
+  @include from-md {
+    @include col(6);
+  }
+}
+
+%col-7-fw,
+.col-7-fw {
+  @extend %col-md-fullwidth;
+  @include from-md {
+    @include col(7);
+  }
+}
+
+%col-8-fw,
+.col-8-fw {
+  @extend %col-md-fullwidth;
+  @include from-md {
+    @include col(8);
+  }
+}
+
+%col-9-fw,
+.col-9-fw {
+  @extend %col-md-fullwidth;
+  @include from-md {
+    @include col(9);
+  }
+}
+
+%col-10-fw,
+.col-10-fw {
+  @extend %col-md-fullwidth;
+  @include from-md {
+    @include col(10);
+  }
+}
+
+%col-11-fw,
+.col-11-fw {
+  @extend %col-md-fullwidth;
+  @include from-md {
+    @include col(11);
+  }
+}
+
+%col-12-fw,
+.col-12-fw {
+  @extend %col-md-fullwidth;
+  @include from-md {
+    @include col(12);
+  }
+}
