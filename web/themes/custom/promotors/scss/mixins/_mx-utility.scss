@@ -104,7 +104,7 @@
    * $width: border-width.
    * $type: border top or bottom.
  */
-@mixin border($color: palette(primary, orange), $width, $type: 'bottom') {
+@mixin border($color, $width, $type: 'bottom') {
   border-style: solid;
   border-color: $color;
   border-width: $width 0 0 0;
