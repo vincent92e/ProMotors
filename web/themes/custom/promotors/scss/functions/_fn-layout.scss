@@ -1,0 +1,27 @@
+// Retrieve a given layout from a set of layouts
+@function layout( $layout: 'default', $property: false ) {
+  $result: map-get( $layouts, $layout );
+
+  @if ( $property ) {
+      $result: map-get( $result, $property );
+  }
+
+  @if $property == 'container-padding' {
+    @return $result;
+  }
+  @return rem($result);
+}
+
+// Used to calculate the column width for the grid, based on the layout settings used.
+@function calc-col-width($columns, $gutters, $gutter-width: 16px, $column-base: $column-base-default) {
+  $col-width: calc((#{$columns} * ((100% - ( (#{$column-base} - 1) * #{$gutter-width})) / #{$column-base})) + (#{$gutters} * #{$gutter-width}));
+
+  @return $col-width;
+}
+
+// Used to calculate the width of the columns to skip in the grid, based on the layout settings used.
+@function calc-skip-width($columns, $gutters, $gutter-width: 16px, $column-base: $column-base-default) {
+$skip-width: calc((#{$columns} * ((100% - ( (#{$column-base} - 1) * #{$gutter-width})) / #{$column-base})) + (#{$gutters} * #{$gutter-width}));
+
+@return $skip-width;
+}
