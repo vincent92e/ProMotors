@@ -1,0 +1,202 @@
+/**
+ * @file
+ * Variables.
+ */
+
+
+//== Root (ratios et al)
+//
+//============================================
+$ratio: 1.5;
+$line-height-base: $ratio; // legacy naming for functions, mixins etc.
+$layout-base: 1rem;
+
+// Used for .container padding left/right for Montere grid system.
+/*
+Used for Modular scale. E.g. padding on a box.
+Then during breakpoints you can switch these if needs be but only use these sizes?
+*/
+$root-size-standard: 1rem; // 1rem / 16px
+$root-size-medium: $ratio * $root-size-standard; // 1.5rem / 24px
+$root-size-large: $ratio * $root-size-medium; // 2.25rem / 36px
+$root-size-x-large: $ratio * $root-size-large; // 3.375rem / 54px
+$root-size-xx-large: $ratio * $root-size-x-large; // 5.0625rem / 81px
+$root-size-xxx-large: $ratio * $root-size-xx-large; // 7.59375rem / 121.5px
+
+
+//== Relative Paths
+//
+//============================================
+$path-to-assets: '/themes/huk/assets';
+$path-to-images: '/themes/huk/assets/images';
+$path-to-icons: $path-to-images + '/icons';
+
+
+//== Typography
+//
+//============================================
+$type-base: 1em; // 16px default
+$type-base-px: 16px;
+$font-size-base: $type-base; // legacy naming for functions, mixins etc.
+$font-small: 0.8em;
+
+// Setup Custom Font(s)
+
+/* Webfont: Chakra Petch */
+@font-face {
+  font-family: 'Chakra Petch Bold';
+  src:
+       url('../../assets/fonts/chakra-petch/ChakraPetch-Bold.woff') format('woff'),
+       url('../../assets/fonts/chakra-petch/ChakraPetch-Bold.eot'), // For IE browsers
+       url('../../assets/fonts/chakra-petch/ChakraPetch-Bold.eot?#iefix');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Chakra Petch Regular';
+  src:
+       url('../../assets/fonts/chakra-petch/ChakraPetch-Regular.woff') format('woff'),
+       url('../../assets/fonts/chakra-petch/ChakraPetch-Regular.eot'), // For IE browsers
+       url('../../assets/fonts/chakra-petch/ChakraPetch-Regular.eot?#iefix');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Chakra Petch Light';
+  src:
+       url('../../assets/fonts/chakra-petch/ChakraPetch-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+// Mulish FONT
+@font-face {
+  font-family: 'Mulish Bold';
+  src:
+        url('../../assets/fonts/mulish/Mulish-Bold.woff') format('woff'),
+        url('../../assets/fonts/mulish/Mulish-Bold.eot'), // For IE browsers
+        url('../../assets/fonts/mulish/Mulish-Bold.eot?#iefix');
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Mulish Regular';
+  src:
+    url('../../assets/fonts/mulish/Mulish-Regular.woff') format('woff'),
+    url('../../assets/fonts/mulish/Mulish-Regular.eot'), // For IE browsers
+    url('../../assets/fonts/mulish/Mulish-Regular.eot?#iefix');
+  font-style: normal;
+  font-weight: 600;
+}
+
+// Font Families
+$font-family-mulish-regular: "Mulish Regular", "Arial", sans-serif;
+$font-family-mulish-bold: "Mulish Bold", "Mulish Regular", "Arial", sans-serif;
+$font-family-chakra-petch-regular: "Chakra Petch Regular", "Arial", sans-serif;
+$font-family-chakra-petch-bold: "Chakra Petch Bold", "Chakra Petch Regular", "Arial", sans-serif;
+
+
+
+//== Layout
+//
+//============================================
+
+// Spacing
+/*
+$layout-tight: $layout-base / $ratio; // tight - 0.666666667rem / 10.666666672px
+$layout-medium: $ratio * $layout-base; // natural - 1.5rem / 24px
+$layout-large: $ratio * $layout-medium; // loose - 2.25rem / 36px
+$layout-x-large: $ratio * $layout-large; // luxury - 3.375rem / 54px
+$layout-xx-large: $ratio * $layout-x-large; // oversized - 5.0625rem / 81px
+$layout-xxx-large: $ratio * $layout-xx-large; // supersized - 7.59375rem / 121.5
+*/
+
+//== Breakpoints
+//
+//============================================
+
+// Variables represent the min width values
+// $bp-xs: 0px; // 0 - 599px;
+$bp-sm: 600px; // 600 - 839px;
+$bp-md: 840px; // 840 - 1023px;
+$bp-lg: 1024px; // 1024 - 1279px;
+$bp-xl: 1280px; // 1280 - 1439px;
+$bp-hd: 1440px; // 1440 - 1919px;
+$bp-fhd: 1920px; // 1920+
+
+
+//== Grid
+//
+//============================================
+
+/*
+ * To set up a Montere or Ratio-driven-design grid, all you need are:
+ * - The max width of the container
+ * - the padding to use for the left and right
+ * - the guttering size between columns
+ *
+ * These are setup with the variables and map below.
+*/
+
+/* Set the column Base of the grid. e.g. Base 12 (12 cols), Base 10 (10 col). Used for calculations of column widths
+ * Used when you call @mixin col();
+ * e.g. @include col(2, $column-base: 10); - says, I want this element to be 2 columns wide, spread across 10 (base) columns grid track.
+ * e.g. @include col(2); - says, I want this element to be 2 columns wide, spread across 12 (base) columns grid track. (Note $column-base not passed as argument as it is default at 12).
+ */
+ $column-base-default: 12;
+
+/* Container max width - in Pixels (it will be converted to Rems automatically)
+ * Here we set the max width we want this site to figuratively 'stretch' to.
+ * Once it reaches this width, it will not go beyond, regardless of ratio driven design in place.
+*/
+$container-max-width: 1920px;
+
+/* Map of grid settings to apply at different breakpoints.
+ *
+ * Each key corresponds to the breakpoint naming convention.
+*/
+
+$layouts: (
+  xs: (
+    from-bp: 0px,
+    container-padding: $root-size-standard, // 16px
+    gutter-width-inner: 16px,
+  ),
+  sm: (
+    from-bp: 600px,
+    container-padding: $root-size-medium, // 24px
+    gutter-width-inner: 20px, // 16px,
+  ),
+  md: (
+    from-bp: 840px,
+    container-padding: $root-size-medium, // 36px
+    gutter-width-inner: 30px, // 24px,
+  ),
+  lg: (
+    from-bp: 1024px,
+    container-padding: $root-size-medium, // 54px
+    gutter-width-inner: 44px, // 24px,
+  ),
+  xl: (
+    from-bp: 1280px,
+    container-padding: $root-size-medium, // 81px
+    gutter-width-inner: 44px, //24px,
+  ),
+  hd: (
+    from-bp: 1440px,
+    container-padding: $root-size-medium, // 121.5px
+    container-inner: 1440px,
+    gutter-width-inner: 66px,
+  ),
+);
+
+
+//== Other
+//
+//============================================
+
+$border-radius: 20px;
