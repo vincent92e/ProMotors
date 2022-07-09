@@ -1,0 +1,19 @@
+uuid: add878c6-4290-4bef-9ff9-68f9d79992a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contact_info
+    - field.storage.block_content.field_additional_information
+id: block_content.contact_info.field_additional_information
+field_name: field_additional_information
+entity_type: block_content
+bundle: contact_info
+label: 'Additional information'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

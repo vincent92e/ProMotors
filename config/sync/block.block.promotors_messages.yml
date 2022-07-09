@@ -1,0 +1,22 @@
+uuid: f865bf59-001f-4b6b-aca3-39207f251399
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - promotors
+_core:
+  default_config_hash: KC12e0aosUnBBs5bd374JVcQjJaFNOSIHzu0dUGf22o
+id: promotors_messages
+theme: promotors
+region: highlighted
+weight: -6
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }
