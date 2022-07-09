@@ -1,0 +1,10 @@
+uuid: 80a557a4-cc1d-490d-92aa-7e1500c00f36
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.teaser
+label: Teaser
+targetEntityType: block_content
+cache: true

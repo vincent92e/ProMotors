@@ -1,0 +1,25 @@
+uuid: a1229765-6cd8-4b60-b363-97e8ff7d1eb2
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:contact_info:615b2cdc-1db4-489f-b64b-e95447230e9c'
+  module:
+    - block_content
+  theme:
+    - promotors
+id: supportinformation
+theme: promotors
+region: header
+weight: 0
+provider: null
+plugin: 'block_content:615b2cdc-1db4-489f-b64b-e95447230e9c'
+settings:
+  id: 'block_content:615b2cdc-1db4-489f-b64b-e95447230e9c'
+  label: 'Support information'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: teaser
+visibility: {  }

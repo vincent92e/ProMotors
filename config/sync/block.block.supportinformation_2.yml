@@ -1,0 +1,25 @@
+uuid: 889270ab-7f5f-4c71-ba84-49d03f563de3
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:contact_info:615b2cdc-1db4-489f-b64b-e95447230e9c'
+  module:
+    - block_content
+  theme:
+    - promotors
+id: supportinformation_2
+theme: promotors
+region: footer_one
+weight: 0
+provider: null
+plugin: 'block_content:615b2cdc-1db4-489f-b64b-e95447230e9c'
+settings:
+  id: 'block_content:615b2cdc-1db4-489f-b64b-e95447230e9c'
+  label: 'Support information'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: default
+visibility: {  }

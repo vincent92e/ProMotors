@@ -1,0 +1,8 @@
+uuid: aa002a6d-0e2f-4493-add7-abc6b9ba23bc
+langcode: en
+status: true
+dependencies: {  }
+id: contact_info
+label: 'Contact info'
+revision: 0
+description: 'Site contact information block'
