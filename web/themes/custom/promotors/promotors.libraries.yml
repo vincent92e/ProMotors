@@ -1,0 +1,7 @@
+# ProMotors base styles
+# These lines define the base library
+base:
+  css:
+    base:
+      asset-builds/css/style.css: {}
+
