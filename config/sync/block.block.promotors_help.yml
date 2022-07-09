@@ -1,0 +1,22 @@
+uuid: bf601e7e-6d62-4e56-8ca0-491444c49855
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - promotors
+_core:
+  default_config_hash: '-laWx8WA-ikiIEH3NJQ0hVbjqk3iEuBms91LB0B4IQU'
+id: promotors_help
+theme: promotors
+region: content
+weight: -6
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

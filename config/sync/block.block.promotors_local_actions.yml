@@ -1,0 +1,20 @@
+uuid: 5137884e-619f-4dcd-a5e4-bed3bbf6fec9
+langcode: en
+status: true
+dependencies:
+  theme:
+    - promotors
+_core:
+  default_config_hash: XRdb8LpbArVA6CpuuEZxzi50JIdjsJaCCZ5o3fH0Blk
+id: promotors_local_actions
+theme: promotors
+region: content
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

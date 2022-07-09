@@ -1,0 +1,25 @@
+uuid: 787c9cce-13a9-438e-b9a9-aff35e7fa65e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - promotors
+_core:
+  default_config_hash: d-0emr1mEq7sFKDu5RHUJckvNk62hvIZdRwPEfnJyGg
+id: promotors_branding
+theme: promotors
+region: header
+weight: -6
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

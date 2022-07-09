@@ -1,0 +1,22 @@
+uuid: dc0a93be-2a65-4be3-b1f4-52066e842f76
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - promotors
+_core:
+  default_config_hash: y0bXRvKYQQKkf_RVxA3aOPGpIfKKsDOzzrWYCgjxJ9Y
+id: promotors_breadcrumbs
+theme: promotors
+region: pre_content
+weight: -6
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }
