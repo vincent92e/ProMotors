@@ -1,0 +1,17 @@
+//== Typography functions
+//
+
+// Convert Pixels to EM
+@function em($pixels, $context: $type-base-px) {
+  @return #{strip-unit($pixels/$context)}em;
+}
+
+// Convert Pixels to REM
+@function rem($pixels, $context: $type-base-px) {
+  @return #{strip-unit($pixels/$context)}rem;
+}
+
+// Convert EM or REM to Pixels
+@function px($em, $context: $type-base-px) {
+  @return strip-unit($em) * $context;
+}

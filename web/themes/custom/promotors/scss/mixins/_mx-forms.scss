@@ -1,0 +1,13 @@
+%input-base {
+  background-color: transparent;
+  font-family: $font-family-mulish-regular;
+  color: palette(text, white);
+  @include border(palette(utility, border), 2px);
+  &:focus {
+    border-color: palette(text, white);
+  }
+}
+
+@mixin textbox-style {
+  @extend %input-base;
+}

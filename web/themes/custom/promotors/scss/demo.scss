@@ -1,0 +1,371 @@
+@import "style";
+
+// -------------------------
+// BASE --------------------
+// -------------------------
+
+.demo {
+  body {
+    background-color: #c0dee0;
+    font-size: 100%;
+  }
+
+  &__intro {
+    margin-top: em(50);
+    margin-bottom: em(100);
+  }
+}
+
+h1 {
+  font-size: em(42);
+  font-family: "Vag Rounded Light";
+}
+
+h2 {
+  font-size: em(24);
+}
+
+%container-styles {
+  background: #154C79;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+.example {
+  margin-bottom: 50px;
+}
+
+// -------------------------
+// EXAMPLES ----------------
+// -------------------------
+
+/*
+ * Example 1: Twelve Columns
+ *
+ * Demonstrates...
+ * 1. Switching the component layouts
+*/
+.example-1 {
+
+  .row {
+    @extend %container-styles;
+  }
+
+  &__col {
+    background-color: rgb(211, 196, 58);
+    @include col(12, $component-layout: 'fullwidth');
+    margin-bottom: rem(30);
+
+    @include from-sm {
+      @include col(6, $component-layout: 'halves');
+      margin-bottom: rem(15);
+    }
+
+    @include from-md {
+      @include col(4, $component-layout: 'thirds');
+      margin-bottom: rem(30);
+    }
+
+    @include from-lg {
+      @include col(2, $component-layout: 'sixths');
+      margin-bottom: rem(45);
+    }
+
+    @include from-xl {
+      @include col(1);
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+
+/*
+ * Example 2: Ten Columns
+ *
+ * Demonstrates...
+ * 1. Switching the component layouts.
+ * 2. Switching column bases between 10 & 12.
+*/
+.example-2 {
+
+  .row {
+    @extend %container-styles;
+  }
+
+  &__col {
+    background-color: peru;
+
+    @include col(12, $component-layout: 'fullwidth');
+    margin-bottom: rem(15);
+
+    @include from-md {
+      @include col(6, $component-layout: 'halves');
+      margin-bottom: rem(30);
+    }
+
+    @include from-lg {
+      @include col(1, $column-base: 10);
+       margin-bottom: 0;
+    }
+  }
+
+}
+
+
+/*
+ * Example 3: Six Columns
+ *
+ * Demonstrates...
+ * 1. Switching the component layouts.
+*/
+.example-3 {
+
+  .row {
+    @extend %container-styles;
+  }
+
+  &__col {
+    @include col(12, $component-layout: 'fullwidth');
+    margin-bottom: rem(30);
+    background-color: red;
+
+    @include from-sm {
+      @include col(6, $component-layout: 'halves');
+      margin-bottom: rem(15);
+    }
+
+    @include from-md {
+      @include col(4, $component-layout: 'thirds');
+      margin-bottom: rem(30);
+    }
+
+    @include from-lg {
+      @include col(2);
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+
+/*
+ * Example 4: Four Columns
+ *
+ * Demonstrates...
+ * 1. Switching the component layouts.
+*/
+.example-4 {
+
+  .row {
+    @extend %container-styles;
+  }
+
+  &__col {
+    @include col(12, $component-layout: 'fullwidth');
+    margin-bottom: rem(30);
+    background-color: rgb(234, 0, 255);
+
+    @include from-md {
+      @include col(6, $component-layout: 'halves');
+    }
+
+    @include from-lg {
+      @include col(3);
+      margin-bottom: 0;
+    }
+  }
+
+  .card {
+    border-radius: 3px;
+    color: orange;
+    padding: $root-size-x-large;
+    font-size: rem(16);
+
+    &__title {
+      font-size: em(36);
+      margin: 0;
+    }
+
+    &__body {
+      font-size: em(18);
+    }
+  }
+
+}
+
+
+/*
+ * Example 5: Three Columns
+ *
+ * Demonstrates...
+ * 1. Going from stacked/fullwidth to 3-col layout
+*/
+.example-5 {
+
+  .row {
+    @extend %container-styles;
+  }
+
+  &__col {
+    @include col(12);
+    margin-bottom: rem(30);
+
+    @include from-lg {
+      @include col(4);
+      margin-bottom: 0;
+    }
+  }
+
+  .box {
+    border-radius: 12px;
+    background-color: rgb(167, 188, 233);
+    color: white;
+    padding: rem(15);
+    font-size: rem(16);
+
+    &__title {
+      font-size: em(36);
+      margin: 0;
+    }
+
+    &__body {
+      font-size: em(18);
+    }
+  }
+
+}
+
+
+/*
+ * Example 6: Two Columns
+ *
+ * Demonstrates...
+ * 1. Going from stacked/fullwidth to 3-col layout
+*/
+.example-6 {
+
+  .row {
+    @extend %container-styles;
+  }
+
+  &__col {
+    @include col(6);
+    background-color: gold;
+  }
+
+}
+
+
+/*
+ * Example 7: Two Columns of Five, using Skip()
+ *
+ * Demonstrates...
+ * 1. Using skip columns to keep central layout.
+*/
+.example-7 {
+
+  .row {
+    @extend %container-styles;
+  }
+
+  &__col {
+    @include col(5);
+    background-color: gold;
+
+    &:first-child {
+      @include skip(1);
+    }
+  }
+
+}
+
+
+/*
+ * Example 8: Padding on the inside lanes of both columns.
+ *
+ * Demonstrates...
+ * 1. Stops content from being too close to each other for certain designs.
+*/
+.example-8 {
+
+  .row {
+    @extend %container-styles;
+  }
+
+  &__col {
+    @include col(12);
+    background-color: rgb(250, 71, 101);
+
+
+    @include from-md {
+      @include col(4);
+
+      &:first-child {
+        @include skip(2)
+      }
+    }
+  }
+
+}
+
+
+/*
+ * Example 9: Full bleed container
+ *
+ * Demonstrates...
+ * 1. A full bleed container with central container content.
+*/
+.example-9 {
+  background-color: grey;
+
+  .row {
+    @extend %container-styles;
+    background-color: unset;
+  }
+
+  &__col {
+    @include col(4);
+    background-color: gold;
+  }
+
+}
+
+
+/*
+ * Example 10: Narrow layout used for article
+ *
+ * Demonstrates...
+ * 1. A narrow layout for article content
+ * 2. multiple rows used.
+ * 3. Different column layouts used in both rows
+*/
+.example-10 {
+  background-color: grey;
+
+  .layout-container-narrow {
+    background-color: white; // background-color: salmon;
+  }
+
+  .row {
+    @extend %container-styles;
+    background-color: unset;
+  }
+
+  &__col {
+    @include col(12);
+    // background-color: green;
+  }
+
+  &__col--alt {
+    @include col(12);
+    margin-bottom: 20px;
+    background-color: red;
+
+    @include from-md {
+      @include col(6);
+      margin-bottom: 0;
+    }
+  }
+
+}
