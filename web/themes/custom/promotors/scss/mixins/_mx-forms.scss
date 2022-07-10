@@ -2,12 +2,23 @@
   background-color: transparent;
   font-family: $font-family-mulish-regular;
   color: palette(text, white);
+  outline: none;
+  padding: rem(10) 0;
   @include border(palette(utility, border), 2px);
+
   &:focus {
     border-color: palette(text, white);
   }
 }
 
 @mixin textbox-style {
-  @extend %input-base;
+  label {
+    display: block;
+    margin-bottom: rem(15);
+    color: palette(text, white);
+
+    + input {
+      @extend %input-base;
+    }
+  }
 }

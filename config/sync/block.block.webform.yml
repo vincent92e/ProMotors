@@ -1,0 +1,25 @@
+uuid: 9c4bc17d-dd80-4c25-90f3-6a10ca1028ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - webform.webform.subscription_form
+  module:
+    - webform
+  theme:
+    - promotors
+id: webform
+theme: promotors
+region: footer_four
+weight: 0
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: Subscribe
+  label_display: visible
+  provider: webform
+  webform_id: subscription_form
+  default_data: ''
+  redirect: false
+visibility: {  }
