@@ -1,7 +1,7 @@
-// --Reset
+// -- Reset
 @import "normalize-css/normalize";
 
-// --Library & settings
+// -- Library & settings
 @import "settings/colors";
 @import "functions/functions";
 @import "settings/variables";
@@ -9,3 +9,8 @@
 
 // -- Base styles
 @import "base/base";
+
+// -- Modules/Components
+// e.g. @import "module/module-name"
+@import "modules/button";
+@import "modules/subscription-form";
