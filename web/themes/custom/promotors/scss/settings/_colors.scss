@@ -1,0 +1,28 @@
+//== Colors
+//
+//============================================
+
+// Color palettes
+$palettes: (
+  primary: (
+    black: #000000,
+    orange: #d16527,
+  ),
+  secondary: (
+    dm-button:      #00455C,
+    curious_blue:   #1FABD7,
+  ),
+  neutral: (
+    grey1: #F6F6F6,
+  ),
+  greys: (
+    footer:       #F6F6F6,
+  ),
+  text: (
+    white:   #ededed,
+    grey1:   #c6c6c6,
+  ),
+  utility: (
+    border: #606060,
+  )
+);

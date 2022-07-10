@@ -1,0 +1,5 @@
+.webform-submission-subscription-form-form {
+  .form-type-email {
+    @include textbox-style;
+  }
+}

@@ -1,0 +1,148 @@
+.section {
+
+  &__row {
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 100%;
+
+    @include row;
+    flex-direction: column;
+
+    @include from-md {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+    }
+
+    &--nowrap {
+      flex-wrap: nowrap;
+    }
+
+    &__col {
+      position: relative;
+      display: block;
+      max-height: 100%;
+      overflow: hidden;
+    }
+
+    &--one-col {
+
+      .section__col {
+        // @include from-md {
+          flex: 0 0 100%;
+        // }
+      }
+    }
+
+    &--two-col {
+
+      .section__col {
+        @include from-md {
+          flex: 1 0 50%;
+
+          @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+            flex: 0 50%;
+            flex-basis: auto;
+            width: 50%;
+          }
+        }
+      }
+    }
+
+    &--three-col {
+
+      .section__col {
+
+        @include from-md {
+          flex: 1 0 33.33%;
+
+          @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+            flex: 0 33.33%;
+            flex-basis: auto;
+            width: 33.33%;
+          }
+
+        }
+      }
+    }
+
+  }
+
+}
+
+
+
+
+/**
+ * Global flex layout
+ * Columns stack on mobile (< 600px)
+ * Tested to work on IE11
+ */
+//  .row_1_col {
+//   position: relative;
+//   display: block;
+//   height: 100%;
+//   width: 100%;
+//   @media only screen and (min-width: 600px) {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//   }
+//   .col {
+//     position: relative;
+//     display: block;
+//     max-height: 100%;
+//     overflow: hidden;
+//     @media only screen and (min-width: 600px) {
+//       flex: 0 0 100%;
+//     }
+//   }
+// }
+// .row_2_col {
+//   position: relative;
+//   display: block;
+//   height: 100%;
+//   width: 100%;
+//   @media only screen and (min-width: 600px) {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//   }
+//   .col {
+//     position: relative;
+//     display: block;
+//     max-height: 100%;
+//     overflow: hidden;
+//     @media only screen and (min-width: 600px) {
+//       flex: 1 0 50%;
+//     }
+//   }
+// }
+
+// .row_3_col {
+//   position: relative;
+//   display: block;
+//   height: 100%;
+//   width: 100%;
+//   @media only screen and (min-width: 600px) {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//   }
+//   .col {
+//     position: relative;
+//     display: block;
+//     max-height: 100%;
+//     overflow: hidden;
+//     @media only screen and (min-width: 600px) {
+//       flex: 1 0 33.33%;
+//     }
+//   }
+// }
+
+// %header-offset,
+// .header-offset {
+//   padding-top: $header-height;
+// }

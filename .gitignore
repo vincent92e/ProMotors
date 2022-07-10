@@ -6,6 +6,11 @@
 /web/modules/contrib/
 /web/themes/contrib/
 /web/profiles/contrib/
+# Ignore node_modules folder
+/web/themes/custom/promotors/node_modules/
+# Ignore css map files
+/web/themes/custom/promotors/asset-builds/css/style.css.map
+/web/themes/custom/promotors/asset-builds/css/demo.css.map
 # Ignore sensitive information
 /web/sites/*/settings.php
 /web/sites/*/settings.local.php
