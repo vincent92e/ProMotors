@@ -1,0 +1,153 @@
+%list-style {
+  &::before {
+    content: '\f45c';
+    font-family: 'Fontawesome';
+    color: palette(primary, orange);
+    font-size: em(6);
+    vertical-align: middle;
+  }
+
+  a {
+    display: inline-block;
+    margin-left: rem(10);
+    text-transform: uppercase;
+  }
+}
+
+.page-footer {
+  ul {
+    &.menu {
+      a {
+        &.is-active {
+          color: palette(text, white);
+        }
+        @include link-decor(none);
+      }
+    }
+  }
+
+  .row > div {
+    &:not(:last-child) {
+      @include upto-breakpoint($bp-sm) {
+        margin-bottom: rem(40);
+      }
+    }
+
+    h2 {
+      font-size: em(18);
+      font-family: $font-family-chakra-petch-regular;
+      margin-bottom: rem(40);
+      margin-top: rem(7);
+    }
+
+    .menu {
+      li {
+        display: block;
+        a {
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  &__one {
+    @include col(12);
+
+    @include from-sm {
+      @include col(7, $component-layout: 'halves');
+      margin-bottom: rem(50);
+    }
+
+    @include from-breakpoint(1147px) {
+      @include col(3);
+      margin-bottom: 0;
+    }
+
+    .field--name-body {
+      margin: rem(19) 0 rem(25) 0;
+    }
+
+    .field--name-field-additional-information {
+      margin-bottom: rem(10);
+      font-family: $font-family-mulish-regular;
+      font-size: em(14);
+    }
+
+    .field--name-field-contact-number {
+      font-family: $font-family-chakra-petch-bold;
+      font-size: em(23);
+      color: palette(primary, text);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &__two {
+    @include col(12);
+
+    @include from-sm {
+      @include col(5, $component-layout: 'halves');
+      margin-bottom: rem(50);
+    }
+
+    @include from-breakpoint(1147px) {
+      @include col(2);
+      margin-bottom: 0;
+    }
+
+    &.about-us {
+      ul#superfish-about-us {
+        display: flex;
+        flex-direction: column;
+        gap: rem(20);
+
+        li {
+          @extend %list-style;
+        }
+      }
+    }
+  }
+
+  &__three {
+    @include col(12);
+
+    @include from-sm {
+      @include col(7, $component-layout: 'halves');
+    }
+
+    @include from-breakpoint(1147px) {
+      @include col(4);
+    }
+
+    &.popular-services {
+      ul#superfish-popular-services {
+        display: flex;
+        flex-flow: row wrap;
+
+        li {
+          @extend %list-style;
+          flex-basis: 50%;
+
+          &:not(:last-child) {
+            margin-bottom: rem(20);
+          }
+        }
+      }
+    }
+  }
+
+  &__four {
+    @include col(12);
+
+    @include from-sm {
+      @include col(5, $component-layout: 'halves');
+    }
+
+    @include from-breakpoint(1147px) {
+      @include col(3);
+    }
+  }
+}
