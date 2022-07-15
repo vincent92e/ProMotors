@@ -4,6 +4,7 @@
   color: palette(text, white);
   outline: none;
   padding: rem(10) 0;
+  width: 100%;
   @include border(palette(utility, border), 2px);
 
   &:focus {
