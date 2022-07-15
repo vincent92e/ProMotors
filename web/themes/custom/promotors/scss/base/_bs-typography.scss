@@ -56,6 +56,8 @@ h4,
 h5,
 h6 {
   font-family: $font-family-chakra-petch-bold;
+  text-transform: uppercase;
+  color: palette(text, white);
 }
 
 // Sizes
@@ -131,7 +133,7 @@ p {
   // TODO: Include margin or not? WYSIWYG component will do it
   // but not sure about <p> used elsewhere
   // margin-bottom: rem(24);
-  font-size: em(18);
+  font-size: $font-size-base;
 
   &:last-child {
     margin-bottom: 0;
@@ -148,9 +150,10 @@ p {
 
 // Default
 a {
-  color: palette(text, link);
+  color: palette(text, white);
   font-weight: bold;
-  @include link-decor; // set to underline and opposite for hover
+  @include link-decor(none);
+  transition: .4s;
 }
 
 

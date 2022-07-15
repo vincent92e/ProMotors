@@ -6,10 +6,10 @@ core_version_requirement: ^8 || ^9
 libraries:
   - promotors/base
 
-#Using Classy as a base theme https://www.drupal.org/theme-guide/8/classy
+# Using Classy as a base theme https://www.drupal.org/theme-guide/8/classy
 base theme: classy
 
-#Regions
+# Regions
 regions:
   header: Header
   highlighted: Highlighted
