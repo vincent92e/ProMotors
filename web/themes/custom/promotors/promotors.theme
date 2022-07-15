@@ -38,7 +38,12 @@ function promotors_page_attachments_alter(array &$page) {
  * Implements hook_preprocess_page() for page.html.twig.
  */
 function promotors_preprocess_page(array &$variables) {
-
+  // Checks if sidebar is available on the page.
+  if ($variables['page']['content'] && $variables['page']['sidebar_right']) {
+    $variables['has_sidebar'] = 'with-sidebar';
+  } else {
+    $variables['has_sidebar'] = 'without-sidebar';
+  }
 }
 
 /**
