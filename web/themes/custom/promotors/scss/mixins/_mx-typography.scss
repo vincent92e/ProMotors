@@ -27,12 +27,7 @@
 @mixin link-decor($decorate: underline) {
   text-decoration: $decorate;
   @include link-states {
-    @if $decorate == 'underline' {
-      text-decoration: none;
-    }
-    @else {
-      text-decoration: underline;
-    }
+    color: palette(primary, orange);
   }
 }
 
