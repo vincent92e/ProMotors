@@ -19,6 +19,13 @@ elements: |-
     '#placeholder': 'Enter Your Email Address'
     '#autocomplete': 'off'
     '#required': true
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit__label': Subscribe
+    '#submit__attributes':
+      class:
+        - site-btn
 css: ''
 javascript: ''
 settings:
