@@ -1,0 +1,75 @@
+//== Responsive Breakpoint helpers
+//
+//============================================
+
+/*
+NOTE:
+HOW TO USE THESE BREAKPOINTS MIXINS:
+When passing the breakpoint variable into these three mixins,
+you must pass it through as a pixel value. That means use the px() function.
+e.g. @include from-breakpoint( px($breakpoint-7) ) {}
+*/
+
+@mixin from-breakpoint($bp) {
+  @media only screen and (min-width: $bp) {
+    @content;
+  }
+}
+
+@mixin upto-breakpoint($bp) {
+  @media only screen and (max-width: $bp - 1) {
+    @content;
+  }
+}
+
+@mixin between-breakpoint($bp-from, $bp-to) {
+  @media only screen and (min-width: $bp-from) and (max-width: $bp-to - 1) {
+    @content;
+  }
+}
+
+//== Sizing Paradigms:
+//
+//============================================
+
+// From 600px
+@mixin from-sm {
+  @include from-breakpoint($bp-sm)  {
+    @content;
+  }
+}
+
+// From 840
+@mixin from-md {
+  @include from-breakpoint($bp-md)  {
+    @content;
+  }
+}
+
+// From 1024px
+@mixin from-lg {
+  @include from-breakpoint($bp-lg)  {
+    @content;
+  }
+}
+
+// From 1280px
+@mixin from-xl {
+  @include from-breakpoint($bp-xl)  {
+    @content;
+  }
+}
+
+// From 1440px;
+@mixin from-hd {
+  @include from-breakpoint($bp-hd) {
+    @content;
+  }
+}
+
+// From 1920px
+@mixin from-fhd {
+  @include from-breakpoint($bp-fhd)  {
+    @content;
+  }
+}

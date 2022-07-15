@@ -1,0 +1,28 @@
+name: ProMotors
+type: theme
+description: 'ProMotors theme'
+package: Custom
+core_version_requirement: ^8 || ^9
+libraries:
+  - promotors/base
+
+# Using Classy as a base theme https://www.drupal.org/theme-guide/8/classy
+base theme: classy
+
+# Regions
+regions:
+  header: Header
+  highlighted: Highlighted
+  pre_content: Pre content
+  content: Content
+  sidebar_right: Right sidebar
+  footer_one: Footer one
+  footer_two: Footer two
+  footer_three: Footer three
+  footer_four: Footer four
+  footer_bottom: Footer bottom
+
+  # These regions are hidden. They are required for the html.html.twig
+  # to work so do not delete them.
+  page_top: Page top
+  page_bottom: Page bottom

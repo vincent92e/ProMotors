@@ -1,0 +1,29 @@
+uuid: 43449534-3c9e-41ce-ad27-225765a2653e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contact_info
+    - field.storage.block_content.field_site_logo
+    - media.type.image
+id: block_content.contact_info.field_site_logo
+field_name: field_site_logo
+entity_type: block_content
+bundle: contact_info
+label: 'Site logo'
+description: 'Add site logo'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

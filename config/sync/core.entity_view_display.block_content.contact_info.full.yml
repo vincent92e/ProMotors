@@ -1,0 +1,50 @@
+uuid: a71bb401-e61f-4c7e-88fe-15db88f95c5b
+langcode: en
+status: false
+dependencies:
+  config:
+    - block_content.type.contact_info
+    - core.entity_view_mode.block_content.full
+    - field.field.block_content.contact_info.body
+    - field.field.block_content.contact_info.field_additional_information
+    - field.field.block_content.contact_info.field_contact_number
+    - field.field.block_content.contact_info.field_site_logo
+  module:
+    - text
+id: block_content.contact_info.full
+targetEntityType: block_content
+bundle: contact_info
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_additional_information:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_contact_number:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_site_logo:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

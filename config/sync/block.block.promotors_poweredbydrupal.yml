@@ -1,0 +1,20 @@
+uuid: b5422a21-047e-464b-a627-c43c363ec9fe
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - promotors
+id: promotors_poweredbydrupal
+theme: promotors
+region: footer_bottom
+weight: -7
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

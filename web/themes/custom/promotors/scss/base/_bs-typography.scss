@@ -1,0 +1,247 @@
+// TYPOGRAPHY BASICS
+
+// AXIOMATIC SPACING AND ROOT TYPOGRAPHY
+
+
+// Root
+// -------------------------
+
+* {
+  // hyphens: auto;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  line-height: $ratio;
+  -webkit-text-size-adjust: 100%; // Prevent font scaling in landscape while allowing user zoom //
+  font-family: $font-family-chakra-petch-regular;
+  font-weight: normal; // Default, unless stated
+}
+
+body {
+  background: #000000;
+  color: palette(text, grey1);
+  margin-top: 0; // Axiomatic exception
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label,
+legend,
+figure,
+ul,
+ol {
+	margin: 0;
+	padding: 0;
+	@include axiomatic-spacing;
+}
+
+
+// Headings
+// -------------------------
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-chakra-petch-bold;
+  text-transform: uppercase;
+  color: palette(text, white);
+}
+
+// Sizes
+
+%heading-xl,
+.heading-xl {
+  font-size: em(74);
+  line-height: 1.15;
+}
+
+h1,
+.h1 {
+  font-size: em(59);
+  line-height: 1em;
+
+  @include from-md {
+    line-height: 1.1em;
+  }
+}
+
+h2,
+.h2 {
+  font-size: em(42);
+  line-height: 1.1em;
+}
+
+h3,
+.h3 {
+  font-size: em(23);
+  line-height: 1.2em;
+}
+
+h4,
+h5,
+h6 {
+  font-size: em(18);
+  line-height: 1.2em;
+}
+
+// Variations
+
+%heading-bold,
+.heading-bold {
+  font-family: $font-family-chakra-petch-bold;
+}
+
+// %heading-inverted,
+// .heading-inverted {
+// }
+
+
+// Ledes
+// -------------------------
+
+%lede,
+.lede {
+  font-size: em(24);
+  line-height: 1.4;
+}
+
+blockquote,
+%blockquote,
+.blockquote {
+  @extend %lede;
+}
+
+
+// Body
+// -------------------------
+
+// Paragraphs outside of the WYSIWYG Component
+p {
+  // TODO: Include margin or not? WYSIWYG component will do it
+  // but not sure about <p> used elsewhere
+  // margin-bottom: rem(24);
+  font-size: $font-size-base;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.small-text {
+  font-size: em(14);
+}
+
+
+// Links
+// -------------------------
+
+// Default
+a {
+  color: palette(text, white);
+  font-weight: bold;
+  @include link-decor(none);
+  transition: .4s;
+}
+
+
+// Images
+// -------------------------
+
+%img-responsive,
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+picture {
+  display: block;
+}
+
+
+// Lists
+// -------------------------
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  li {
+    & + li {
+      margin: 0;
+      padding: 0;
+      margin-top: $root-size-standard;
+    }
+  }
+}
+
+%list-inline,
+.list-inline {
+  padding-left: 0;
+
+  li {
+    display: inline-block;
+    padding: 0 1em 0 0;
+  }
+}
+
+%list-unstyled,
+.list-unstyled {
+  list-style-type: none;
+}
+
+
+// Forms
+// -------------------------
+label {
+  color: #000000;
+  font-weight: bold;
+}
+
+
+// Other
+// -------------------------
+
+br {
+  margin-top: 0;
+}
+
+// i,
+// em,
+// .italic {
+//   font-style: italic;
+// }
+
+// LINE LENGTH LIMITS
+// p,
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6,
+// blockquote,
+// label,
+// legend,
+// input,
+// textarea,
+// select,
+// button,
+// .btn,
+// .form-type-select {
+//   max-width: 45em;
+//   // Optimum maximum line length, relative to font size
+// }

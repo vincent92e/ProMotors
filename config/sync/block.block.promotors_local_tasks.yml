@@ -1,0 +1,22 @@
+uuid: b47273d6-5e05-4604-8280-e9558546d76c
+langcode: en
+status: true
+dependencies:
+  theme:
+    - promotors
+_core:
+  default_config_hash: Qf2BoIzd9py5AYXZj8fJzCYDyVk1-AWXcu-AqQeDZKA
+id: promotors_local_tasks
+theme: promotors
+region: content
+weight: -7
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

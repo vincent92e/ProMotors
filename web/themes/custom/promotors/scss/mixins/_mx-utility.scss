@@ -1,0 +1,122 @@
+//== Decorative Color Bar
+//
+//============================================
+
+/*
+  * $vpos: the vertical position of the bar (top | bottom)
+  * $hpos: the horizontal position of the bar (left | right)
+  * $color: background colour of the bar.
+  * $width: width of the bar.
+  * $outset: If you want the bar to be outset on the element with negative margin, set to true (true | false)
+  * $desktop-bp: the breakpoint where you want desktop styles to begin for this (use breakpoints from variables.scss)
+  * $show-on-desktop: Choose to hide or show this bar on desktop styles. Default is to show (true | false)
+*/
+@mixin color-bar($vpos: 'bottom', $hpos: 'left', $color: palette(primary, yellow), $width: 70%, $outset: false, $desktop-bp: $bp-sm, $show-on-desktop: true) {
+  $desktop-height: 13px;
+  $mobile-height: 9px;
+
+  position: relative;
+
+  &:after {
+    content: "";
+    background-color: $color;
+    position: absolute;
+    width: $width;
+    height: $mobile-height;
+
+    // Place either at top or bottom of element
+    @if $vpos == 'top' {
+      top: 0;
+
+      // Outset or Inset
+      @if outset == true {
+        top: -$mobile-height;
+
+        @include from-breakpoint($desktop-bp) {
+          top: -$desktop-height;
+        }
+      }
+    }
+    @else if $vpos == 'bottom' {
+      bottom: 0;
+
+      // Outset or Inset
+      @if outset == true {
+        bottom: -$mobile-height;
+
+        @include from-breakpoint($desktop-bp) {
+          bottom: -$desktop-height;
+        }
+      }
+    }
+
+    // Place either left or right of element
+    @if $hpos == 'left' {
+      left: 0;
+    }
+    @else if $hpos == 'right' {
+      right: 0;
+    }
+
+    // User chooses the responsive points for this, so mixin flexible/reusable for many components
+    @include from-breakpoint($desktop-bp) {
+      height: $desktop-height;
+
+      // show or hide on Desktop {
+      @if $show-on-desktop == false {
+        display: none;
+      }
+    }
+
+
+
+  }
+}
+
+//== Decorative Underline
+//
+//============================================
+@mixin underline($color: palette(primary, navy), $desktop-bp: $bp-sm) {
+
+  &:after {
+    content: "";
+    background-color: $color;
+    width: 33px;
+    height: 3px;
+    display: block;
+    margin-top: rem(10);
+
+    // User chooses the responsive points for this, so mixin flexible/reusable for many components
+    @include from-breakpoint($desktop-bp) {
+      margin-top: rem(24);
+      width: 47px;
+    }
+  }
+
+}
+
+//== Border style
+//
+//============================================
+
+/*
+   * $color: border-color.
+   * $width: border-width.
+   * $type: border top or bottom.
+ */
+@mixin border($color, $width, $type: 'bottom') {
+  border-style: solid;
+  border-color: $color;
+  border-width: $width 0 0 0;
+
+  @if $type == 'bottom' {
+    border-width: 0 0 $width 0;
+  }
+}
+
+//== Clip style for containers
+//
+//============================================
+@mixin clipStyle {
+  clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+}

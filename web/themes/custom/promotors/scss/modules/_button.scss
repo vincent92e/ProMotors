@@ -1,0 +1,29 @@
+// Primary Button (Orange)
+%site-btn,
+.site-btn {
+  background-color: palette(primary, orange);
+  color: palette(text, white);
+  font-family: $font-family-chakra-petch-bold;
+  font-size: em(18);
+  text-transform: uppercase;
+  line-height: 1.125;
+  padding: 14px 60px;
+  border-radius: 0;
+  border: 2px solid palette(primary, orange);
+  width: 100%;
+  @include clipStyle;
+
+
+  @include link-states {
+    text-decoration: none;
+  }
+
+  //&:hover {
+  //  background-color: transparent;
+  //  color: palette(primary, pink);
+  //}
+
+  &:focus, &:active {
+    outline: 5px auto -webkit-focus-ring-color;
+  }
+}

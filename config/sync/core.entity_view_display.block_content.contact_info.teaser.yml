@@ -1,0 +1,29 @@
+uuid: c65fa2a4-faa5-4bd7-b8d8-2e845ea1f755
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contact_info
+    - core.entity_view_mode.block_content.teaser
+    - field.field.block_content.contact_info.body
+    - field.field.block_content.contact_info.field_additional_information
+    - field.field.block_content.contact_info.field_contact_number
+    - field.field.block_content.contact_info.field_site_logo
+  module:
+    - text
+id: block_content.contact_info.teaser
+targetEntityType: block_content
+bundle: contact_info
+mode: teaser
+content:
+  field_contact_number:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  field_additional_information: true
+  field_site_logo: true

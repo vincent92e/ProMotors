@@ -1,0 +1,35 @@
+%hidden,
+.hidden {
+  display: none;
+}
+
+%visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  word-wrap: normal;
+}
+
+%text-center,
+.text-center {
+  text-align: center;
+}
+
+%text-lockup,
+.text-lockup {
+  * {
+    max-width: 45rem;
+    // Optimum maximum line length, relative to root font size. Great for a standardised-width gathering of text with varying font sizes
+    width: 100%;
+  }
+}
+
+%text-lockup--large,
+.text-lockup--large {
+  * {
+    max-width: 55rem;
+  }
+}
+

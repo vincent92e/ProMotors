@@ -1,0 +1,68 @@
+//## Axiomatic Spacing
+// -------------------------
+@mixin axiomatic-spacing {
+	* + & {
+		margin-top: $root-size-standard;
+
+		@include from-hd {
+			margin-top: $root-size-medium;
+		}
+	}
+}
+
+//## Anchors/Links
+// -------------------------
+
+//** Set all the anchor's pseudo states to have the same styling.
+@mixin link-states {
+  &:hover,
+  &:focus,
+  &:active,
+  &:focus-within {
+    @content;
+  }
+}
+
+//** Sets the anchor's decoration then sets the pseudo states to the opposite.
+@mixin link-decor($decorate: underline) {
+  text-decoration: $decorate;
+  @include link-states {
+    color: palette(primary, orange);
+  }
+}
+
+//## Buttons
+// -------------------------
+
+// site-btn-wrapper
+// Give these styles, but at varying breakpoints.
+// $bp: breakpoint we want the styles to work upto.
+
+@mixin site-btn-wrapper($bp) {
+  @include upto-breakpoint($bp) {
+    display: flex;
+    justify-content: center;
+  }
+
+  a,
+  .site-btn {
+    @include upto-breakpoint($bp) {
+      max-width: 304px;
+      width: 100%;
+    }
+  }
+}
+
+@mixin h2-title-style($color: palette(primary, blue)) {
+  font-size: em(30);
+  color: $color;
+  line-height: 1.1;
+
+  @include from-sm {
+    font-size: em(39);
+  }
+
+  @include from-xl {
+    font-size: em(46);
+  }
+}

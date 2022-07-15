@@ -1,0 +1,58 @@
+/* TYPOGRAPHY EXPANSION */
+
+html {
+  font-size: 87.5%; /* Typically 14px in a lot of web browsers */
+
+  @include from-sm {
+    font-size: 100%; /* Typically 16px in a lot of web browsers */
+  }
+}
+
+// /* NOTCHING HEADINGS UP THE SCALE */
+
+// @include breakpoint-7 {
+// 	.xxx-large {
+// 		font-size: $relative-size-xxx-large * $ratio;
+// 		line-height: 1;
+// 	}
+
+// 	.xx-large {
+// 		font-size: $relative-size-xxx-large;
+// 		line-height: 1;
+// 	}
+
+// 	.x-large {
+// 		font-size: $relative-size-xx-large;
+// 		line-height: 1.1;
+// 	}
+
+// 	h1,
+// 	.large {
+// 		font-size: $relative-size-x-large;
+// 		line-height: 1.1;
+// 	}
+
+// 	h2,
+// 	.medium {
+// 		font-size: $relative-size-large;
+// 		line-height: 1.2;
+// 	}
+
+// 	h3,
+// 	.standard {
+// 		font-size: $relative-size-medium;
+// 		line-height: 1.3;
+// 	}
+// }
+
+// @include breakpoint-23 {
+// 	html {
+// 		font-size: 112.5%; /* Typically 18px in a lot of web browsers */
+// 	}
+// }
+
+// @include breakpoint-25 {
+// 	html {
+// 		font-size: 125%; /* Typically 20px in a lot of web browsers */
+// 	}
+// }
