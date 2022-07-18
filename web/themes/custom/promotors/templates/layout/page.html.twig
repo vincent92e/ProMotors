@@ -42,70 +42,84 @@
  * @see html.html.twig
  */
 #}
-<div class="layout-container">
+<div id="page-wrapper">
 
-  <header role="banner">
-    {{ page.header }}
-  </header>
+  <div id="page">
+    <header role="banner">
+      <div class="layout-container">
+        {{ page.header }}
+      </div>
+    </header>
 
-  {{ page.pre_content }}
-
-  {{ page.highlighted }}
-
-  {{ page.help }}
-
-  <main role="main">
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-
-    <div class="layout-content">
-      {{ page.content }}
-    </div>{# /.layout-content #}
-
-    {% if page.sidebar_first %}
-      <aside class="layout-sidebar-first" role="complementary">
-        {{ page.sidebar_first }}
-      </aside>
-    {% endif %}
-
-    {% if page.sidebar_second %}
-      <aside class="layout-sidebar-second" role="complementary">
-        {{ page.sidebar_second }}
-      </aside>
-    {% endif %}
-
-  </main>
-
-  {% if page.footer %}
-    <footer role="contentinfo">
-      {{ page.footer_one }}
-    </footer>
-  {% endif %}
-
-  <footer class="page-footer">
-    <div class="layout-container-wide">
-      <div class="row">
-        {% if page.footer_one %}
-          <div class="page-footer__one support-info">
-            {{ page.footer_one }}
-          </div>
-        {% endif %}
-        {% if page.footer_two %}
-          <div class="page-footer__two about-us">
-            {{ page.footer_two }}
-          </div>
-        {% endif %}
-        {% if page.footer_three %}
-          <div class="page-footer__three popular-services">
-            {{ page.footer_three }}
-          </div>
-        {% endif %}
-        {% if page.footer_four %}
-          <div class="page-footer__four subscribe">
-            {{ page.footer_four }}
-          </div>
-        {% endif %}
+    {% if page.pre_content %}
+    <div class="pre-content">
+      <div class="layout-container">
+        {{ page.pre_content }}
       </div>
     </div>
-  </footer>
+    {% endif %}
+
+    {% if page.highlighted %}
+    <div class="highlighted">
+      <div class="layout-container">
+        {{ page.highlighted }}
+      </div>
+    </div>
+    {% endif %}
+
+    <main role="main">
+
+      <div class="content {{ has_sidebar }}">
+        {{ page.content }}
+      </div>{# /.layout-content #}
+
+      {% if page.sidebar_right %}
+        <aside class="sidebar-right" role="complementary">
+          {{ page.sidebar_first }}
+        </aside>
+      {% endif %}
+
+    </main>
+
+    <footer class="page-footer">
+      <div class="footer-top">
+        <div class="layout-container">
+          <div class="row">
+            {% if page.footer_one %}
+              <div class="page-footer__one support-info">
+                {{ page.footer_one }}
+              </div>
+            {% endif %}
+            {% if page.footer_two %}
+              <div class="page-footer__two about-us">
+                {{ page.footer_two }}
+              </div>
+            {% endif %}
+            {% if page.footer_three %}
+              <div class="page-footer__three popular-services">
+                {{ page.footer_three }}
+              </div>
+            {% endif %}
+            {% if page.footer_four %}
+              <div class="page-footer__four subscribe">
+                {{ page.footer_four }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="layout-container">
+          <div class="row">
+            {% if page.footer_bottom %}
+              <div class="page-footer__bottom copyright">
+                {{ page.footer_bottom }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
 
 </div>{# /.layout-container #}
