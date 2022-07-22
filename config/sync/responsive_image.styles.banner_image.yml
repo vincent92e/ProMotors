@@ -1,0 +1,51 @@
+uuid: d0eb4d97-1b9f-4600-8686-76f47713c99b
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.banner_image_extra_large_1462x944_
+    - image.style.banner_image_large_1381x749_
+    - image.style.banner_image_medium_1823x960_
+    - image.style.banner_image_small_725x253_
+  theme:
+    - promotors
+id: banner_image
+label: 'Banner image'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_image_extra_large_1462x944_
+    breakpoint_id: promotors.extra-wide
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_image_extra_large_1462x944_
+    breakpoint_id: promotors.wide
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_image_extra_large_1462x944_
+    breakpoint_id: promotors.extra-large
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_image_large_1381x749_
+    breakpoint_id: promotors.large
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_image_medium_1823x960_
+    breakpoint_id: promotors.medium
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_image_small_725x253_
+    breakpoint_id: promotors.small
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_image_small_725x253_
+    breakpoint_id: promotors.mobile
+    multiplier: 1x
+breakpoint_group: promotors
+fallback_image_style: banner_image_small_725x253_
