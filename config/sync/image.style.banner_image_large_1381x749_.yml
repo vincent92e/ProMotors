@@ -1,0 +1,17 @@
+uuid: 64a4e8f4-aba8-4918-91aa-f64495a83fb4
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: banner_image_large_1381x749_
+label: "Banner image large (1381x749)\t"
+effects:
+  c2dcaf3c-46e9-4c75-ab40-6e126ec6177c:
+    uuid: c2dcaf3c-46e9-4c75-ab40-6e126ec6177c
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1381
+      height: 749
+      crop_type: focal_point
