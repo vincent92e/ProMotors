@@ -6,7 +6,7 @@ dependencies:
     - image.style.banner_image_extra_large_1462x944_
     - image.style.banner_image_large_1381x749_
     - image.style.banner_image_medium_1823x960_
-    - image.style.banner_image_small_725x253_
+    - image.style.banner_image_small_725x353
   theme:
     - promotors
 id: banner_image
@@ -39,13 +39,13 @@ image_style_mappings:
     multiplier: 1x
   -
     image_mapping_type: image_style
-    image_mapping: banner_image_small_725x253_
+    image_mapping: banner_image_small_725x353
     breakpoint_id: promotors.small
     multiplier: 1x
   -
     image_mapping_type: image_style
-    image_mapping: banner_image_small_725x253_
+    image_mapping: banner_image_small_725x353
     breakpoint_id: promotors.mobile
     multiplier: 1x
 breakpoint_group: promotors
-fallback_image_style: banner_image_small_725x253_
+fallback_image_style: banner_image_small_725x353
