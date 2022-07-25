@@ -6,3 +6,10 @@ base:
       asset-builds/css/style.css: {}
   js:
     asset-builds/js/fontawesome.js: {}
+
+scroll_animation:
+  js:
+    asset-builds/js/scrollAnimation.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery

@@ -148,3 +148,12 @@ function promotors_theme_suggestions_details_alter(array &$suggestions, array $v
 function promotors_preprocess_menu_local_task(array &$variables) {
   //$variables['element']['#link']['url']->setOption('attributes', ['class'=>'rounded']);
 }
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function promotors_preprocess_paragraph__banner(&$variables) {
+  if (isset($variables['content']['field_button']['0'])) {
+    $variables['button_link'] = $variables['content']['field_button']['0'];
+  }
+}

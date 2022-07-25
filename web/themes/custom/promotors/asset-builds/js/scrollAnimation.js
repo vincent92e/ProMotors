@@ -1,0 +1,2 @@
+"use strict";!function(s,e){Drupal.behaviors.scrollAnimation={attach:function(i,n){s.fn.visible=function(i){var n=s(this),o=s(e),t=o.scrollTop(),o=t+o.height(),a=n.offset().top,n=a+n.height();return(!0===i?a:n)<=o&&t<=(!0===i?n:a)};var o=s(e),t=s(".scroll-animation",i);t.each(function(i,n){var o=s(n);o.visible(!0)&&(o.addClass("come-in"),setTimeout(function(){o.addClass("already-visible")},"1000"))}),o.scroll(function(i){t.each(function(i,n){n=s(n);n.visible(!0)&&n.addClass("come-in")})})}}}(jQuery,window);
+//# sourceMappingURL=scrollAnimation.js.map

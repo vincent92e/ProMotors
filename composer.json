@@ -21,6 +21,10 @@
         "drupal/core-composer-scaffold": "^9.4",
         "drupal/core-project-message": "^9.4",
         "drupal/core-recommended": "^9.4",
+        "drupal/devel": "^4.1",
+        "drupal/field_group": "^3.2",
+        "drupal/focal_point": "^1.5",
+        "drupal/paragraphs": "^1.14",
         "drupal/superfish": "^1.4",
         "drupal/webform": "^6.1",
         "drush/drush": "^11.0"
