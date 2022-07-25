@@ -120,3 +120,80 @@
 @mixin clipStyle {
   clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
 }
+
+//== Makes images fluid
+//
+//============================================
+@mixin imgfluid {
+  max-width: 100%;
+  height: auto;
+}
+
+@mixin scrollAnimation($type) {
+  &.come-in {
+    opacity:1;
+    transition: opacity 1s ease-in;
+    animation: $type 1s ease-in-out;
+  }
+}
+
+@mixin stopAnimation {
+  .already-visible {
+    transform: translateY(0);
+    animation: none;
+  }
+}
+
+@mixin fadeIn($type, $position) {
+  @if ($type == 'top') {
+    @keyframes fadeInTop {
+      from {
+        opacity: 0;
+        transform: translateY($position);
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  }
+
+  @if ($type == 'right') {
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX($position);
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  }
+
+  @if ($type == 'bottom') {
+    @keyframes fadeInBottom {
+      from {
+        opacity: 0;
+        transform: translateY($position);
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  }
+
+  @if ($type == 'left') {
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX($position);
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  }
+}
