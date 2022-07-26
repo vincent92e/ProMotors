@@ -7,9 +7,25 @@ base:
   js:
     asset-builds/js/fontawesome.js: {}
 
+visible:
+  js:
+    asset-builds/js/visible.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+
 scroll_animation:
   js:
     asset-builds/js/scrollAnimation.js: {}
   dependencies:
     - core/drupal
     - core/jquery
+    - promotors/visible
+
+counter:
+  js:
+    asset-builds/js/counter.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - promotors/visible

@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.homepage.field_banner
+    - field.field.node.homepage.field_content
     - node.type.homepage
   module:
     - user
@@ -20,3 +21,4 @@ content:
     region: content
 hidden:
   field_banner: true
+  field_content: true

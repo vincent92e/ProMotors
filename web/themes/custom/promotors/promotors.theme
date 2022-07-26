@@ -157,3 +157,20 @@ function promotors_preprocess_paragraph__banner(&$variables) {
     $variables['button_link'] = $variables['content']['field_button']['0'];
   }
 }
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function promotors_preprocess_paragraph__statistics(&$variables) {
+  $paragraphs = $variables['content']['field_items'];
+  $statistics = [];
+
+  // Filter statistics items that have integer keys.
+  foreach ($paragraphs as $key => $value) {
+    if (is_int($key)) {
+      $statistics[$key] = $value;
+    }
+  }
+
+  $variables['statistics'] = $statistics;
+}

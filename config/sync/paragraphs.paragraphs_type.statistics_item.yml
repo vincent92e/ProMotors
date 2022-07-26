@@ -1,0 +1,10 @@
+uuid: a34fd107-4b75-46eb-a69e-413b196d6ed4
+langcode: en
+status: true
+dependencies: {  }
+id: statistics_item
+label: 'Statistics item'
+icon_uuid: null
+icon_default: null
+description: 'Fields for the statistics paragraph type'
+behavior_plugins: {  }
