@@ -1,0 +1,15 @@
+.paragraph--type--statistics-item {
+  .statistics-item {
+    &__value {
+      .value, .suffix {
+        font-size: em(36);
+        color: palette(text, white);
+        font-family: $font-family-chakra-petch-bold;
+
+        @include from-md {
+          font-size: em(59);
+        }
+      }
+    }
+  }
+}
