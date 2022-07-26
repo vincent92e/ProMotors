@@ -1,0 +1,19 @@
+uuid: 13d07c45-286e-4ca8-a3d7-0fb56954edf1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.statistics_item
+id: paragraph.statistics_item.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: statistics_item
+label: Title
+description: 'Name of the statistics you would like to add.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
