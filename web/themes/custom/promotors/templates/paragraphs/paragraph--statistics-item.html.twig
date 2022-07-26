@@ -49,7 +49,14 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {{ content }}
+      <div class="statistics-item">
+        <div class="statistics-item__value">
+          <span class="value counter" data-count="{{ content.field_statistics_value.0 }}">0</span>
+          <span class="suffix">{{ content.field_suffix.0 }}</span>
+        </div>
+        <hr class="promotors-hr">
+        <div class="statistics-item__description">{{ content.field_body.0 }}</div>
+      </div>
     {% endblock %}
   </div>
 {% endblock paragraph %}

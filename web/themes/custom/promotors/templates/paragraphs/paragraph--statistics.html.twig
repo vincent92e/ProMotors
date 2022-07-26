@@ -46,10 +46,16 @@
     not paragraph.isPublished() ? 'paragraph--unpublished'
   ]
 %}
+
+{{ attach_library('promotors/counter') }}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {{ content }}
+      <div class="statistics">
+        <div class="layout-container">
+          {{ content }}
+        </div>
+      </div>
     {% endblock %}
   </div>
 {% endblock paragraph %}
