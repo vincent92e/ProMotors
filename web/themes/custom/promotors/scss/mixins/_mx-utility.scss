@@ -117,26 +117,45 @@
 //== Clip style for containers
 //
 //============================================
-@mixin clipStyle {
-  clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+@mixin clipStyle($width) {
+  clip-path: polygon($width 0, 100% 0, 100% calc(100% - #{$width}), calc(100% - #{$width}) 100%, 0 100%, 0 $width);
 }
 
 //== Makes images fluid
 //
 //============================================
-@mixin imgfluid {
+@mixin imgFluid {
   max-width: 100%;
   height: auto;
 }
 
-@mixin scrollAnimation($type) {
+@mixin scrollAnimation($type, $delay: false, $time: 0s) {
   &.come-in {
-    opacity:1;
-    transition: opacity 1s ease-in;
-    animation: $type 1s ease-in-out;
+    opacity: 1;
+    @if $delay == true {
+      transition: opacity 1s ease-in $time;
+      animation: $type 1s ease-in-out $time;
+    } @else {
+      transition: opacity 1s ease-in;
+      animation: $type 1s ease-in-out;
+    }
   }
 }
 
+//== Adds css animation with delay
+//
+//============================================
+@mixin scrollAnimationWithDelay($type, $delay) {
+  &.come-in {
+    opacity: 1;
+    transition: opacity 1s ease-in $delay;
+    animation: $type 1s ease-in-out $delay;
+  }
+}
+
+//== Stops animation
+//
+//============================================
 @mixin stopAnimation {
   .already-visible {
     transform: translateY(0);
@@ -144,6 +163,9 @@
   }
 }
 
+//== Add fadein effect
+//
+//============================================
 @mixin fadeIn($type, $position) {
   @if ($type == 'top') {
     @keyframes fadeInTop {

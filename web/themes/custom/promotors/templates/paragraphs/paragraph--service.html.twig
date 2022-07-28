@@ -43,26 +43,28 @@
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    'scroll-animation',
     not paragraph.isPublished() ? 'paragraph--unpublished'
   ]
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      <div class="statistics-item">
-        <div class="statistics-item__value">
-          {% if content.field_statistics_value.0 %}
-            <span class="value counter" data-count="{{ content.field_statistics_value.0 }}">0</span>
-          {% endif %}
+      <div class="service">
+        {% if content.field_service_icon.0 %}
+          <div class="service__icon {{ content.field_service_icon.0['#plain_text'] | lower }}"></div>
+        {% endif %}
 
-          {% if content.field_suffix.0 %}
-            <span class="suffix">{{ content.field_suffix.0 }}</span>
-          {% endif %}
-        </div>
-        <hr class="promotors-hr">
+        {% if content.field_title.0 %}
+          <h4 class="service__name">{{ content.field_title.0 }}</h4>
+        {% endif %}
 
         {% if content.field_body.0 %}
-          <div class="statistics-item__description">{{ content.field_body.0 }}</div>
+          <div class="service__description">{{ content.field_body.0 }}</div>
+        {% endif %}
+
+        {% if content.field_button.0 %}
+          <div class="service__button">{{ content.field_button.0 }}</div>
         {% endif %}
       </div>
     {% endblock %}

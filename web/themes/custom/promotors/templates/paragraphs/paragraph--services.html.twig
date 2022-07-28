@@ -46,24 +46,25 @@
     not paragraph.isPublished() ? 'paragraph--unpublished'
   ]
 %}
+
+{{ attach_library('promotors/scroll_animation') }}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      <div class="statistics-item">
-        <div class="statistics-item__value">
-          {% if content.field_statistics_value.0 %}
-            <span class="value counter" data-count="{{ content.field_statistics_value.0 }}">0</span>
+      <div class="services">
+        <div class="layout-container">
+          {% if content.field_title.0 or field_button.0 %}
+            <div class="services__top">
+              <h2 class="title">{{ content.field_title.0 }}</h2>
+              <div class="link-btn">
+                {{ link(button_link['#title'], button_link['#url'], { 'class' : ['site-btn', 'button-primary']}) }}
+              </div>
+            </div>
           {% endif %}
-
-          {% if content.field_suffix.0 %}
-            <span class="suffix">{{ content.field_suffix.0 }}</span>
+          {% if content.field_service %}
+            <div class="services__content">{{ content.field_service }}</div>
           {% endif %}
         </div>
-        <hr class="promotors-hr">
-
-        {% if content.field_body.0 %}
-          <div class="statistics-item__description">{{ content.field_body.0 }}</div>
-        {% endif %}
       </div>
     {% endblock %}
   </div>

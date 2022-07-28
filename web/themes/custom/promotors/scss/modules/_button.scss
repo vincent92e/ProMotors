@@ -12,7 +12,7 @@
   border: 2px solid palette(primary, orange);
   width: 100%;
   display: inline-block;
-  @include clipStyle;
+  @include clipStyle(20px);
 
 
   @include link-states {

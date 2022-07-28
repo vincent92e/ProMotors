@@ -1,21 +1,20 @@
-uuid: d824fc7e-9287-4358-9d79-6dec2506a5f3
+uuid: 0724f8fc-3b8a-4421-8a95-bcfe38d8ebc9
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_content
-    - node.type.homepage
+    - field.storage.paragraph.field_service
+    - paragraphs.paragraphs_type.service
     - paragraphs.paragraphs_type.services
-    - paragraphs.paragraphs_type.statistics
   module:
     - entity_reference_revisions
-id: node.homepage.field_content
-field_name: field_content
-entity_type: node
-bundle: homepage
-label: Content
-description: 'Add homepage contents.'
-required: true
+id: paragraph.services.field_service
+field_name: field_service
+entity_type: paragraph
+bundle: services
+label: Service
+description: 'Services offered by Promotors.'
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -23,23 +22,22 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      statistics: statistics
-      services: services
+      service: service
     negate: 0
     target_bundles_drag_drop:
       banner:
-        weight: 4
+        weight: 6
         enabled: false
       service:
         weight: 7
-        enabled: false
+        enabled: true
       services:
         weight: 8
-        enabled: true
+        enabled: false
       statistics:
-        weight: 5
-        enabled: true
+        weight: 9
+        enabled: false
       statistics_item:
-        weight: 6
+        weight: 10
         enabled: false
 field_type: entity_reference_revisions
