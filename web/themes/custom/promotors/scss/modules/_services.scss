@@ -1,0 +1,118 @@
+.paragraph--type--services {
+  .services {
+    padding: rem(70) 0;
+
+    &__top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: rem(40);
+
+      .link-btn {
+        display: none;
+
+        @include from-md {
+          display: block;
+        }
+      }
+    }
+
+    .field__items {
+      @include row;
+      justify-content: space-between;
+
+      .field__item {
+        @include col(12, $use-gutter: false);
+
+        @include from-md {
+          @include col(6, $component-layout: 'halves', $use-gutter: false);
+        }
+
+        @include from-lg {
+          @include col(4, $use-gutter: false);
+        }
+
+        .service {
+          padding: rem(40) 0;
+          border-top: 3px solid palette(greys, grey-shade2);
+          transition: border 1s;
+
+          &:hover {
+            border-top-color: palette(primary, orange);
+          }
+        }
+
+        &:nth-child(1) {
+          .scroll-animation {
+            opacity: 0;
+            @include scrollAnimation(fadeInRight);
+          }
+        }
+        &:nth-child(2) {
+          .scroll-animation {
+            opacity: 0;
+            @include scrollAnimation(fadeInRight);
+
+            @include from-md {
+              @include scrollAnimation(fadeInRight, true, .3s);
+            }
+          }
+        }
+
+        &:nth-child(3) {
+          .scroll-animation {
+            opacity: 0;
+            @include scrollAnimation(fadeInRight);
+
+            @include from-lg {
+              @include scrollAnimation(fadeInRight, true, .6s);
+            }
+          }
+        }
+
+        &:nth-child(4) {
+          .scroll-animation {
+            opacity: 0;
+            @include scrollAnimation(fadeInRight);
+
+            @include from-md {
+              @include scrollAnimation(fadeInRight, true, .3s);
+            }
+
+            @include from-lg {
+              @include scrollAnimation(fadeInRight);
+            }
+          }
+        }
+
+        &:nth-child(5) {
+          .scroll-animation {
+            opacity: 0;
+            @include scrollAnimation(fadeInRight);
+
+            @include from-md {
+              @include scrollAnimation(fadeInRight, true, .3s);
+            }
+          }
+        }
+
+        &:nth-child(6) {
+          .scroll-animation {
+            opacity: 0;
+            @include scrollAnimation(fadeInRight);
+
+            @include from-md {
+              @include scrollAnimation(fadeInRight, true, .3s);
+            }
+
+            @include from-lg {
+              @include scrollAnimation(fadeInRight, true, .6s);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include fadeIn('right', 300px);
+@include stopAnimation;

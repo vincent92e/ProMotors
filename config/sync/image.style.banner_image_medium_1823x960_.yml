@@ -1,0 +1,17 @@
+uuid: 957c0f70-9cab-4369-bed7-acfedabf8ba2
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: banner_image_medium_1823x960_
+label: "Banner image medium (1823x960)\t"
+effects:
+  d57adc9f-90f1-4ba0-824a-855f6217ac01:
+    uuid: d57adc9f-90f1-4ba0-824a-855f6217ac01
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1823
+      height: 960
+      crop_type: focal_point

@@ -38,7 +38,12 @@ function promotors_page_attachments_alter(array &$page) {
  * Implements hook_preprocess_page() for page.html.twig.
  */
 function promotors_preprocess_page(array &$variables) {
-
+  // Checks if sidebar is available on the page.
+  if ($variables['page']['content'] && $variables['page']['sidebar_right']) {
+    $variables['has_sidebar'] = 'with-sidebar';
+  } else {
+    $variables['has_sidebar'] = 'without-sidebar';
+  }
 }
 
 /**
@@ -142,4 +147,42 @@ function promotors_theme_suggestions_details_alter(array &$suggestions, array $v
  */
 function promotors_preprocess_menu_local_task(array &$variables) {
   //$variables['element']['#link']['url']->setOption('attributes', ['class'=>'rounded']);
+}
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function promotors_preprocess_paragraph(&$variables) {
+  if (isset($variables['content']['field_button']['0'])) {
+    $variables['button_link'] = $variables['content']['field_button']['0'];
+  }
+}
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function promotors_preprocess_paragraph__statistics(&$variables) {
+  $paragraphs = $variables['content']['field_items'];
+  $variables['statistics'] = getChildren($paragraphs);
+}
+
+function promotors_preprocess_paragraph__services(&$variables) {
+  $paragraphs = $variables['content']['field_service'];
+  $variables['services'] = getChildren($paragraphs);
+}
+
+/**
+ * Returns paragraph children within a multi-level paragraph component.
+ */
+function getChildren($parent) {
+  $children = [];
+
+  // Filter array children items that have integer keys only.
+  foreach ($parent as $key => $value) {
+    if (is_int($key)) {
+      $children[$key] = $value;
+    }
+  }
+
+  return $children;
 }

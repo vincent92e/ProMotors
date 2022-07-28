@@ -1,0 +1,42 @@
+promotors.mobile:
+  label: mobile
+  mediaQuery: ''
+  weight: 0
+  multipliers:
+    - 1x
+promotors.small:
+  label: small
+  mediaQuery: 'all and (min-width: 600px) and (max-width: 839px)'
+  weight: 1
+  multipliers:
+    - 1x
+promotors.medium:
+  label: medium
+  mediaQuery: 'all and (min-width: 840px) and (max-width: 1023px)'
+  weight: 2
+  multipliers:
+    - 1x
+promotors.large:
+  label: large
+  mediaQuery: 'all and (min-width: 1024px) and (max-width: 1279px)'
+  weight: 3
+  multipliers:
+    - 1x
+promotors.extra-large:
+  label: extra-large
+  mediaQuery: 'all and (min-width: 1280px) and (max-width: 1439px)'
+  weight: 4
+  multipliers:
+    - 1x
+promotors.wide:
+  label: wide
+  mediaQuery: 'all and (min-width: 1440px) and (max-width: 1919px)'
+  weight: 5
+  multipliers:
+    - 1x
+promotors.extra-wide:
+  label: extra-wide
+  mediaQuery: 'all and (min-width: 1920px)'
+  weight: 6
+  multipliers:
+    - 1x

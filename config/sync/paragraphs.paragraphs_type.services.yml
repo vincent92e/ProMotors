@@ -1,0 +1,10 @@
+uuid: eba89fb1-9d79-4075-b49e-4dba1ecfaf65
+langcode: en
+status: true
+dependencies: {  }
+id: services
+label: Services
+icon_uuid: null
+icon_default: null
+description: 'List of services offered by Promotors.'
+behavior_plugins: {  }

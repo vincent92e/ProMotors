@@ -1,0 +1,13 @@
+main {
+  .content {
+    @include col(12);
+
+    &.with-sidebar {
+      @include col(9);
+    }
+  }
+
+  .sidebar-right {
+    @include col(3);
+  }
+}

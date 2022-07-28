@@ -11,11 +11,13 @@
   border-radius: 0;
   border: 2px solid palette(primary, orange);
   width: 100%;
-  @include clipStyle;
+  display: inline-block;
+  @include clipStyle(20px);
 
 
   @include link-states {
     text-decoration: none;
+    color: palette(text, white);
   }
 
   //&:hover {

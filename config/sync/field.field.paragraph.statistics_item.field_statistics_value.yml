@@ -1,0 +1,19 @@
+uuid: dec88e5f-14e8-4e99-96bf-ce535073c410
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_statistics_value
+    - paragraphs.paragraphs_type.statistics_item
+id: paragraph.statistics_item.field_statistics_value
+field_name: field_statistics_value
+entity_type: paragraph
+bundle: statistics_item
+label: 'Statistics value'
+description: 'Value of the statistics'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

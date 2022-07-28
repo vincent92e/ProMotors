@@ -1,0 +1,34 @@
+uuid: 8d872afa-56b4-4acb-9d8a-6b791e558200
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.footer_logo
+    - field.field.media.image.field_media_image
+    - image.style.footer_logo
+    - media.type.image
+  module:
+    - image
+_core:
+  default_config_hash: 73xaTNkI5J6sfFcBmNYeuk070X3mQS_iwwWaPYyfG2M
+id: media.image.footer_logo
+targetEntityType: media
+bundle: image
+mode: footer_logo
+content:
+  field_media_image:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: footer_logo
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

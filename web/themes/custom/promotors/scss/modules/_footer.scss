@@ -15,6 +15,28 @@
 }
 
 .page-footer {
+  .footer-top {
+    padding: rem(70) 0;
+    background-color: palette(primary, black-shade2);
+
+    @include from-md {
+      padding: rem(90) 0;
+    }
+
+    @include from-lg {
+      padding: rem(160) 0;
+    }
+  }
+
+  .footer-bottom {
+    padding: rem(40) 0;
+    background-color: transparent;
+
+    @include from-md {
+      padding: rem(50) 0;
+    }
+  }
+
   ul {
     &.menu {
       a {
@@ -80,8 +102,7 @@
     }
 
     img {
-      max-width: 100%;
-      height: auto;
+      @include imgFluid;
     }
   }
 
@@ -149,5 +170,10 @@
     @include from-breakpoint(1147px) {
       @include col(3);
     }
+  }
+
+  &__bottom {
+    @include col(12);
+    text-align: center;
   }
 }

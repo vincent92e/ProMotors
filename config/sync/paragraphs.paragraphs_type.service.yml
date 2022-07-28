@@ -1,0 +1,10 @@
+uuid: b4d85ea1-2d2c-428d-9072-23d4e4ccadcc
+langcode: en
+status: true
+dependencies: {  }
+id: service
+label: Service
+icon_uuid: null
+icon_default: null
+description: 'Individual service offered by Promotors.'
+behavior_plugins: {  }
