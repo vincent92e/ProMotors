@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_content
     - node.type.homepage
+    - paragraphs.paragraphs_type.services
     - paragraphs.paragraphs_type.statistics
   module:
     - entity_reference_revisions
@@ -23,11 +24,18 @@ settings:
   handler_settings:
     target_bundles:
       statistics: statistics
+      services: services
     negate: 0
     target_bundles_drag_drop:
       banner:
         weight: 4
         enabled: false
+      service:
+        weight: 7
+        enabled: false
+      services:
+        weight: 8
+        enabled: true
       statistics:
         weight: 5
         enabled: true
