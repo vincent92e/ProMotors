@@ -106,7 +106,7 @@ header {
         padding: rem(10) rem(30);
         line-height: 1.1em;
         font-family: $font-family-chakra-petch-bold;
-        @include clipStyle;
+        @include clipStyle(20px);
       }
     }
   }
