@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_content
     - node.type.homepage
+    - paragraphs.paragraphs_type.price_listings
     - paragraphs.paragraphs_type.services
     - paragraphs.paragraphs_type.statistics
   module:
@@ -25,11 +26,18 @@ settings:
     target_bundles:
       statistics: statistics
       services: services
+      price_listings: price_listings
     negate: 0
     target_bundles_drag_drop:
       banner:
         weight: 4
         enabled: false
+      price_list_item:
+        weight: 10
+        enabled: false
+      price_listings:
+        weight: 9
+        enabled: true
       service:
         weight: 7
         enabled: false
