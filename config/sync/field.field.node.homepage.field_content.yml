@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_content
     - node.type.homepage
+    - paragraphs.paragraphs_type.call_to_action
     - paragraphs.paragraphs_type.price_listings
     - paragraphs.paragraphs_type.services
     - paragraphs.paragraphs_type.statistics
@@ -27,11 +28,15 @@ settings:
       statistics: statistics
       services: services
       price_listings: price_listings
+      call_to_action: call_to_action
     negate: 0
     target_bundles_drag_drop:
       banner:
         weight: 4
         enabled: false
+      call_to_action:
+        weight: 10
+        enabled: true
       price_list_item:
         weight: 10
         enabled: false
