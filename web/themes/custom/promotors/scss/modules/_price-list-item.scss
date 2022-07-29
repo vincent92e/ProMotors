@@ -1,0 +1,67 @@
+.paragraph--type--price-list-item {
+  .price-list-item {
+
+    &__name {
+      text-transform: uppercase;
+      font-family: $font-family-chakra-petch-bold;
+      text-align: center;
+
+      margin-bottom: rem(20);
+    }
+
+    &__price-wrapper {
+      text-align: center;
+
+      .currency {
+        color: palette(text, white);
+        font-size: em(23);
+
+        vertical-align: top;
+
+        text-transform: uppercase;
+        font-family: $font-family-chakra-petch-bold;
+      }
+
+      .price {
+        margin-bottom: rem(30);
+
+        color: palette(text, white);
+        font-size: em(36);
+
+        @include from-breakpoint(768px) {
+          font-size: em(59);
+        }
+
+        text-transform: uppercase;
+        font-family: $font-family-chakra-petch-bold;
+      }
+    }
+
+    &__body {
+      margin-bottom: rem(30);
+
+      ul {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+
+        li {
+          list-style: none;
+          color: palette(text, white);
+          display: inline-flex;
+
+          &:before {
+            content: "\f00c";
+            font-family: Fontawesome;
+            margin-right: rem(15);
+          }
+        }
+      }
+    }
+
+    &__button {
+      text-align: center;
+    }
+  }
+}
