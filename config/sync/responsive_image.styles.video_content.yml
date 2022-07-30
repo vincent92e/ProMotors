@@ -1,0 +1,51 @@
+uuid: c57ec36e-df2b-4a5f-ad6a-6d778fefbae3
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.video_content_1240x568_
+    - image.style.video_content_1360_x_568
+    - image.style.video_content_727x307_
+    - image.style.video_content_984x307_
+  theme:
+    - promotors
+id: video_content
+label: 'Video content'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: video_content_1360_x_568
+    breakpoint_id: promotors.extra-wide
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: video_content_1360_x_568
+    breakpoint_id: promotors.wide
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: video_content_1360_x_568
+    breakpoint_id: promotors.extra-large
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: video_content_1240x568_
+    breakpoint_id: promotors.large
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: video_content_984x307_
+    breakpoint_id: promotors.medium
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: video_content_727x307_
+    breakpoint_id: promotors.small
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: video_content_727x307_
+    breakpoint_id: promotors.mobile
+    multiplier: 1x
+breakpoint_group: promotors
+fallback_image_style: video_content_727x307_
