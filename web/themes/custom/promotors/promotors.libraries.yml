@@ -29,3 +29,10 @@ counter:
     - core/drupal
     - core/jquery
     - promotors/visible
+
+video_content:
+  js:
+    asset-builds/js/videoContent.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
