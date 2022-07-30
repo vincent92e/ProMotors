@@ -3,16 +3,7 @@
     margin: rem(30) 0;
 
     &__background-text {
-      z-index: 0;
-      font-size: em(55);
-      font-family: $font-family-chakra-petch-bold;
-      color: transparent;
-      text-transform: uppercase;
-      line-height: 1em;
-      stroke: palette(greys, grey-shade2);
-      stroke-width: 2px;
-      -webkit-text-stroke-width: 2px;
-      -webkit-text-stroke-color: palette(greys, grey-shade2);
+      @include backgroundText(55px);
       margin-bottom: rem(-20);
       opacity: 0;
       @include scrollAnimation(fadeInTop);
@@ -23,6 +14,10 @@
       }
 
       @include from-breakpoint(992px) {
+        font-size: em(140);
+      }
+
+      @include from-lg {
         font-size: em(170);
       }
     }

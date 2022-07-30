@@ -1,0 +1,32 @@
+uuid: e68dff1c-d785-4ded-86b3-9e3b73b29762
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.call
+    - field.field.media.image.field_media_image
+    - media.type.image
+    - responsive_image.styles.call_to_action
+  module:
+    - responsive_image
+_core:
+  default_config_hash: 73xaTNkI5J6sfFcBmNYeuk070X3mQS_iwwWaPYyfG2M
+id: media.image.call
+targetEntityType: media
+bundle: image
+mode: call
+content:
+  field_media_image:
+    type: responsive_image
+    label: visually_hidden
+    settings:
+      responsive_image_style: call_to_action
+      image_link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

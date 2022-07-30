@@ -1,0 +1,17 @@
+uuid: 67916b3d-8477-4c64-b316-8cd9268b18f3
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: call_to_action_720x610_
+label: 'Call to action (720x610)'
+effects:
+  72ba9a40-8a59-415c-94d7-40e92d092bb5:
+    uuid: 72ba9a40-8a59-415c-94d7-40e92d092bb5
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 720
+      height: 610
+      crop_type: focal_point

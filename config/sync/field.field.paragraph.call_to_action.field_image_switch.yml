@@ -1,0 +1,23 @@
+uuid: 99b6eb3a-01ce-4d80-9b13-c07b7dbeeebe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_switch
+    - paragraphs.paragraphs_type.call_to_action
+id: paragraph.call_to_action.field_image_switch
+field_name: field_image_switch
+entity_type: paragraph
+bundle: call_to_action
+label: 'Image switch'
+description: 'Select to switch image to the right.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: left
+  off_label: right
+field_type: boolean
