@@ -1,0 +1,17 @@
+uuid: 91e11392-d26e-4014-994c-59d279358ae2
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: video_content_1360_x_568
+label: 'Video content (1360x568)'
+effects:
+  a51b25ec-acbc-4262-9d50-40a4ba97b06a:
+    uuid: a51b25ec-acbc-4262-9d50-40a4ba97b06a
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1360
+      height: 568
+      crop_type: focal_point

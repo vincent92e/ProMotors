@@ -1,5 +1,8 @@
 <?php
 
+use Drupal\media\Entity\Media;
+use Drupal\file\Entity\File;
+
 /**
  * @file
  * Functions to support theming in the promotors theme.
@@ -172,6 +175,58 @@ function promotors_preprocess_paragraph__services(&$variables) {
 }
 
 /**
+ * Implements hook_preprocess_field().
+ *
+ * Creates the preprcess variable for the image/video field element.
+ */
+function promotors_preprocess_field__media__field_media_oembed_video__remote_video(&$variables, $hook) {
+  $src = $variables['items'][0]['content']['#attributes']['src'];
+  $variables['#theme_wrappers'] = [];
+
+  if (str_contains($src, 'vimeo')) {
+    $vid_cont = explode('/', $variables['element']['#items'][0]->getValue()['value']);
+    $variables['vid'] = end($vid_cont);
+    $variables['video_type'] = t('vimeo');
+  }
+
+  if (str_contains($src, 'youtube')) {
+    $vid_cont = explode('/', $variables['element']['#items'][0]->getValue()['value']);
+    $vid = explode('=', end($vid_cont));
+    $variables['vid'] = end($vid);
+    $variables['video_type'] = t('youtube');
+  }
+}
+
+/**
+ * Implements hook_preprocess_paragraph().
+ *
+ * Creates preprocess variable for the image/video paragraph type.
+ */
+function promotors_preprocess_paragraph__video_content(&$variables) {
+
+  // Check if we have a video to show.
+  $video = FALSE;
+  if (isset($variables['content']['field_video'][0])) {
+    $video = $variables['content']['field_video'][0];
+    $variables['video'] = $video;
+  }
+
+  // Check if hero image is available.
+  $hero_img = FALSE;
+  if (isset($variables['content']['field_image'][0])) {
+    $hero_img = $variables['content']['field_image'][0];
+    $variables['thumbnail'] = $hero_img;
+  }
+
+  // Use image field as thumbnail for video if both are set.
+  if ($hero_img && $video) {
+    $mid = $variables['thumbnail']['#media']->get('mid')->getValue()[0]['value'];
+    $url = getMedia($mid);
+    $variables['thumbnail_url'] = $url['url'];
+  }
+}
+
+/**
  * Returns paragraph children within a multi-level paragraph component.
  */
 function getChildren($parent) {
@@ -185,4 +240,40 @@ function getChildren($parent) {
   }
 
   return $children;
+}
+
+/**
+ * Get the url & alt for a image or the size & type for a file.
+ */
+function getMedia($mid, $file = FALSE) {
+  $media = Media::load($mid);
+  if ($media) {
+    $file_size = '';
+    $file_type = '';
+
+    // If TRUE get file info else get image info.
+    if ($file == TRUE) {
+      $fid = $media->field_media_document->target_id;
+      $file = File::load($fid);
+      $url = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+      $alt = ($media->field_media_document->alt) ? $media->field_media_document->alt : '';
+      $file_size = strtolower(str_replace(' ', '', format_size($file->getSize())->render()));
+      $file_type = strtoupper(explode('.', $file->get('filename')->value)[1]);
+    }
+    else {
+      $fid = $media->field_media_image->target_id;
+      $file = File::load($fid);
+      $url = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+      $alt = $media->field_media_image->alt;
+    }
+
+    return [
+      'url' => $url,
+      'alt' => $alt,
+      'size' => $file_size,
+      'type' => $file_type,
+    ];
+  }
+
+  return '';
 }
