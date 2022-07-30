@@ -219,3 +219,19 @@
     }
   }
 }
+
+//== Background text style
+//
+//============================================
+@mixin backgroundText($font) {
+  z-index: 0;
+  font-size: em($font);
+  font-family: $font-family-chakra-petch-bold;
+  color: transparent;
+  text-transform: uppercase;
+  line-height: 1em;
+  stroke: palette(greys, grey-shade2);
+  stroke-width: 2px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: palette(greys, grey-shade2);
+}

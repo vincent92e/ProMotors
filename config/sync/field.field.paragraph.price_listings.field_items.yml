@@ -1,0 +1,49 @@
+uuid: 26ac0e2e-b07b-47b0-b078-e7ef1dbc7033
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_items
+    - paragraphs.paragraphs_type.price_list_item
+    - paragraphs.paragraphs_type.price_listings
+  module:
+    - entity_reference_revisions
+id: paragraph.price_listings.field_items
+field_name: field_items
+entity_type: paragraph
+bundle: price_listings
+label: 'Price list item'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      price_list_item: price_list_item
+    negate: 0
+    target_bundles_drag_drop:
+      banner:
+        weight: 8
+        enabled: false
+      price_list_item:
+        weight: 10
+        enabled: true
+      price_listings:
+        weight: 9
+        enabled: false
+      service:
+        weight: 11
+        enabled: false
+      services:
+        weight: 12
+        enabled: false
+      statistics:
+        weight: 13
+        enabled: false
+      statistics_item:
+        weight: 14
+        enabled: false
+field_type: entity_reference_revisions
