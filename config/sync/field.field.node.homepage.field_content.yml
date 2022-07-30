@@ -9,6 +9,7 @@ dependencies:
     - paragraphs.paragraphs_type.price_listings
     - paragraphs.paragraphs_type.services
     - paragraphs.paragraphs_type.statistics
+    - paragraphs.paragraphs_type.video_content
   module:
     - entity_reference_revisions
 id: node.homepage.field_content
@@ -29,6 +30,7 @@ settings:
       services: services
       price_listings: price_listings
       call_to_action: call_to_action
+      video_content: video_content
     negate: 0
     target_bundles_drag_drop:
       banner:
@@ -55,4 +57,7 @@ settings:
       statistics_item:
         weight: 6
         enabled: false
+      video_content:
+        weight: 18
+        enabled: true
 field_type: entity_reference_revisions
