@@ -1,0 +1,23 @@
+.paragraph--type--webform {
+  .promotors-webform {
+    padding: rem(70) 0;
+
+    &__background-text {
+      opacity: 0;
+      @include backgroundText(66px);
+      margin-bottom: rem(-60);
+      @include scrollAnimation(fadeInTop);
+    }
+
+    &__title, &__body {
+      margin-bottom: rem(20);
+    }
+
+    &__title {
+      z-index: 2;
+    }
+  }
+}
+
+@include fadeIn('top', -50px);
+@include stopAnimation;

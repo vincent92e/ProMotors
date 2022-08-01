@@ -36,3 +36,14 @@ video_content:
   dependencies:
     - core/drupal
     - core/jquery
+
+date_picker:
+  css:
+    theme:
+      https://code.jquery.com/ui/1.12.1/themes/ui-lightness/jquery-ui.css: {type: eternal, minified: true}
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js: {type: external, minified: true}
+    asset-builds/js/datePicker.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
