@@ -10,6 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.services
     - paragraphs.paragraphs_type.statistics
     - paragraphs.paragraphs_type.video_content
+    - paragraphs.paragraphs_type.webform
   module:
     - entity_reference_revisions
 id: node.homepage.field_content
@@ -31,6 +32,7 @@ settings:
       price_listings: price_listings
       call_to_action: call_to_action
       video_content: video_content
+      webform: webform
     negate: 0
     target_bundles_drag_drop:
       banner:
@@ -59,5 +61,8 @@ settings:
         enabled: false
       video_content:
         weight: 18
+        enabled: true
+      webform:
+        weight: 20
         enabled: true
 field_type: entity_reference_revisions

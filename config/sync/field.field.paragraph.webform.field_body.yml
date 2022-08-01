@@ -1,0 +1,21 @@
+uuid: ec24ec38-217f-432a-97d0-f48ba9fa89e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - paragraphs.paragraphs_type.webform
+  module:
+    - text
+id: paragraph.webform.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: webform
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

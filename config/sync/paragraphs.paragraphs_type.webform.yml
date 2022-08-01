@@ -1,0 +1,10 @@
+uuid: 4289a571-0d8a-4791-9947-6df2ad6e1b11
+langcode: en
+status: true
+dependencies: {  }
+id: webform
+label: Webform
+icon_uuid: null
+icon_default: null
+description: 'Paragraph type to reference webforms.'
+behavior_plugins: {  }
