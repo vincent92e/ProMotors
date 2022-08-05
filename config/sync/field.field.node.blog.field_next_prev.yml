@@ -1,0 +1,23 @@
+uuid: bfd7179c-f65e-4fad-946c-ee9c19c91cf7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_next_prev
+    - node.type.blog
+id: node.blog.field_next_prev
+field_name: field_next_prev
+entity_type: node
+bundle: blog
+label: Next/Prev
+description: 'Prints the next/prev blog posts on the current blog content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:block'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

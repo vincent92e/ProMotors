@@ -1,0 +1,91 @@
+.node--type-blog {
+  .node__content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .field {
+    width: 100%;
+  }
+
+  .field--name-field-hero-image {
+    margin-bottom: rem(30);
+
+    img {
+      @include imgFluid;
+      display: block;
+    }
+  }
+
+  .blog-info {
+    display: flex;
+    margin-bottom: rem(20);
+
+    .comment-count {
+      &:before {
+        @include dot;
+        margin: 0 rem(20);
+      }
+    }
+  }
+
+  .field--name-body {
+    padding-bottom: rem(30);
+    margin-bottom: rem(60);
+    border-bottom: 2px solid palette(greys, grey-shade2);
+
+    li {
+      margin: 0;
+    }
+
+    ul {
+      margin-top: rem(16);
+
+      li {
+        list-style: none;
+
+        &:before {
+          @include dot;
+          margin-right: rem(10);
+          vertical-align: middle;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: rem(5);
+        }
+      }
+    }
+
+    ol {
+      margin-left: rem(15);
+
+      li {
+        &:not(:last-child) {
+          margin-bottom: rem(5);
+        }
+      }
+    }
+  }
+
+  .field--name-field-tags {
+    width: fit-content;
+    align-self: center;
+    margin-right: auto;
+    text-transform: uppercase;
+
+    .field__item {
+      display: inline;
+
+      &:not(:last-child) {
+        &:after {
+          content: ',';
+        }
+      }
+    }
+  }
+
+  .field--name-field-social-share {
+    width: fit-content;
+  }
+}

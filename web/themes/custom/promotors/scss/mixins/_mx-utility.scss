@@ -247,3 +247,14 @@
   background-color: palette(primary, black-shade2);
   opacity: .7;
 }
+
+//== Promotors dot notation style
+//
+//============================================
+@mixin dot {
+  content: '\f45c';
+  font-family: 'Fontawesome';
+  color: palette(primary, orange);
+  font-size: em(6);
+  vertical-align: middle;
+}

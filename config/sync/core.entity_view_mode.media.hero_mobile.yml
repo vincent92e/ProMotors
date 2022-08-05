@@ -1,0 +1,10 @@
+uuid: fe51d2d5-15a0-4afc-994f-0bfd35c0320a
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.hero_mobile
+label: 'Hero mobile'
+targetEntityType: media
+cache: true

@@ -1,0 +1,17 @@
+{% extends 'page.html.twig' %}
+
+{% block main_content %}
+  <div class="layout-container">
+    <div class="row">
+      <div class="content {{ has_sidebar }}">
+        {{ page.content }}
+      </div>
+
+      {% if page.sidebar_right %}
+        <aside class="sidebar-right" role="complementary">
+          {{ page.sidebar_right }}
+        </aside>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

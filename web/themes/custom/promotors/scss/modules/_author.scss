@@ -1,0 +1,19 @@
+.node--type-author {
+  .author-teaser {
+    margin: rem(60) 0 rem(20);
+    display: flex;
+    gap: rem(30);
+    align-items: center;
+
+    &__image {
+      @include imgFluid;
+      display: block;
+    }
+
+    &__content {
+      h4.title {
+        margin-bottom: rem(15);
+      }
+    }
+  }
+}
