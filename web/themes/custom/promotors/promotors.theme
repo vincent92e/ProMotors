@@ -117,10 +117,9 @@ function promotors_theme_suggestions_fieldset_alter(array &$suggestions, array $
  */
 function promotors_preprocess_node(array &$variables) {
   // Get comment count for blogs in full view.
-  if ($variables['node']->bundle() === 'blog' && $variables['teaser'] === false) {
-    $comment_count = $variables['content']['comment']['#items']->getValue('comment_count')[0]['comment_count'];
-    if (isset($comment_count)) {
-      $comment_count = intval($comment_count);
+  if ($variables['node']->bundle() === 'blog') {
+    if (isset($variables['content']['comment']['#items']->getValue('comment_count')[0]['comment_count'])) {
+      $comment_count = intval($variables['content']['comment']['#items']->getValue('comment_count')[0]['comment_count']);
 
       if ($comment_count === 1) {
         $comment_count = $comment_count . ' comment';
@@ -129,8 +128,13 @@ function promotors_preprocess_node(array &$variables) {
       } else {
         $comment_count = t('No Comments');
       }
+      $variables['comment_count'] = $comment_count;
     }
-    $variables['comment_count'] = $comment_count;
+
+    // Format blog published date.
+    $published_date = date_create($variables['content']['field_published_date'][0]['#text']);
+    $published_date_formatted = date_format($published_date, 'F m, Y');
+    $variables['published_date_formatted'] = $published_date_formatted;
   }
 }
 
