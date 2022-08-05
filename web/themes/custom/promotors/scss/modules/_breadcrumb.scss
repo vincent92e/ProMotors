@@ -1,0 +1,10 @@
+nav.breadcrumb {
+  ol {
+    li:not(:first-child) {
+      &:before {
+        @include dot;
+        margin: 0 rem(15);
+      }
+    }
+  }
+}

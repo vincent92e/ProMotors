@@ -1,0 +1,45 @@
+.field--type-comment {
+  .comment-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .field--name-field-user-name,
+    .field--name-field-email {
+      width: 48%;
+    }
+
+    .field--name-field-comment {
+      width: 100%;
+    }
+  }
+
+  p.description-text {
+    margin-bottom: rem(16);
+  }
+
+  .form-type-textarea {
+    @include textarea;
+  }
+
+  .form-type-textfield {
+    @include textbox-style;
+  }
+
+  .form-type-checkbox {
+    input {
+      margin-right: rem(5);
+    }
+
+    label {
+      color: palette(text, white);
+    }
+  }
+
+  .form-actions {
+    input {
+      @extend %site-btn;
+      width: fit-content;
+    }
+  }
+}

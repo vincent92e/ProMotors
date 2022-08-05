@@ -1,0 +1,110 @@
+.paragraph--type--call-to-action {
+  .call-to-action {
+
+    &__content {
+      display: grid;
+      grid-template-columns: 1fr;
+
+      @include from-lg {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    &__img-wrapper {
+      position: relative;
+      @include scrollAnimation(fadeInLeft);
+
+      &.left {
+        @include scrollAnimation(fadeInRight);
+      }
+
+      .image {
+        img {
+          @include imgFluid;
+          display: block;
+        }
+      }
+
+      .overlay {
+        @include overlay;
+      }
+    }
+
+    &__info-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: rem(50) rem(20);
+      background-color: palette(primary, black-shade2);
+
+      @include from-lg {
+        padding: 0 rem(96) 0 rem(64);
+      }
+
+      &.left {
+        @include from-lg {
+          grid-column-start: 1;
+          grid-row-end: 1;
+          padding: 0 rem(64) 0 rem(141);
+        }
+      }
+
+      .background-text {
+        @include backgroundText(66px);
+        margin-bottom: rem(-60);
+      }
+
+      h2.title {
+        font-family: $font-family-chakra-petch-bold;
+        line-height: 1.1em;
+        margin-bottom: rem(20);
+        z-index: 2;
+      }
+
+      .body {
+        margin-bottom: rem(40);
+
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          row-gap: rem(10);
+
+          li {
+            list-style: none;
+            flex-basis: 100%;
+            margin: 0;
+            text-transform: uppercase;
+            font-family: $font-family-chakra-petch-regular;
+            color: palette(text, white);
+            display: inline-flex;
+
+            @include from-sm {
+              flex-basis: 50%;
+            }
+
+            &:before {
+              content: "\f14a";
+              font-family: FontAwesome;
+              color: palette(primary, orange);
+              margin-right: rem(10);
+            }
+          }
+        }
+      }
+
+      .button {
+        margin: 0;
+        @include scrollAnimation(fadeInBottom);
+
+        @include from-sm {
+          width: fit-content;
+        }
+      }
+    }
+
+  }
+}
+@include fadeIn('left', -300px);
+@include fadeIn('right', 300px);
+@include fadeIn('bottom', 50px);
+@include stopAnimation;

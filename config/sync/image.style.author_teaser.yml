@@ -1,0 +1,17 @@
+uuid: a35b6fa1-0249-4eb1-adaf-e539d49eed87
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: author_teaser
+label: 'Author teaser (118x130)'
+effects:
+  44d30c99-24ec-44a1-a29b-b1db7a6d3943:
+    uuid: 44d30c99-24ec-44a1-a29b-b1db7a6d3943
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 118
+      height: 130
+      crop_type: focal_point

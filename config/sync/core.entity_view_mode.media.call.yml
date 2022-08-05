@@ -1,0 +1,10 @@
+uuid: 1e04f312-6856-4aab-8ec6-caa405bda170
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.call
+label: 'Call to action'
+targetEntityType: media
+cache: true

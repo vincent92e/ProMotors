@@ -1,0 +1,10 @@
+uuid: e6129719-198f-431a-bbed-327269ab55be
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.video_content
+label: 'Video content'
+targetEntityType: media
+cache: true

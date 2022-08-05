@@ -1,0 +1,17 @@
+uuid: ea20ea7f-c8d7-4f86-a045-7bd6dc5a0396
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: call_to_action_600x360_
+label: 'Call to action (600x360)'
+effects:
+  8cd83592-8903-4cc0-be5b-bada808ec008:
+    uuid: 8cd83592-8903-4cc0-be5b-bada808ec008
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 600
+      height: 360
+      crop_type: focal_point

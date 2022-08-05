@@ -1,0 +1,27 @@
+{% extends 'block.html.twig' %}
+
+{% block content %}
+  <div class="prev-next-wrapper">
+    {% if content.prev %}
+      <div class="prev-content">
+        <div class="content">
+          <div class="previous">{{ content.prev['#title'] }}</div>
+          <div class="title">{{ link(prev_node_title, content.prev['#url']) }}</div>
+        </div>
+      </div>
+    {% endif %}
+    {% if content.next %}
+      <div class="next-content">
+        <div class="content">
+          <div class="next">{{ content.next['#title'] }}</div>
+          <div class="title">{{ link(next_node_title, content.next['#url']) }}</div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+
+  {{ content | without(
+    'prev',
+    'next'
+  ) }}
+{% endblock %}

@@ -1,10 +1,6 @@
 %list-style {
   &::before {
-    content: '\f45c';
-    font-family: 'Fontawesome';
-    color: palette(primary, orange);
-    font-size: em(6);
-    vertical-align: middle;
+    @include dot;
   }
 
   a {

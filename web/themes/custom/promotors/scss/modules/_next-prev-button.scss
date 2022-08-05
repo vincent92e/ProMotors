@@ -1,0 +1,83 @@
+%pre-next-base {
+  font-family: Fontawesome;
+  padding: rem(10) rem(20);
+  border: 1px solid palette(primary, orange);
+  background-color: palette(primary, orange);
+  color: palette(primary, white);
+  @include clipStyle(15px);
+}
+
+.block-next-previous-block {
+  .prev-next-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: rem(40);
+    flex-direction: column;
+    gap: rem(15);
+
+    @include from-md {
+      flex-direction: row;
+      gap: 0;
+    }
+
+    .prev-content {
+      display: flex;
+      align-items: center;
+
+      .previous {
+        font-size: em(14);
+      }
+
+      .title {
+        font-size: em(18);
+      }
+
+      &:before {
+        content: '\f053';
+        margin-right: rem(15);
+        @extend %pre-next-base;
+      }
+    }
+
+    .next-content {
+      display: flex;
+      align-items: center;
+
+      @include from-md {
+        margin-left: auto;
+      }
+
+      .next {
+        font-size: em(14);
+
+        @include from-md {
+          text-align: right;
+        }
+      }
+
+      .title {
+        font-size: em(18);
+
+        @include from-md {
+          text-align: right;
+        }
+      }
+
+      &:before {
+        @include upto-breakpoint(839px) {
+          content: '\f054';
+          margin-right: rem(15);
+        }
+        @extend %pre-next-base;
+      }
+
+      &:after {
+        @include from-md {
+          content: '\f054';
+          margin-left: rem(15);
+        }
+        @extend %pre-next-base;
+      }
+    }
+  }
+}

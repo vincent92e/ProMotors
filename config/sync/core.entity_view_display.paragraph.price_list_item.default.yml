@@ -1,0 +1,63 @@
+uuid: a0429170-33ae-4b19-923c-47fe4e5c36d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.price_list_item.field_body
+    - field.field.paragraph.price_list_item.field_button
+    - field.field.paragraph.price_list_item.field_price
+    - field.field.paragraph.price_list_item.field_suffix
+    - field.field.paragraph.price_list_item.field_title
+    - paragraphs.paragraphs_type.price_list_item
+  module:
+    - link
+    - text
+id: paragraph.price_list_item.default
+targetEntityType: paragraph
+bundle: price_list_item
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_button:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_price:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_suffix:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }
