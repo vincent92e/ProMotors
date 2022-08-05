@@ -1,0 +1,10 @@
+uuid: 3cbdd188-0fe4-46f9-86fe-198cd840ed0b
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.author_teaser
+label: 'Author teaser'
+targetEntityType: media
+cache: true
