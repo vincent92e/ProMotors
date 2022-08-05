@@ -69,15 +69,17 @@
 
     <main role="main">
 
-      <div class="content {{ has_sidebar }}">
+      {% block main_content %}
+        <div class="content {{ has_sidebar }}">
         {{ page.content }}
-      </div>{# /.layout-content #}
+        </div>{# /.layout-content #}
 
-      {% if page.sidebar_right %}
-        <aside class="sidebar-right" role="complementary">
-          {{ page.sidebar_first }}
-        </aside>
-      {% endif %}
+        {% if page.sidebar_right %}
+          <aside class="sidebar-right" role="complementary">
+            {{ page.sidebar_right }}
+          </aside>
+        {% endif %}
+      {% endblock %}
 
     </main>
 
