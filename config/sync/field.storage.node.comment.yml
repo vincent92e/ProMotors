@@ -12,7 +12,7 @@ field_name: comment
 entity_type: node
 type: comment
 settings:
-  comment_type: comment
+  comment_type: blog_comment
 module: comment
 locked: false
 cardinality: 1
