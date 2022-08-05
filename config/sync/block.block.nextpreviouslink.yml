@@ -1,0 +1,33 @@
+uuid: 152aa733-9248-46e0-9e7f-af114e9d6c5c
+langcode: en
+status: true
+dependencies:
+  module:
+    - nextpre
+    - node
+  theme:
+    - promotors
+id: nextpreviouslink
+theme: promotors
+region: hidden_content
+weight: -8
+provider: null
+plugin: next_previous_block
+settings:
+  id: next_previous_block
+  label: 'Next Previous link'
+  label_display: '0'
+  provider: nextpre
+  content_type: blog
+  previous_text: Previous
+  next_text: Next
+  previouslink_class: ''
+  nextlink_class: ''
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      blog: blog
