@@ -122,6 +122,26 @@ blockquote,
 %blockquote,
 .blockquote {
   @extend %lede;
+  margin: rem(21) rem(40);
+  padding: 0 rem(21);
+  text-transform: uppercase;
+  color: palette(text, white);
+
+  p {
+    &:before {
+      content: '\f10d';
+      font-family: Fontawesome;
+      margin-right: rem(10);
+      color: palette(primary, orange);
+    }
+
+    &:after {
+      content: '\f10e';
+      font-family: Fontawesome;
+      margin-left: rem(10);
+      color: palette(primary, orange);
+    }
+  }
 }
 
 
