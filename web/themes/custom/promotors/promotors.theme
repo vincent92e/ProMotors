@@ -117,20 +117,18 @@ function promotors_theme_suggestions_fieldset_alter(array &$suggestions, array $
  */
 function promotors_preprocess_node(array &$variables) {
   // Get comment count for blogs in full view.
-  if ($variables['node']->bundle() === 'blog' && $variables['teaser'] === false) {
-    $comment_count = $variables['content']['comment']['#items']->getValue('comment_count')[0]['comment_count'];
-    if (isset($comment_count)) {
-      $comment_count = intval($comment_count);
-
-      if ($comment_count === 1) {
-        $comment_count = $comment_count . ' comment';
-      } elseif ($comment_count > 1) {
-        $comment_count = $comment_count . ' comments';
-      } else {
-        $comment_count = t('No Comments');
-      }
+  if ($variables['node']->bundle() === 'blog') {
+    if (isset($variables['content']['comment'])) {
+      $comment_count = $variables['content']['comment']['#items']->getValue('comment_count')[0]['comment_count'];
+      $variables['comment_count'] = formatCommentCount(intval($comment_count));
     }
-    $variables['comment_count'] = $comment_count;
+
+    if (isset($variables['content']['field_published_date'])) {
+      // Format blog published date.
+      $published_date = date_create($variables['content']['field_published_date'][0]['#text']);
+      $published_date_formatted = date_format($published_date, 'F m, Y');
+      $variables['published_date_formatted'] = $published_date_formatted;
+    }
   }
 }
 
@@ -260,6 +258,19 @@ function promotors_preprocess_paragraph__video_content(&$variables) {
 }
 
 /**
+ * Implements hook_preprocess_views_view_unformatted().
+ */
+function promotors_preprocess_views_view_unformatted__search__page_1(&$variables) {
+  // Get comment count for blog teaser nodes.
+  foreach ($variables['rows'] as $key => $value) {
+    if (isset($value['content']['#row']->_entity->get('comment')->getValue()[0]['comment_count'])) {
+      $comment_count = $value['content']['#row']->_entity->get('comment')->getValue()[0]['comment_count'];
+      $variables['comment_count'][$key] = formatCommentCount(intval($comment_count));
+    }
+  }
+}
+
+/**
  * Returns paragraph children within a multi-level paragraph component.
  */
 function getChildren($parent) {
@@ -322,4 +333,18 @@ function getNode($nid, $param) {
       return $node->getTitle();
     }
   }
+}
+
+function formatCommentCount($count) {
+  $comment_count = '';
+
+  if ($count === 1) {
+    $comment_count = intval($count) . ' comment';
+  } elseif ($count > 1) {
+    $comment_count = intval($count) . ' comments';
+  } else {
+    $comment_count = t('No Comments');
+  }
+
+  return $comment_count;
 }

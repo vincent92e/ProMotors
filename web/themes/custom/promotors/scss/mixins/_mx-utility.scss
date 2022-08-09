@@ -127,6 +127,7 @@
 @mixin imgFluid {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
 @mixin scrollAnimation($type, $delay: false, $time: 0s) {
