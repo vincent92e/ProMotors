@@ -5,14 +5,14 @@ dependencies:
   config:
     - views.view.services
   module:
-    - node
+    - system
     - views
   theme:
     - promotors
 id: views_block__services_block_1
 theme: promotors
 region: sidebar_right
-weight: 0
+weight: -7
 provider: null
 plugin: 'views_block:services-block_1'
 settings:
@@ -23,10 +23,7 @@ settings:
   views_label: ''
   items_per_page: none
 visibility:
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
+  request_path:
+    id: request_path
     negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
-    bundles:
-      blog: blog
+    pages: "/blogs\r\n/blogs/*"
