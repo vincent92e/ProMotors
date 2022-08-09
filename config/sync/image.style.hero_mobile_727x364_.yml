@@ -4,14 +4,14 @@ status: true
 dependencies:
   module:
     - focal_point
-name: hero_mobile_732x200_
-label: 'Hero mobile (732x200)'
+name: hero_mobile_727x364_
+label: 'Hero mobile (727x364)'
 effects:
   76ddd9f2-f17d-4c17-91da-ab33f4c5d295:
     uuid: 76ddd9f2-f17d-4c17-91da-ab33f4c5d295
     id: focal_point_scale_and_crop
     weight: 1
     data:
-      width: 732
-      height: 200
+      width: 727
+      height: 364
       crop_type: focal_point
