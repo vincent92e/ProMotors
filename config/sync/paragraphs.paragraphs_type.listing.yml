@@ -1,0 +1,10 @@
+uuid: c90e17cf-656d-4663-9ab1-722318aa627a
+langcode: en
+status: true
+dependencies: {  }
+id: listing
+label: Listing
+icon_uuid: null
+icon_default: null
+description: 'General listings paragraph item'
+behavior_plugins: {  }

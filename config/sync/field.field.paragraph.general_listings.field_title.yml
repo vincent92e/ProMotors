@@ -1,0 +1,19 @@
+uuid: c56be438-65fe-4c41-9154-d4080b916263
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.general_listings
+id: paragraph.general_listings.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: general_listings
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
