@@ -83,3 +83,11 @@ main {
     }
   }
 }
+
+.tabs {
+  a {
+    &.is-active {
+      color: palette(primary, orange);
+    }
+  }
+}

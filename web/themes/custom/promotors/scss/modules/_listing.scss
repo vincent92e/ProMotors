@@ -1,0 +1,57 @@
+%listing-common-style {
+  font-family: $font-family-chakra-petch-bold;
+  text-transform: uppercase;
+  line-height: 1.2em;
+}
+
+.paragraph--type--listing {
+  .listing {
+    padding: rem(20) 0 rem(60);
+
+    &__header {
+      display: flex;
+      align-items: center;
+      margin-bottom: rem(20);
+
+      .prefix {
+        @extend %listing-common-style;
+        font-size: em(23);
+        color: palette(primary, orange);
+        margin-right: rem(20);
+      }
+
+      .title {
+        @extend %listing-common-style;
+        font-size: em(23);
+        color: palette(text, white);
+      }
+    }
+
+    &__body {
+      margin-bottom: rem(20);
+    }
+
+    &__button {
+      @extend %service-common-style;
+      font-size: em(18);
+      color: palette(text, white);
+      display: flex;
+
+      &:before {
+        content: "\f105";
+        font-family: Fontawesome;
+        width: 32px;
+        height: 32px;
+        text-align: center;
+        background-color: palette(primary, orange);
+        line-height: 2rem;
+        margin-right: 10px;
+        @include clipStyle(7px);
+      }
+
+      & > a {
+        align-self: center;
+      }
+    }
+  }
+}
