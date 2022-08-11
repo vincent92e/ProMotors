@@ -27,9 +27,10 @@ $root-size-xxx-large: $ratio * $root-size-xx-large; // 7.59375rem / 121.5px
 //== Relative Paths
 //
 //============================================
-$path-to-assets: '/themes/promotors/assets';
-$path-to-images: '/themes/promotors/assets/images';
+$path-to-assets: '/themes/custom/promotors/assets';
+$path-to-images: '/themes/custom/promotors/assets/images';
 $path-to-icons: "../../assets/images/icons";
+$path-to-gif: "../../assets/images/gif";
 
 //== Typography
 //
