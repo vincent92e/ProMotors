@@ -1,0 +1,187 @@
+/*
+ * Page Header: Title, Text & Image
+ * Sits at the top of content pages
+*/
+.page-header {
+  color: #ffffff;
+  padding-top: rem(20);
+
+  .row {
+    align-items: stretch;
+    flex-direction: column;
+
+    @include from-md {
+      flex-direction: row;
+    }
+  }
+
+  &__left-col,
+  &__right-col {
+    width: 100%;
+    @include from-md {
+      width: 50%;
+    }
+  }
+
+  &__left-col {
+    border-top-right-radius: 20px;
+    margin-top: rem(-20);
+    position: relative;
+
+    &:before {
+      content: "";
+      height: 100%;
+      left: -50%;
+      top: 0;
+      position: absolute;
+      width: 100%;
+      z-index: -1;
+    }
+
+    @include upto-breakpoint($bp-md) {
+      padding-bottom: rem(100);
+    }
+  }
+
+  &--blue {
+    .page-header__left-col {
+      background-color: palette(primary, navy);
+
+      &:before {
+        background-color: palette(primary, navy);
+      }
+    }
+  }
+
+  &--pink {
+    .page-header__left-col {
+      background-color: palette(primary, pink);
+
+      &:before {
+        background-color: palette(primary, pink);
+      }
+    }
+  }
+
+  &--title-only {
+    @include from-md {
+      .page-header__left-col {
+        display: flex;
+        align-items: center;
+      }
+
+      .page-header__inner-col {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &__inner-col {
+    // Note:
+    // This comonent (page-header) is a special one, where we have to style it in order to stay in complete ratio
+    // throughout any screen size. Therefore we use units that are special to this.
+    padding: em(67) em(67) em(32) 0;
+    @include from-md {
+      font-size: 1vw;
+    }
+  }
+
+  &__right-col {
+    display: flex;
+    align-items: flex-end;
+
+    // IE11 only
+    @media screen and (-ms-high-contrast: none) {
+      display: block;
+    }
+
+    @include upto-breakpoint($bp-md) {
+      justify-content: flex-end;
+      margin-top: rem(-100);
+    }
+  }
+
+
+  // Image
+  &__img {
+    picture {
+      @include color-bar($hpos: right, $desktop-bp: $bp-md, $show-on-desktop: false);
+    }
+
+    img {
+      display: block;
+      width: 100%;
+
+      @include upto-breakpoint($bp-md) {
+        border-top-left-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
+      }
+
+    }
+  }
+
+  //Bundle type
+  &__bundle-type a {
+    text-decoration: underline;
+  }
+
+  &__bundle-type a,
+  &__published-date {
+    font-size: em(18);
+    line-height: 1.6;
+    text-transform: capitalize;
+    color: #FFFFFF;
+  }
+
+  &__published-date {
+    margin-top: rem(24);
+    font-weight: 700;
+  }
+
+  // Location icon
+  &__location-icon {
+    float: right;
+    margin: rem(25) 0 rem(56) rem(56);
+
+    &.custom-icon {
+      margin: rem(25) 0 rem(56) rem(56);
+    }
+  }
+
+  // Title
+  &__title {
+    font-size: em(47);
+    line-height: 1;
+
+    @include from-md {
+      font-size: em(71);
+      max-width: 80%;
+      line-height: 1.2;
+    }
+  }
+
+  // Summary
+  &__summary {
+    @include from-md {
+      max-width: 80%;
+    }
+
+    * + & {
+      margin-top: rem(21);
+    }
+
+    * {
+      font-size: rem(24);
+    }
+  }
+
+}
+
+.dying-matters {
+  .page-header {
+    &__published-date {
+      color: palette(primary, navy);
+    }
+  }
+}

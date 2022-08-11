@@ -7,6 +7,10 @@ base:
   js:
     asset-builds/js/fontawesome.js: {}
 
+slick:
+  js:
+    asset-builds/js/slick.js: {}
+
 visible:
   js:
     asset-builds/js/visible.js: {}
@@ -16,7 +20,7 @@ visible:
 
 scroll_animation:
   js:
-    asset-builds/js/scrollAnimation.js: {}
+    asset-builds/js/scroll_animation.js: {}
   dependencies:
     - core/drupal
     - core/jquery
@@ -32,7 +36,7 @@ counter:
 
 video_content:
   js:
-    asset-builds/js/videoContent.js: {}
+    asset-builds/js/video_content.js: {}
   dependencies:
     - core/drupal
     - core/jquery
@@ -43,7 +47,15 @@ date_picker:
       https://code.jquery.com/ui/1.12.1/themes/ui-lightness/jquery-ui.css: {type: eternal, minified: true}
   js:
     https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js: {type: external, minified: true}
-    asset-builds/js/datePicker.js: {}
+    asset-builds/js/date_picker.js: {}
   dependencies:
     - core/drupal
     - core/jquery
+
+car_brands_carousel:
+  js:
+    asset-builds/js/car_brands_carousel.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - promotors/slick

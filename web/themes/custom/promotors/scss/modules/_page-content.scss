@@ -85,9 +85,11 @@ main {
 }
 
 .tabs {
-  a {
-    &.is-active {
-      color: palette(primary, orange);
+  li.is-active {
+    a {
+      &.is-active {
+        background-color: palette(primary, orange);
+      }
     }
   }
 }

@@ -1,0 +1,31 @@
+.mobile-menu {
+  display: none;
+
+  &.is-open {
+    display: block;
+  }
+
+  @include from-sm {
+    display: none;
+  }
+
+
+  &__list {
+    @extend %list-unstyled;
+
+    li {
+      a {
+        background-color: palette(neutral, grey1);
+        border-radius: 12px;
+        color: palette(primary, blue);
+        display: block;
+        font-family: $font-family-heading;
+        font-size: rem(26);
+        padding: rem(16);
+        width: 100%;
+        @include link-decor($decorate: none);
+      }
+    }
+  }
+
+}

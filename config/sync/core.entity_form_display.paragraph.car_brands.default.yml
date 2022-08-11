@@ -1,0 +1,34 @@
+uuid: 1d5527e9-574e-4ab9-9d42-3c5f402f2d49
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.car_brands.field_car_brands
+    - field.field.paragraph.car_brands.field_title
+    - paragraphs.paragraphs_type.car_brands
+id: paragraph.car_brands.default
+targetEntityType: paragraph
+bundle: car_brands
+mode: default
+content:
+  field_car_brands:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

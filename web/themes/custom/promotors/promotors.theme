@@ -258,6 +258,16 @@ function promotors_preprocess_paragraph__video_content(&$variables) {
 }
 
 /**
+ * Implements hook_preprocess_paragraph().
+ *
+ * Creates preprocess variable for the car brands paragraph type.
+ */
+function promotors_preprocess_paragraph__car_brands (&$variables) {
+  $paragraphs = $variables['content']['field_car_brands'];
+  $variables['car_brands'] = getChildren($paragraphs);
+}
+
+/**
  * Implements hook_preprocess_views_view_unformatted().
  */
 function promotors_preprocess_views_view_unformatted__search__page_1(&$variables) {
@@ -335,6 +345,9 @@ function getNode($nid, $param) {
   }
 }
 
+/**
+ * Format node comment count.
+ */
 function formatCommentCount($count) {
   $comment_count = '';
 
