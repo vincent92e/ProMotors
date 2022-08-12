@@ -1,0 +1,58 @@
+.node--type-service {
+  .field--name-field-hero-image {
+    margin-bottom: rem(30);
+
+    img {
+      @include imgFluid;
+      transform: scaleX(-1);
+      opacity: .6;
+    }
+  }
+
+  .field--name-body {
+    padding-bottom: rem(30);
+    margin-bottom: rem(60);
+
+    li {
+      margin: 0;
+    }
+
+    ul {
+      margin: rem(30) 0;
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: rem(10);
+
+      li {
+        list-style: none;
+        flex-basis: 100%;
+        margin: 0;
+        text-transform: uppercase;
+        font-family: $font-family-chakra-petch-regular;
+        color: palette(text, white);
+        display: inline-flex;
+
+        @include from-md {
+          flex-basis: 48%;
+        }
+
+        &:before {
+          content: "\f14a";
+          font-family: FontAwesome;
+          color: palette(primary, orange);
+          margin-right: rem(10);
+        }
+      }
+    }
+
+    ol {
+      margin-left: rem(15);
+
+      li {
+        &:not(:last-child) {
+          margin-bottom: rem(5);
+        }
+      }
+    }
+  }
+}

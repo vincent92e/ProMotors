@@ -6,14 +6,14 @@ main {
       @include col(12);
 
       @include from-lg {
-        @include col(9);
+        @include col(8);
       }
     }
   }
 
   .sidebar-right {
     @include from-lg {
-      @include col(3);
+      @include col(4);
     }
   }
 }
