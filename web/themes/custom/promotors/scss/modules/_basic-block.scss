@@ -1,0 +1,22 @@
+.region-sidebar-right  {
+  & > div.block-block-content {
+    padding: rem(40);
+    border: 2px solid palette(greys, grey-shade2);
+
+    h2 {
+      font-size: em(18);
+      margin-bottom: rem(25);
+    }
+
+    a.site-btn {
+      margin-top: rem(20);
+    }
+  }
+}
+
+.region-sidebar-right  {
+  #block-getservice {
+    background-color: palette(primary, black-shade2);
+    border: none;
+  }
+}

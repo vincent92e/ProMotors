@@ -1,0 +1,33 @@
+uuid: fc1f86fd-7ed1-4d87-9226-a17dc23a3d1c
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:935fcf45-69ac-4ac8-926f-0b56b1dcf560'
+  module:
+    - block_content
+    - node
+  theme:
+    - promotors
+id: address
+theme: promotors
+region: sidebar_right
+weight: 0
+provider: null
+plugin: 'block_content:935fcf45-69ac-4ac8-926f-0b56b1dcf560'
+settings:
+  id: 'block_content:935fcf45-69ac-4ac8-926f-0b56b1dcf560'
+  label: Address
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      service: service
