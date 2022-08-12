@@ -1,0 +1,33 @@
+uuid: b1208611-d965-4fc5-9578-e3f2b5a7cc96
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:f27d54f4-000f-4d9b-8600-7597be5ffc7f'
+  module:
+    - block_content
+    - node
+  theme:
+    - promotors
+id: contactus
+theme: promotors
+region: sidebar_right
+weight: -6
+provider: null
+plugin: 'block_content:f27d54f4-000f-4d9b-8600-7597be5ffc7f'
+settings:
+  id: 'block_content:f27d54f4-000f-4d9b-8600-7597be5ffc7f'
+  label: 'Contact us'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      service: service

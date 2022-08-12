@@ -12,7 +12,7 @@ dependencies:
 id: categories
 theme: promotors
 region: sidebar_right
-weight: -8
+weight: -9
 provider: null
 plugin: 'facet_block:categories'
 settings:
