@@ -15,6 +15,7 @@ regions:
   highlighted: Highlighted
   pre_content: Pre content
   content: Content
+  lower_content: Lower content
   hidden_content: Hidden content
   sidebar_right: Right sidebar
   footer_one: Footer one
