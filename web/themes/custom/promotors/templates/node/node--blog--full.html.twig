@@ -3,7 +3,7 @@
 {% block content %}
   {{ content.field_hero_image }}
   <div class="blog-info">
-    <div class="published-date">{{ content.field_published_date }}</div>
+    <div class="published-date">{{ published_date_formatted }}</div>
     {% if comment_count %}
       <div class="comment-count">{{ comment_count }}</div>
     {% endif %}

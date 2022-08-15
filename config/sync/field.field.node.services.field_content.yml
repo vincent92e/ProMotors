@@ -1,0 +1,73 @@
+uuid: 0f392c15-d9ac-4b5a-841d-26cd535d40f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content
+    - node.type.services
+    - paragraphs.paragraphs_type.call_to_action
+    - paragraphs.paragraphs_type.car_brands
+    - paragraphs.paragraphs_type.general_listings
+    - paragraphs.paragraphs_type.services
+  module:
+    - entity_reference_revisions
+id: node.services.field_content
+field_name: field_content
+entity_type: node
+bundle: services
+label: Content
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      call_to_action: call_to_action
+      car_brands: car_brands
+      general_listings: general_listings
+      services: services
+    negate: 0
+    target_bundles_drag_drop:
+      banner:
+        weight: 14
+        enabled: false
+      call_to_action:
+        weight: 15
+        enabled: true
+      car_brands:
+        weight: 16
+        enabled: true
+      general_listings:
+        weight: 17
+        enabled: true
+      listing:
+        weight: 18
+        enabled: false
+      price_list_item:
+        weight: 20
+        enabled: false
+      price_listings:
+        weight: 19
+        enabled: false
+      service:
+        weight: 21
+        enabled: false
+      services:
+        weight: 22
+        enabled: true
+      statistics:
+        weight: 23
+        enabled: false
+      statistics_item:
+        weight: 24
+        enabled: false
+      video_content:
+        weight: 25
+        enabled: false
+      webform:
+        weight: 26
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,28 @@
+uuid: 3fa2bb85-6b9f-44e4-963a-43fdd40ff1ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.search
+  module:
+    - system
+    - views
+  theme:
+    - promotors
+id: exposedformsearchpage_1
+theme: promotors
+region: sidebar_right
+weight: -10
+provider: null
+plugin: 'views_exposed_filter_block:search-page_1'
+settings:
+  id: 'views_exposed_filter_block:search-page_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: Search
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/blogs\r\n/blogs/*"

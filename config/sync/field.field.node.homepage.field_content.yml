@@ -6,6 +6,8 @@ dependencies:
     - field.storage.node.field_content
     - node.type.homepage
     - paragraphs.paragraphs_type.call_to_action
+    - paragraphs.paragraphs_type.car_brands
+    - paragraphs.paragraphs_type.general_listings
     - paragraphs.paragraphs_type.price_listings
     - paragraphs.paragraphs_type.services
     - paragraphs.paragraphs_type.statistics
@@ -31,6 +33,8 @@ settings:
       services: services
       price_listings: price_listings
       call_to_action: call_to_action
+      general_listings: general_listings
+      car_brands: car_brands
       video_content: video_content
       webform: webform
     negate: 0
@@ -41,6 +45,15 @@ settings:
       call_to_action:
         weight: 10
         enabled: true
+      car_brands:
+        weight: 16
+        enabled: true
+      general_listings:
+        weight: 15
+        enabled: true
+      listing:
+        weight: 16
+        enabled: false
       price_list_item:
         weight: 10
         enabled: false

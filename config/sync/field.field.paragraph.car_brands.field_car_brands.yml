@@ -1,0 +1,29 @@
+uuid: 4868dcb9-6fbd-485a-84da-5a3ab9b0b069
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_car_brands
+    - paragraphs.paragraphs_type.car_brands
+    - taxonomy.vocabulary.car_brands
+id: paragraph.car_brands.field_car_brands
+field_name: field_car_brands
+entity_type: paragraph
+bundle: car_brands
+label: 'Car brands'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      car_brands: car_brands
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

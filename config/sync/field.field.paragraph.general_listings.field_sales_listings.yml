@@ -1,0 +1,23 @@
+uuid: e4189aa4-3cc0-40c5-ae70-cf3e659a429b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sales_listings
+    - paragraphs.paragraphs_type.general_listings
+id: paragraph.general_listings.field_sales_listings
+field_name: field_sales_listings
+entity_type: paragraph
+bundle: general_listings
+label: 'Sales listings'
+description: 'Check to enable sales listing display'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'on'
+  off_label: 'off'
+field_type: boolean

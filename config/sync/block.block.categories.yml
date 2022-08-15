@@ -1,0 +1,29 @@
+uuid: b64f5a3a-87d9-4835-8ca8-bb7f464bba4c
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.categories
+  module:
+    - facets
+    - system
+  theme:
+    - promotors
+id: categories
+theme: promotors
+region: sidebar_right
+weight: -9
+provider: null
+plugin: 'facet_block:categories'
+settings:
+  id: 'facet_block:categories'
+  label: Categories
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: categories
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/blogs\r\n/blogs/*"

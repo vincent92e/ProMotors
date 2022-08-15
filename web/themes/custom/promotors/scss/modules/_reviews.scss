@@ -1,0 +1,25 @@
+.paragraph--type--reviews {
+  .reviews {
+    padding: rem(70) 0;
+    &__title {
+      margin-bottom: rem(30);
+      text-align: center;
+    }
+
+    &__review-item {
+      .field--name-field-items {
+        overflow: hidden;
+
+        .slick-list {
+          margin-right: rem(-15);
+
+          .slick-slide {
+            & > div {
+              margin-right: rem(15);
+            }
+          }
+        }
+      }
+    }
+  }
+}

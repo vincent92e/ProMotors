@@ -1,0 +1,10 @@
+uuid: 64eeda8a-40d0-42ba-a168-e2bf3f338b8e
+langcode: en
+status: true
+dependencies: {  }
+id: car_brands
+label: 'Car brands'
+icon_uuid: null
+icon_default: null
+description: 'Car brands supported by promotors.'
+behavior_plugins: {  }

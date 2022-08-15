@@ -1,0 +1,10 @@
+uuid: faad4e35-b5a8-41fe-bffe-9c233d8504e2
+langcode: en
+status: true
+dependencies: {  }
+id: reviews
+label: Reviews
+icon_uuid: null
+icon_default: null
+description: 'Reviews paragraph type'
+behavior_plugins: {  }

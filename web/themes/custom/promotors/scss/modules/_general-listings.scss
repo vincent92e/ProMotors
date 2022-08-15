@@ -1,0 +1,87 @@
+.paragraph--type--general-listings {
+  .general-listings {
+    padding: rem(70) 0;
+
+    &__info-wrapper {
+      @include col(12);
+      margin-bottom: rem(25);
+
+      @include from-lg {
+        @include col(4);
+        margin-bottom: rem(0);
+      }
+
+      h2.title {
+        margin-bottom: rem(20);
+      }
+    }
+
+    &__content {
+      @include col(12);
+
+      @include from-lg {
+        @include col(8);
+      }
+
+      .field__items {
+        @include row;
+
+        .field__item {
+          @include col(12);
+
+          @include from-md {
+            @include col(6, $component-layout: 'halves');
+          }
+
+          .listing {
+            border-top: 3px solid palette(greys, grey-shade2);
+            transition: border 1s;
+
+            &:hover {
+              border-top-color: palette(primary, orange);
+            }
+          }
+
+          &:nth-child(1),
+          &:nth-child(3) {
+            .scroll-animation {
+              opacity: 0;
+              @include scrollAnimation(fadeInRight);
+            }
+          }
+
+          &:nth-child(2),
+          &:nth-child(4) {
+            .scroll-animation {
+              opacity: 0;
+              @include scrollAnimation(fadeInRight);
+
+              @include from-md {
+                @include scrollAnimation(fadeInRight, true, .3s);
+              }
+            }
+          }
+        }
+      }
+
+      &.on {
+        .field__items {
+          .field__item {
+            .listing {
+              &__header {
+                .prefix {
+                  color: palette(text, white);
+                  padding: rem(15);
+                  background-color: palette(primary, orange);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include fadeIn('right', 300px);
+@include stopAnimation;

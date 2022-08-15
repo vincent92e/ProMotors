@@ -1,0 +1,8 @@
+uuid: e02ad2f0-131e-4cae-af8d-1aa0c59f063c
+langcode: en
+status: true
+dependencies: {  }
+name: 'Car brands'
+vid: car_brands
+description: 'List of car brands supported by Promotors'
+weight: 0

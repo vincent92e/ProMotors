@@ -1,0 +1,28 @@
+uuid: a39f83aa-5656-44dc-adb5-93def2241ec0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lower_content
+  module:
+    - entity_reference_revisions
+    - fieldblock
+  theme:
+    - promotors
+id: contentfield
+theme: promotors
+region: lower_content
+weight: 0
+provider: null
+plugin: 'fieldblock:node'
+settings:
+  id: 'fieldblock:node'
+  label: 'Content field'
+  label_display: '0'
+  provider: fieldblock
+  label_from_field: false
+  field_name: field_lower_content
+  formatter_id: entity_reference_revisions_entity_view
+  formatter_settings:
+    view_mode: default
+visibility: {  }

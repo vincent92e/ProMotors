@@ -1,0 +1,38 @@
+.paragraph--type--car-brands {
+  .car-brands {
+    padding: rem(70) 0;
+
+    &__title {
+      text-align: center;
+      margin-bottom: rem(40);
+    }
+
+    &__content {
+      overflow: hidden;
+
+      .slick-list {
+        margin-right: rem(-15);
+
+        .slick-slide {
+          & > div {
+            margin-right: rem(15);
+          }
+        }
+      }
+
+      .brand {
+        border: 2px solid palette(greys, grey-shade2);
+        display: block !important; // To override slick css property added by javascript.
+
+        @include upto-breakpoint(599px) {
+          width: fit-content !important; // To override slick css property added by javascript.
+          margin: 0 auto;
+        }
+
+        img {
+          @include imgFluid;
+        }
+      }
+    }
+  }
+}

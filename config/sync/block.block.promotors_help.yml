@@ -11,7 +11,7 @@ _core:
 id: promotors_help
 theme: promotors
 region: content
-weight: -6
+weight: -8
 provider: null
 plugin: help_block
 settings:
