@@ -16,6 +16,10 @@ main {
       @include col(4);
     }
   }
+
+  .lower-content {
+    @include col(12);
+  }
 }
 
 .region-pre-content {

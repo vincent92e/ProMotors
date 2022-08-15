@@ -1,0 +1,48 @@
+%review-item-basis {
+  color: palette(text, white);
+  line-height: 1.2em;
+  text-transform: uppercase;
+  font-size: em(18);
+}
+
+.paragraph--type--review-item {
+  .review-item {
+    background-color: palette(primary, black-shade2);
+
+    &__top {
+      padding: rem(40) rem(40) rem(15);
+      position: relative;
+      border-bottom: 2px solid palette(greys, grey-shade2);
+
+      &:after {
+        color: palette(primary, orange);
+        content: '\f10e';
+        font-family: Fontawesome;
+        position: absolute;
+        right: rem(40);
+        top: rem(30);
+        font-size: em(32);
+      }
+    }
+
+    &__bottom {
+      padding: rem(15) rem(40) rem(40);
+    }
+
+    &__subject {
+      @extend %review-item-basis;
+      font-family: $font-family-chakra-petch-bold;
+    }
+
+    &__rating {
+      i.fa-star {
+        color: palette(secondary, gold);
+      }
+    }
+
+    &__name {
+      @extend %review-item-basis;
+      font-family: $font-family-mulish-bold;
+    }
+  }
+}

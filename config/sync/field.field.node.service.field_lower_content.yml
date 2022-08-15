@@ -1,52 +1,52 @@
-uuid: 5793290b-b394-4193-933b-8efc664b55da
+uuid: e93b7cc8-0a3c-4914-b8cb-2b181f9771a1
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_content
+    - field.storage.node.field_lower_content
     - node.type.service
     - paragraphs.paragraphs_type.reviews
     - paragraphs.paragraphs_type.services
   module:
     - entity_reference_revisions
-id: node.service.field_content
-field_name: field_content
+id: node.service.field_lower_content
+field_name: field_lower_content
 entity_type: node
 bundle: service
-label: Content
+label: 'Lower content'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      services: services
       reviews: reviews
+      services: services
     negate: 0
     target_bundles_drag_drop:
       banner:
-        weight: 14
-        enabled: false
-      call_to_action:
-        weight: 15
-        enabled: false
-      car_brands:
         weight: 16
         enabled: false
-      general_listings:
+      call_to_action:
         weight: 17
         enabled: false
-      listing:
+      car_brands:
         weight: 18
         enabled: false
-      price_list_item:
+      general_listings:
+        weight: 19
+        enabled: false
+      listing:
         weight: 20
         enabled: false
+      price_list_item:
+        weight: 22
+        enabled: false
       price_listings:
-        weight: 19
+        weight: 21
         enabled: false
       review_item:
         weight: 24
@@ -55,21 +55,21 @@ settings:
         weight: 23
         enabled: true
       service:
-        weight: 21
-        enabled: false
-      services:
-        weight: 22
-        enabled: true
-      statistics:
-        weight: 23
-        enabled: false
-      statistics_item:
-        weight: 24
-        enabled: false
-      video_content:
         weight: 25
         enabled: false
-      webform:
+      services:
         weight: 26
+        enabled: true
+      statistics:
+        weight: 27
+        enabled: false
+      statistics_item:
+        weight: 28
+        enabled: false
+      video_content:
+        weight: 29
+        enabled: false
+      webform:
+        weight: 30
         enabled: false
 field_type: entity_reference_revisions

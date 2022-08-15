@@ -1,0 +1,25 @@
+uuid: eb0239b6-b58b-4f09-b08e-d873e5d6312d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rating
+    - paragraphs.paragraphs_type.review_item
+id: paragraph.review_item.field_rating
+field_name: field_rating
+entity_type: paragraph
+bundle: review_item
+label: Rating
+description: 'Rating out of 5'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: 5
+  prefix: ''
+  suffix: ''
+field_type: integer
