@@ -1,19 +1,18 @@
-uuid: 5793290b-b394-4193-933b-8efc664b55da
+uuid: 26cb678e-c4dd-4237-a6ee-8399f8278c25
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_content
-    - node.type.service
+    - field.storage.paragraph.field_items
+    - paragraphs.paragraphs_type.review_item
     - paragraphs.paragraphs_type.reviews
-    - paragraphs.paragraphs_type.services
   module:
     - entity_reference_revisions
-id: node.service.field_content
-field_name: field_content
-entity_type: node
-bundle: service
-label: Content
+id: paragraph.reviews.field_items
+field_name: field_items
+entity_type: paragraph
+bundle: reviews
+label: 'Review item'
 description: ''
 required: false
 translatable: true
@@ -23,53 +22,52 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      services: services
-      reviews: reviews
+      review_item: review_item
     negate: 0
     target_bundles_drag_drop:
       banner:
-        weight: 14
-        enabled: false
-      call_to_action:
-        weight: 15
-        enabled: false
-      car_brands:
         weight: 16
         enabled: false
-      general_listings:
+      call_to_action:
         weight: 17
         enabled: false
-      listing:
+      car_brands:
         weight: 18
         enabled: false
-      price_list_item:
+      general_listings:
+        weight: 19
+        enabled: false
+      listing:
         weight: 20
         enabled: false
+      price_list_item:
+        weight: 22
+        enabled: false
       price_listings:
-        weight: 19
+        weight: 21
         enabled: false
       review_item:
         weight: 24
-        enabled: false
+        enabled: true
       reviews:
         weight: 23
-        enabled: true
+        enabled: false
       service:
-        weight: 21
-        enabled: false
-      services:
-        weight: 22
-        enabled: true
-      statistics:
-        weight: 23
-        enabled: false
-      statistics_item:
-        weight: 24
-        enabled: false
-      video_content:
         weight: 25
         enabled: false
-      webform:
+      services:
         weight: 26
+        enabled: false
+      statistics:
+        weight: 27
+        enabled: false
+      statistics_item:
+        weight: 28
+        enabled: false
+      video_content:
+        weight: 29
+        enabled: false
+      webform:
+        weight: 30
         enabled: false
 field_type: entity_reference_revisions

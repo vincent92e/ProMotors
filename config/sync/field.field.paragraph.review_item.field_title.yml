@@ -1,0 +1,19 @@
+uuid: e6fb6a18-080e-498a-8877-53e091737f0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.review_item
+id: paragraph.review_item.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: review_item
+label: Subject
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,51 @@
+uuid: a8a48295-9f83-4075-b7e6-0b8303dbedcf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.review_item.field_body
+    - field.field.paragraph.review_item.field_rating
+    - field.field.paragraph.review_item.field_suffix
+    - field.field.paragraph.review_item.field_title
+    - paragraphs.paragraphs_type.review_item
+  module:
+    - text
+id: paragraph.review_item.default
+targetEntityType: paragraph
+bundle: review_item
+mode: default
+content:
+  field_body:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_rating:
+    type: number
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_suffix:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
