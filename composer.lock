@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3ca4be4d8b13ac4d4cd391b9bb3a0234",
+    "content-hash": "00e3c561b253259e3587b3e970932546",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3141,6 +3141,58 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/field_group",
                 "issues": "https://www.drupal.org/project/issues/field_group"
+            }
+        },
+        {
+            "name": "drupal/fieldblock",
+            "version": "2.0.0-alpha5",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/fieldblock.git",
+                "reference": "8.x-2.0-alpha5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/fieldblock-8.x-2.0-alpha5.zip",
+                "reference": "8.x-2.0-alpha5",
+                "shasum": "39c2f0d1f6c8fa1d50e641ad85b05fc79c851ffd"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.0-alpha5",
+                    "datestamp": "1605603146",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Sutharsan",
+                    "homepage": "https://www.drupal.org/user/73854"
+                },
+                {
+                    "name": "joycelam",
+                    "homepage": "https://www.drupal.org/user/3543385"
+                },
+                {
+                    "name": "marcvangend",
+                    "homepage": "https://www.drupal.org/user/158153"
+                }
+            ],
+            "description": "Display fields of the current entity as blocks.",
+            "homepage": "https://www.drupal.org/project/fieldblock",
+            "support": {
+                "source": "https://git.drupalcode.org/project/fieldblock"
             }
         },
         {
@@ -8835,7 +8887,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "drupal/fieldblock": 15
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
