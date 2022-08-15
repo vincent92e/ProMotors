@@ -81,6 +81,15 @@
         {% endif %}
       {% endblock %}
 
+      {% block lower_content %}
+        {# lower content region #}
+        {% if (page.lower_content) %}
+          <section class="lower-content">
+            {{ page.lower_content }}
+          </section>
+        {% endif %}
+      {% endblock %}
+
     </main>
 
     <footer class="page-footer">

@@ -100,7 +100,7 @@
 
   <div{{ content_attributes.addClass('node__content') }}>
     {% block content %}
-      {{ content }}
+      {{ content|without('field_lower_content') }}
     {% endblock %}
   </div>
 
