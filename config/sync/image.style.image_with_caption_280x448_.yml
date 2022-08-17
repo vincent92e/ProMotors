@@ -1,0 +1,17 @@
+uuid: 0edd2fad-04b6-4cfd-a97f-27f5eaed0cd9
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: image_with_caption_280x448_
+label: 'Image with caption (280x448)'
+effects:
+  0adb0623-4bbd-4c46-8213-25b720a719c7:
+    uuid: 0adb0623-4bbd-4c46-8213-25b720a719c7
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 280
+      height: 448
+      crop_type: focal_point

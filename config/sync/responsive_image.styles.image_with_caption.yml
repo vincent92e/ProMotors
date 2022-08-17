@@ -1,0 +1,51 @@
+uuid: 22d09d12-9447-4915-a4c7-754697c99a19
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.image_with_caption_280x448_
+    - image.style.image_with_caption_300_x_448
+    - image.style.image_with_caption_467x373_
+    - image.style.image_with_caption_716x373_
+  theme:
+    - promotors
+id: image_with_caption
+label: 'Image with caption'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: image_with_caption_300_x_448
+    breakpoint_id: promotors.extra-wide
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_with_caption_300_x_448
+    breakpoint_id: promotors.wide
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_with_caption_300_x_448
+    breakpoint_id: promotors.extra-large
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_with_caption_280x448_
+    breakpoint_id: promotors.large
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_with_caption_467x373_
+    breakpoint_id: promotors.medium
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_with_caption_716x373_
+    breakpoint_id: promotors.small
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_with_caption_716x373_
+    breakpoint_id: promotors.mobile
+    multiplier: 1x
+breakpoint_group: promotors
+fallback_image_style: image_with_caption_716x373_

@@ -200,9 +200,43 @@ function promotors_preprocess_paragraph__statistics(&$variables) {
   $variables['statistics'] = getChildren($paragraphs);
 }
 
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function promotors_preprocess_paragraph__image_with_caption(&$variables) {
+  if (isset($variables['content']['field_items'])) {
+    $paragraphs = $variables['content']['field_items'];
+    $variables['items'] = getChildren($paragraphs);
+  }
+
+  if ($variables['content']['field_switch'][0]['#markup'] === 'on') {
+    foreach ($variables['items'] as $key => $item) {
+      $variables['content']['field_items'][$key]['#view_mode'] = 'team_member';
+    }
+  }
+
+  // Unset cache keys only on image fields. To be used only on image fields.
+  // unset($variables['content']['field_image']['0']['#cache']['keys']);
+}
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function promotors_preprocess_paragraph__image_with_caption_item(&$variables) {
+  if (isset($variables['content']['field_social_media'])) {
+    $paragraphs = $variables['content']['field_social_media'];
+    $variables['social_media'] = getChildren($paragraphs);
+  }
+}
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
 function promotors_preprocess_paragraph__services(&$variables) {
-  $paragraphs = $variables['content']['field_service'];
-  $variables['services'] = getChildren($paragraphs);
+  if (isset($variables['content']['field_service'])) {
+    $paragraphs = $variables['content']['field_service'];
+    $variables['services'] = getChildren($paragraphs);
+  }
 }
 
 /**
@@ -263,8 +297,10 @@ function promotors_preprocess_paragraph__video_content(&$variables) {
  * Creates preprocess variable for the car brands paragraph type.
  */
 function promotors_preprocess_paragraph__car_brands (&$variables) {
-  $paragraphs = $variables['content']['field_car_brands'];
-  $variables['car_brands'] = getChildren($paragraphs);
+  if (isset($variables['content']['field_car_brands'])) {
+    $paragraphs = $variables['content']['field_car_brands'];
+    $variables['car_brands'] = getChildren($paragraphs);
+  }
 }
 
 /**
