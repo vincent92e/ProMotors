@@ -1,0 +1,10 @@
+uuid: 6078b8f4-8058-401e-a053-3735eaafc881
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.team_member
+label: 'Team member'
+targetEntityType: media
+cache: true

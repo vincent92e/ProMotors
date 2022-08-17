@@ -1,0 +1,17 @@
+uuid: 77a4ec8a-7108-4a90-b1f3-ff27bce1d866
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: team_members_300x340_
+label: 'Team members (300x340)'
+effects:
+  badf923a-44c3-45d3-88cb-884cf757c4a9:
+    uuid: badf923a-44c3-45d3-88cb-884cf757c4a9
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 300
+      height: 340
+      crop_type: focal_point
