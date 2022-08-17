@@ -1,5 +1,9 @@
 nav.breadcrumb {
   ol {
+    li {
+      text-transform: uppercase;
+    }
+    
     li:not(:first-child) {
       &:before {
         @include dot;

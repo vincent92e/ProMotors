@@ -60,17 +60,34 @@
             <div class="image-with-caption-item__caption caption">{{ content.field_caption.0 }}</div>
           {% endif %}
 
-          {% if content.field_name.0 %}
-            <div class="image-with-caption-item__name">{{ content.field_name.0 }}</div>
-          {% endif %}
+          <div class="team-member">
+            {% if content.field_name.0 %}
+              <div class="image-with-caption-item__name">{{ content.field_name.0 }}</div>
+            {% endif %}
 
-          {% if content.field_suffix.0 %}
-            <div class="image-with-caption-item__expertise">{{ content.field_suffix.0 }}</div>
-          {% endif %}
+            {% if content.field_suffix.0 %}
+              <div class="image-with-caption-item__expertise">{{ content.field_suffix.0 }}</div>
+            {% endif %}
 
-          {% if content.field_social_media.0 %}
-            <div class="image-with-caption-item__social-media">{{ content.field_social_media.0 }}</div>
-          {% endif %}
+            {% if social_media %}
+              <div class="image-with-caption-item__social-media">
+                {% for item in social_media %}
+                  {% set name = item['#title'] | lower %}
+                  <a href="{{ item['#url'] }}" class="{{ name }}">
+                    {% if name is same as ('facebook') %}
+                      <i class="fa fa-facebook-f"></i>
+                    {% elseif name is same as ('twitter') %}
+                      <i class="fa fa-twitter"></i>
+                    {% elseif name is same as ('instagram') %}
+                      <i class="fa fa-instagram"></i>
+                    {% else %}
+                      <i class="fa fa-dribbble"></i>
+                    {% endif %}
+                  </a>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
         </div>
       </div>
     {% endblock %}

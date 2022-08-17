@@ -1,5 +1,7 @@
 .paragraph--type--image-with-caption {
   .image-with-caption {
+    padding: rem(30) 0;
+
     .promotors-hr {
       margin: rem(20) 0 rem(35);
       border: 1px solid palette(greys, grey-shade2);
@@ -10,26 +12,10 @@
         .field__item {
           .image-with-caption-item {
             &__image {
-              overflow: hidden;
               border-top: 3px solid palette(primary, orange);
-
-              img {
-                opacity: .7;
-                transition: transform .4s ease-in-out;
-              }
-            }
-
-            &:hover {
-              img {
-                transform: scale(1.1);
-              }
             }
 
             &__content {
-              left: 0;
-              bottom: 0;
-              width: 100%;
-              height: 100%;
               transition: all .3s ease-in-out;
 
               .caption {
@@ -51,31 +37,67 @@
             }
           }
         }
+
+        .scroll-animation {
+          opacity: 0;
+          @include scrollAnimation(fadeInBottom);
+        }
+      }
+
+      &.on {
+        .field__item {
+          .image-with-caption-item {
+            overflow: hidden;
+
+            &:hover {
+              .image-with-caption-item__content {
+                transform: translateY(-95%);
+              }
+            }
+
+            &__image {
+              img {
+                opacity: 1;
+              }
+            }
+
+
+            &__content {
+              bottom: -95%;
+              height: 100%;
+              background-color: #121212B5;
+              transition: transform .5s ease-in-out;
+
+              .team-member {
+                position: absolute;
+                margin: rem(40) rem(25);
+                bottom: 0;
+              }
+            }
+          }
+        }
       }
     }
 
-    .field__items {
+    .field--name-field-items.field__items {
       @include row;
+      justify-content: space-between;
 
       & > .field__item {
-        @include col(12);
-
-        &:not(:last-child) {
-          margin-bottom: rem(40);
-        }
+        @include col(12, $use-gutter: false);
+        margin-bottom: rem(40);
 
         @include from-breakpoint(768px) {
-          @include col(6, $component-layout: 'halves');
+          @include col(6, $component-layout: 'halves', $use-gutter: false);
         }
 
         @include from-lg {
-          @include col(3);
-
-          &:not(:last-child) {
-            margin-bottom: 0;
-          }
+          @include col(3, $use-gutter: false);
         }
       }
     }
   }
 }
+
+@include fadeIn('bottom', 150px);
+@include stopAnimation;

@@ -46,6 +46,7 @@
     not paragraph.isPublished() ? 'paragraph--unpublished'
   ]
 %}
+{{ attach_library('promotors/scroll_animation') }}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
