@@ -1,0 +1,66 @@
+uuid: 5f821fb9-4296-4517-9c61-a8c646d3109e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.team_member
+    - field.field.paragraph.image_with_caption_item.field_caption
+    - field.field.paragraph.image_with_caption_item.field_image
+    - field.field.paragraph.image_with_caption_item.field_name
+    - field.field.paragraph.image_with_caption_item.field_social_media
+    - field.field.paragraph.image_with_caption_item.field_suffix
+    - paragraphs.paragraphs_type.image_with_caption_item
+  module:
+    - link
+id: paragraph.image_with_caption_item.team_member
+targetEntityType: paragraph
+bundle: image_with_caption_item
+mode: team_member
+content:
+  field_caption:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: team_member
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_social_media:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_suffix:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  search_api_excerpt: true

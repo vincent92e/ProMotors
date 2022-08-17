@@ -1,0 +1,10 @@
+uuid: 25644396-cfe5-4d26-83b7-981070cedcc1
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.team_member
+label: 'Team member'
+targetEntityType: paragraph
+cache: true

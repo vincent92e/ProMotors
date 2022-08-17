@@ -3,7 +3,7 @@ nav.breadcrumb {
     li {
       text-transform: uppercase;
     }
-    
+
     li:not(:first-child) {
       &:before {
         @include dot;

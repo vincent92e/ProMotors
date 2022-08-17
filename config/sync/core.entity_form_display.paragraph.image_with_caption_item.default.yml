@@ -1,0 +1,112 @@
+uuid: c488c162-8700-48ad-ad7c-f4e686f44bff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_with_caption_item.field_caption
+    - field.field.paragraph.image_with_caption_item.field_image
+    - field.field.paragraph.image_with_caption_item.field_name
+    - field.field.paragraph.image_with_caption_item.field_social_media
+    - field.field.paragraph.image_with_caption_item.field_suffix
+    - paragraphs.paragraphs_type.image_with_caption_item
+  module:
+    - field_group
+    - link
+    - media_library
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_image_with_caption
+        - group_team_members
+      label: Tabs
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: horizontal
+        width_breakpoint: 640
+    group_team_members:
+      children:
+        - field_name
+        - field_suffix
+        - field_social_media
+      label: 'Team members'
+      region: content
+      parent_name: group_tabs
+      weight: 2
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: 'Add team members fields here'
+        required_fields: true
+    group_image_with_caption:
+      children:
+        - field_image
+        - field_caption
+      label: 'Image with caption'
+      region: content
+      parent_name: group_tabs
+      weight: 1
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: open
+        description: 'Add image with caption fields here'
+        required_fields: true
+id: paragraph.image_with_caption_item.default
+targetEntityType: paragraph
+bundle: image_with_caption_item
+mode: default
+content:
+  field_caption:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_image:
+    type: media_library_widget
+    weight: 2
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_name:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_social_media:
+    type: link_default
+    weight: 5
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: 'facebook, twitter, instagram or dribble'
+    third_party_settings: {  }
+  field_suffix:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

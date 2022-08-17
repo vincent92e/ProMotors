@@ -1,28 +1,27 @@
-uuid: 63d5f549-79cd-4b83-9b5c-29a13f84749b
+uuid: 48fc69e8-fefc-4080-ae4d-b7b06d75b29f
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.team_member
     - field.field.media.image.field_media_image
-    - image.style.large
     - media.type.image
+    - responsive_image.styles.team_member
   module:
-    - image
+    - responsive_image
 _core:
   default_config_hash: 73xaTNkI5J6sfFcBmNYeuk070X3mQS_iwwWaPYyfG2M
-id: media.image.default
+id: media.image.team_member
 targetEntityType: media
 bundle: image
-mode: default
+mode: team_member
 content:
   field_media_image:
-    type: image
+    type: responsive_image
     label: visually_hidden
     settings:
+      responsive_image_style: team_member
       image_link: ''
-      image_style: large
-      image_loading:
-        attribute: lazy
     third_party_settings: {  }
     weight: 1
     region: content
