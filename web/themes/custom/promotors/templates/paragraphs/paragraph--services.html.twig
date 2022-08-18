@@ -53,16 +53,19 @@
     {% block content %}
       <div class="services">
         <div class="layout-container">
-          {% if content.field_title.0 or field_button.0 %}
             <div class="services__top">
-              <h2 class="title">{{ content.field_title.0 }}</h2>
-              <div class="link-btn">
-                {{ link(button_link['#title'], button_link['#url'], { 'class' : ['site-btn', 'button-primary']}) }}
-              </div>
+              {% if content.field_title.0 %}
+                <h2 class="title">{{ content.field_title.0 }}</h2>
+              {% endif %}
+
+              {% if button_link['#url'] %}
+                <div class="link-btn">
+                  {{ link(button_link['#title'], button_link['#url'], { 'class' : ['site-btn', 'button-primary']}) }}
+                </div>
+              {% endif %}
             </div>
-          {% endif %}
           {% if content.field_service %}
-            <div class="services__content">{{ content.field_service }}</div>
+            <div class="services__content {{ content.field_switch.0 }}">{{ content.field_service }}</div>
           {% endif %}
         </div>
       </div>
