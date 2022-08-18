@@ -97,7 +97,7 @@ content:
     region: content
     settings:
       placeholder_url: ''
-      placeholder_title: 'facebook, twitter, instagram or dribble'
+      placeholder_title: 'facebook, twitter, instagram or dribbble'
     third_party_settings: {  }
   field_suffix:
     type: string_textfield

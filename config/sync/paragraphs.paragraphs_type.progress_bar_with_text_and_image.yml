@@ -1,0 +1,10 @@
+uuid: cb71a14c-5256-48f1-b859-cccc550d6f87
+langcode: en
+status: true
+dependencies: {  }
+id: progress_bar_with_text_and_image
+label: 'Progress bar with text and image'
+icon_uuid: null
+icon_default: null
+description: 'Progress bar with text and image paragraph type'
+behavior_plugins: {  }

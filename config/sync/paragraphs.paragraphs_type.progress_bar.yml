@@ -1,0 +1,10 @@
+uuid: 851f31de-a7e2-4eec-aa46-83c18bdb163c
+langcode: en
+status: true
+dependencies: {  }
+id: progress_bar
+label: 'Progress bar'
+icon_uuid: null
+icon_default: null
+description: 'Progress bar paragraph type.'
+behavior_plugins: {  }
