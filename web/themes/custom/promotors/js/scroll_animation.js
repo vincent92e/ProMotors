@@ -1,7 +1,7 @@
 (function ($, window, Drupal) {
   "use strict";
 
-  Drupal.behaviors.scrollAnimation = {
+  Drupal.behaviors.promotorsScrollAnimation = {
     attach: function (context, settings) {
 
       let win = $(window);

@@ -1,7 +1,7 @@
 (function ($, window, Drupal) {
   'use strict';
 
-  Drupal.behaviors.reviewsCarousel = {
+  Drupal.behaviors.promotorsReviewsCarousel = {
     attach: function (context, settings) {
       $('.reviews__review-item .field--name-field-items', context).slick({
         infinite: true,

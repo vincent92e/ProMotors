@@ -1,7 +1,7 @@
 (function ($, window, Drupal) {
   'use strict';
 
-  Drupal.behaviors.progressBar = {
+  Drupal.behaviors.promotorsProgressBar = {
     attach: function (context, settings) {
       $('.progress-bar__bars', context).each(function() {
         $(this).find('.bar').animate({
