@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_content
     - node.type.about_us
+    - paragraphs.paragraphs_type.book_your_service
     - paragraphs.paragraphs_type.general_listings
     - paragraphs.paragraphs_type.image_with_caption
     - paragraphs.paragraphs_type.progress_bar_with_text_and_image
@@ -25,6 +26,7 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
+      book_your_service: book_your_service
       general_listings: general_listings
       image_with_caption: image_with_caption
       progress_bar_with_text_and_image: progress_bar_with_text_and_image
@@ -34,6 +36,9 @@ settings:
       banner:
         weight: 20
         enabled: false
+      book_your_service:
+        weight: 22
+        enabled: true
       call_to_action:
         weight: 21
         enabled: false

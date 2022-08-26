@@ -1,0 +1,44 @@
+uuid: 40e6d306-00d6-4ffb-b1c5-8020f73355dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.book_your_service.field_body
+    - field.field.paragraph.book_your_service.field_button
+    - field.field.paragraph.book_your_service.field_title
+    - paragraphs.paragraphs_type.book_your_service
+  module:
+    - link
+    - text
+id: paragraph.book_your_service.default
+targetEntityType: paragraph
+bundle: book_your_service
+mode: default
+content:
+  field_body:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_button:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

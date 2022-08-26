@@ -1,0 +1,46 @@
+uuid: d1ddeb6e-4550-4d56-89ae-e4372ee6697f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.book_your_service.field_body
+    - field.field.paragraph.book_your_service.field_button
+    - field.field.paragraph.book_your_service.field_title
+    - paragraphs.paragraphs_type.book_your_service
+  module:
+    - link
+    - text
+id: paragraph.book_your_service.default
+targetEntityType: paragraph
+bundle: book_your_service
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_button:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true
