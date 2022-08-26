@@ -1,7 +1,7 @@
 (function ($, window, Drupal) {
   'use strict';
 
-  Drupal.behaviors.counter = {
+  Drupal.behaviors.promotorsCounter = {
     attach: function (context, settings) {
 
       let win = $(window);

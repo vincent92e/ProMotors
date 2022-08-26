@@ -1,0 +1,17 @@
+uuid: fe4756b5-0159-4ec1-ad5b-735aedbe771e
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: progress_bar_with_text_and_image_620x497_
+label: 'Progress bar with text and image (620x497)'
+effects:
+  ddc6bbf9-0f82-4d36-84a0-ddde2258b202:
+    uuid: ddc6bbf9-0f82-4d36-84a0-ddde2258b202
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 620
+      height: 497
+      crop_type: focal_point

@@ -1,0 +1,85 @@
+uuid: 0e1fed27-6165-480b-9f0c-82d2221b49b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_items
+    - paragraphs.paragraphs_type.progress_bar
+    - paragraphs.paragraphs_type.progress_bar_with_text_and_image
+  module:
+    - entity_reference_revisions
+id: paragraph.progress_bar_with_text_and_image.field_items
+field_name: field_items
+entity_type: paragraph
+bundle: progress_bar_with_text_and_image
+label: 'Progress bar'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      progress_bar: progress_bar
+    negate: 0
+    target_bundles_drag_drop:
+      banner:
+        weight: 20
+        enabled: false
+      call_to_action:
+        weight: 21
+        enabled: false
+      car_brands:
+        weight: 22
+        enabled: false
+      general_listings:
+        weight: 23
+        enabled: false
+      image_with_caption:
+        weight: 24
+        enabled: false
+      image_with_caption_item:
+        weight: 25
+        enabled: false
+      listing:
+        weight: 26
+        enabled: false
+      price_list_item:
+        weight: 28
+        enabled: false
+      price_listings:
+        weight: 27
+        enabled: false
+      progress_bar:
+        weight: 29
+        enabled: true
+      progress_bar_with_text_and_image:
+        weight: 30
+        enabled: false
+      review_item:
+        weight: 32
+        enabled: false
+      reviews:
+        weight: 31
+        enabled: false
+      service:
+        weight: 33
+        enabled: false
+      services:
+        weight: 34
+        enabled: false
+      statistics:
+        weight: 35
+        enabled: false
+      statistics_item:
+        weight: 36
+        enabled: false
+      video_content:
+        weight: 37
+        enabled: false
+      webform:
+        weight: 38
+        enabled: false
+field_type: entity_reference_revisions

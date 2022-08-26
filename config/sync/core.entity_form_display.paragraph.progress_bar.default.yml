@@ -1,0 +1,40 @@
+uuid: cd37d02d-cca6-435c-8fbd-64ec242044d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.progress_bar.field_name
+    - field.field.paragraph.progress_bar.field_rating
+    - field.field.paragraph.progress_bar.field_title
+    - paragraphs.paragraphs_type.progress_bar
+id: paragraph.progress_bar.default
+targetEntityType: paragraph
+bundle: progress_bar
+mode: default
+content:
+  field_name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_rating:
+    type: number
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

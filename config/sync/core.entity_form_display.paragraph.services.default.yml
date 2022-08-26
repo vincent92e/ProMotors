@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.services.field_button
     - field.field.paragraph.services.field_service
+    - field.field.paragraph.services.field_switch
     - field.field.paragraph.services.field_title
     - paragraphs.paragraphs_type.services
   module:
@@ -17,7 +18,7 @@ mode: default
 content:
   field_button:
     type: link_default
-    weight: 1
+    weight: 2
     region: content
     settings:
       placeholder_url: ''
@@ -25,7 +26,7 @@ content:
     third_party_settings: {  }
   field_service:
     type: paragraphs
-    weight: 2
+    weight: 3
     region: content
     settings:
       title: Paragraph
@@ -41,9 +42,16 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
+  field_switch:
+    type: boolean_checkbox
+    weight: 0
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_title:
     type: string_textfield
-    weight: 0
+    weight: 1
     region: content
     settings:
       size: 60

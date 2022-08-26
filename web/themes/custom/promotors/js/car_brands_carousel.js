@@ -1,7 +1,7 @@
 (function ($, window, Drupal) {
   'use strict';
 
-  Drupal.behaviors.carBrandsCarousel = {
+  Drupal.behaviors.promotorsCarBrandsCarousel = {
     attach: function (context, settings) {
       $('.car-brands__content', context).slick({
         infinite: true,
