@@ -1,7 +1,7 @@
 (function ($, window, Drupal) {
   'use strict';
 
-  Drupal.behaviors.videoContent = {
+  Drupal.behaviors.promotorsVideoContent = {
     attach: function(context, settings) {
       var v = $('.video-player', context);
 

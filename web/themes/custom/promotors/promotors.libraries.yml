@@ -67,3 +67,10 @@ reviews_carousel:
     - core/jquery
     - core/drupal
     - promotors/slick
+
+progress_bar:
+  js:
+    asset-builds/js/progress_bar.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

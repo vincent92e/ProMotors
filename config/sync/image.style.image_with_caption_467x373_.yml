@@ -1,0 +1,17 @@
+uuid: 4c5de578-00bc-41f6-b09d-3e0681d53fd7
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: image_with_caption_467x373_
+label: 'Image with caption (467x373)'
+effects:
+  13b14138-4c1b-40d8-aa9d-8f64ccfbd9ee:
+    uuid: 13b14138-4c1b-40d8-aa9d-8f64ccfbd9ee
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 467
+      height: 373
+      crop_type: focal_point

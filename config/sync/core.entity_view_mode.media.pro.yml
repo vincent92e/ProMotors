@@ -1,0 +1,10 @@
+uuid: c458ed18-a2e3-4096-ad7e-7f9b344944bd
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.pro
+label: 'Progress bar with text and image'
+targetEntityType: media
+cache: true

@@ -58,6 +58,24 @@
           content: '\f655';
         }
       }
+
+      &.diagnostic {
+        &:after {
+          content: '\f0f1';
+        }
+      }
+
+      &.clutch {
+        &:after {
+          content: '\f013';
+        }
+      }
+
+      &.oil {
+        &:after {
+          content: '\f613';
+        }
+      }
     }
 
     &__name {

@@ -1,7 +1,7 @@
 (function ($, window, Drupal) {
   "use strict";
 
-  Drupal.behaviors.visible = {
+  Drupal.behaviors.promotorsVisible = {
     attach: function (context, settings) {
 
       /*

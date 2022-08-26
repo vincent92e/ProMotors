@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_lower_content
     - node.type.service
+    - paragraphs.paragraphs_type.image_with_caption
     - paragraphs.paragraphs_type.reviews
     - paragraphs.paragraphs_type.services
   module:
@@ -23,6 +24,7 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
+      image_with_caption: image_with_caption
       reviews: reviews
       services: services
     negate: 0
@@ -38,6 +40,12 @@ settings:
         enabled: false
       general_listings:
         weight: 19
+        enabled: false
+      image_with_caption:
+        weight: 22
+        enabled: true
+      image_with_caption_item:
+        weight: 23
         enabled: false
       listing:
         weight: 20

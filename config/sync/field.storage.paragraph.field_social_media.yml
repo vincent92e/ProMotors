@@ -1,0 +1,19 @@
+uuid: e22f6de2-7530-49e4-80e9-c2bbfc3c7cc4
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+id: paragraph.field_social_media
+field_name: field_social_media
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 4
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

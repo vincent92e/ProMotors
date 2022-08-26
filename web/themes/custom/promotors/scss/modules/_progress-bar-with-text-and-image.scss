@@ -1,0 +1,43 @@
+.paragraph--type--progress-bar-with-text-and-image {
+  .progress-bar-with-text-and-image {
+    padding: rem(70) 0;
+
+    .progress-bars {
+      .field--name-field-items {
+        & > .field__item:not(:last-child) {
+          margin-bottom: rem(20);
+        }
+      }
+    }
+
+    &__content-wrapper {
+      margin-bottom: rem(60);
+
+      @include from-lg {
+        margin-bottom: 0;
+      }
+    }
+
+    &__content-wrapper,
+    &__img-wrapper {
+      @include col(12);
+
+      @include from-lg {
+        @include col(6, $component-layout: 'halves');
+      }
+    }
+
+    &__content-wrapper {
+      h2.title,
+      .body {
+        margin-bottom: rem(20);
+      }
+    }
+
+    &__img-wrapper {
+      img {
+        @include imgFluid;
+      }
+    }
+  }
+}

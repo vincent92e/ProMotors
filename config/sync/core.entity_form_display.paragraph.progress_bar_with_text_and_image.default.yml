@@ -1,0 +1,63 @@
+uuid: dd663768-968d-45b2-b9b3-6e6758dceb1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.progress_bar_with_text_and_image.field_body
+    - field.field.paragraph.progress_bar_with_text_and_image.field_image
+    - field.field.paragraph.progress_bar_with_text_and_image.field_items
+    - field.field.paragraph.progress_bar_with_text_and_image.field_title
+    - paragraphs.paragraphs_type.progress_bar_with_text_and_image
+  module:
+    - media_library
+    - paragraphs
+    - text
+id: paragraph.progress_bar_with_text_and_image.default
+targetEntityType: paragraph
+bundle: progress_bar_with_text_and_image
+mode: default
+content:
+  field_body:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_image:
+    type: media_library_widget
+    weight: 3
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_items:
+    type: paragraphs
+    weight: 2
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

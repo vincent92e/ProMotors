@@ -60,9 +60,11 @@ header {
               right: -0.25em;
 
               &:after {
-                content: "\f107";
-                font-size: em(12);
+                content: "\2b";
+                font-size: em(10);
                 font-family: Fontawesome;
+                margin-top: rem(2);
+                color: palette(primary, orange);
               }
             }
 

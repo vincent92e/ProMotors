@@ -1,0 +1,10 @@
+uuid: d2c9ee51-2730-47ea-b105-34bbc9df2cf6
+langcode: en
+status: true
+dependencies: {  }
+id: image_with_caption_item
+label: 'Image with caption item'
+icon_uuid: null
+icon_default: null
+description: 'Image with caption item paragraph type'
+behavior_plugins: {  }

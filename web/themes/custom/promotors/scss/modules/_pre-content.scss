@@ -1,0 +1,25 @@
+.pre-content {
+  position: relative;
+  padding: rem(60) 0;
+  margin-bottom: rem(80);
+  background-color: palette(primary, black-shade2);
+
+  .background-image {
+    background-image: url("#{$path-to-images}/pre-content-img.png");
+    background-position: 100% 66%;
+    background-repeat: no-repeat;
+    background-size: 60% auto;
+    opacity: 0.4;
+    mix-blend-mode: lighten;
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+  }
+
+  .region-pre-content {
+    margin-bottom: 0;
+  }
+}
