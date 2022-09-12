@@ -1,0 +1,37 @@
+.paragraph--type--accordion-item {
+  .accordion-item {
+    &__header {
+      padding: rem(30);
+      background-color: palette(primary, black-shade2);
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      color: palette(text, white);
+      text-transform: uppercase;
+      font-size: em(18);
+      font-family: $font-family-chakra-petch-bold;
+
+      &:after {
+        content: '\f107';
+        font-family: Fontawesome;
+        color: palette(primary, orange);
+        margin-left: auto;
+        transition: transform .3s ease-in-out;
+      }
+
+      &.active {
+        border-top: 3px solid palette(primary, orange);
+
+        &:after {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+
+    &__content {
+      display: none;
+      background-color: palette(primary, black-shade2);
+      padding: 0 rem(30) rem(30);
+    }
+  }
+}
