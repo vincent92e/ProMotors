@@ -1,3 +1,20 @@
+%plus-icon {
+  content: "\2b";
+  font-size: em(10);
+  font-family: Fontawesome;
+  margin-top: rem(2);
+  color: palette(primary, orange);
+}
+
+%menu-hover {
+  color: palette(text, white);
+  background-color: palette(primary, orange);
+}
+
+#page {
+  position: relative;
+}
+
 header {
   .region-header {
     display: flex;
@@ -12,9 +29,120 @@ header {
     #block-promotors-mainnavigation {
       flex-basis: 60%;
 
+      &.contextual-region {
+        position: unset;
+      }
+
+      div.sf-accordion-toggle {
+        a#superfish-main-toggle {
+          display: flex;
+          justify-content: flex-end;
+
+          &:before {
+            content: "\f550";
+            font-family: FontAwesome;
+            font-size: em(35);
+            color: palette(primary, orange);
+          }
+
+          & > span {
+            visibility: hidden;
+            position: absolute;
+          }
+        }
+      }
+
+      ul#superfish-main-accordion {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        position: fixed;
+        z-index: 500;
+        background: palette(greys, grey-shade1);
+        left: 0 !important; // To override superfish 'important' property.
+        top: 0 !important; // To override superfish 'important' property.
+        height: 100%;
+        @include scrollAnimation(fadeInRight);
+
+        &.sf-expanded {
+          li {
+            a {
+              &:hover {
+                @extend %menu-hover;
+              }
+            }
+          }
+
+          ul.sf-has-clone-parent {
+            li {
+              &.sf-clone-parent {
+                display: none;
+              }
+
+              a {
+                padding-left: rem(40);
+              }
+            }
+          }
+        }
+
+        .sf-sub-indicator {
+          opacity: unset;
+
+          &:after {
+            @extend %plus-icon;
+          }
+        }
+
+        &.remove-animation {
+          opacity: 0;
+          transition: all 1s ease-out;
+          animation: fadeOut 1s ease-out;
+        }
+
+        li {
+          a {
+            color: palette(text, white);
+            font-family: $font-family-chakra-petch-regular;
+            font-size: em(18);
+            text-transform: uppercase;
+            border-bottom: 1px solid palette(greys, grey-shade2);
+
+            &.is-active {
+              background-color: palette(primary, orange);
+            }
+          }
+        }
+
+        .mobile-header {
+          display: flex;
+          justify-content: space-between;
+
+          .close-menu {
+            padding-right: rem(24);
+            align-self: center;
+
+            &:before {
+              content: "\f00d";
+              font-family: Fontawesome;
+              font-size: em(24);
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
       ul#superfish-main {
         display: flex;
         justify-content: center;
+
+        @include upto-breakpoint(1039px) {
+          display: none;
+        }
+
+        .mobile-header {
+          display: none;
+        }
 
         > li {
           &:hover {
@@ -60,11 +188,7 @@ header {
               right: -0.25em;
 
               &:after {
-                content: "\2b";
-                font-size: em(10);
-                font-family: Fontawesome;
-                margin-top: rem(2);
-                color: palette(primary, orange);
+                @extend %plus-icon;
               }
             }
 
@@ -83,9 +207,14 @@ header {
 
                 > li {
                   > a {
+                    white-space: nowrap;
+
+                    &.is-active {
+                      @extend %menu-hover;
+                    }
+
                     &:hover {
-                      color: palette(text, white);
-                      background-color: palette(primary, orange);
+                      @extend %menu-hover;
                     }
                   }
                 }
@@ -113,3 +242,6 @@ header {
     }
   }
 }
+
+@include fadeIn('right', 500px);
+@include fadeOut(100%);

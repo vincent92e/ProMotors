@@ -170,12 +170,24 @@
 @mixin fadeIn($type, $position) {
   @if ($type == 'top') {
     @keyframes fadeInTop {
-      from {
+      0% {
         opacity: 0;
         transform: translateY($position);
       }
 
-      to {
+      100% {
+        opacity: 1;
+      }
+    }
+
+    // Fixes opacity flickering issue on Safari by
+    // removing opacity property from the 0% frame.
+    @-webkit-keyframes fadeInTop {
+      0% {
+        -webkit-transform: translateY($position);
+      }
+
+      100% {
         opacity: 1;
       }
     }
@@ -183,12 +195,24 @@
 
   @if ($type == 'right') {
     @keyframes fadeInRight {
-      from {
+      0% {
         opacity: 0;
         transform: translateX($position);
       }
 
-      to {
+      100% {
+        opacity: 1;
+      }
+    }
+
+    // Fixes opacity flickering issue on Safari by
+    // removing opacity property from the 0% frame.
+    @-webkit-keyframes fadeInRight {
+      0% {
+        -webkit-transform: translateX($position);
+      }
+
+      100% {
         opacity: 1;
       }
     }
@@ -196,12 +220,24 @@
 
   @if ($type == 'bottom') {
     @keyframes fadeInBottom {
-      from {
+      0% {
         opacity: 0;
         transform: translateY($position);
       }
 
-      to {
+      100% {
+        opacity: 1;
+      }
+    }
+
+    // Fixes opacity flickering issue on Safari by
+    // removing opacity property from the 0% frame.
+    @-webkit-keyframes fadeInBottom {
+      0% {
+        -webkit-transform: translateY($position);
+      }
+
+      100% {
         opacity: 1;
       }
     }
@@ -209,14 +245,52 @@
 
   @if ($type == 'left') {
     @keyframes fadeInLeft {
-      from {
+      0% {
         opacity: 0;
         transform: translateX($position);
       }
 
-      to {
+      100% {
         opacity: 1;
       }
+    }
+
+    // Fixes opacity flickering issue on Safari by
+    // removing opacity property from the 0% frame.
+    @-webkit-keyframes fadeInLeft {
+      0% {
+        -webkit-transform: translateX($position);
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@mixin fadeOut($position) {
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateX($position);
+    }
+  }
+
+  // Fixes opacity flickering issue on Safari by
+  // removing opacity property from the 0% frame.
+  @-webkit-keyframes fadeOut {
+    0% {
+      //opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+      -webkit-transform: translateX($position);
     }
   }
 }

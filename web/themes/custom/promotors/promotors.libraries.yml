@@ -81,3 +81,10 @@ accordion:
   dependencies:
     - core/jquery
     - core/drupal
+
+mobile_menu_slider:
+  js:
+    asset-builds/js/mobile_menu_slider.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
