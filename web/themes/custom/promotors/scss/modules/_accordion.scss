@@ -1,0 +1,7 @@
+.paragraph--type--accordion {
+  margin-bottom: rem(70);
+
+  .field__item:not(:last-child) {
+    margin-bottom: rem(20);
+  }
+}
