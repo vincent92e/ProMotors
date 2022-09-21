@@ -5,7 +5,6 @@
 const { gulp, src, dest, watch, series, parallel } = require('gulp');
 const sass = require('gulp-sass');
 const sassLint = require('gulp-sass-lint');
-const nodeSass = require('node-sass-import-once');
 const del = require('del');
 const rename = require('gulp-rename');
 const livereload = require('gulp-livereload');

@@ -397,3 +397,19 @@ function formatCommentCount($count) {
 
   return $comment_count;
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function promotors_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id = NULL) {
+  if (isset($form_id)) {
+    return;
+  }
+
+  $form['children_name'] = [
+    '#type' => 'textfield',
+    '#title' => t('Children\'s name'),
+    '#default_value' => theme_get_setting('children'),
+    '#description' => t('Name of child born to the parents'),
+  ];
+}
