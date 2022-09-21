@@ -74,3 +74,10 @@ progress_bar:
   dependencies:
     - core/jquery
     - core/drupal
+
+accordion:
+  js:
+    asset-builds/js/accordion.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

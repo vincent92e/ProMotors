@@ -1,24 +1,21 @@
 (function ($, window, Drupal) {
-  "use strict";
-
   Drupal.behaviors.promotorsVisible = {
-    attach: function (context, settings) {
-
+    attach(context, settings) {
       /*
         Function to check if element is visible in the users window.
        */
       $.fn.visible = function (partial) {
-        let $element            = $(this);
-        let $win            = $(window);
-        let viewTop       = $win.scrollTop();
-        let viewBottom    = viewTop + $win.height();
-        let _top          = $element.offset().top;
-        let _bottom       = _top + $element.height();
-        let compareTop    = partial === true ? _bottom : _top;
-        let compareBottom = partial === true ? _top : _bottom;
+        const $element = $(this);
+        const $win = $(window);
+        const viewTop = $win.scrollTop();
+        const viewBottom = viewTop + $win.height();
+        const _top = $element.offset().top;
+        const _bottom = _top + $element.height();
+        const compareTop = partial === true ? _bottom : _top;
+        const compareBottom = partial === true ? _top : _bottom;
 
-        return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+        return compareBottom <= viewBottom && compareTop >= viewTop;
       };
-    }
+    },
   };
 })(jQuery, window, Drupal);
