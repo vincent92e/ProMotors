@@ -1,0 +1,80 @@
+.paragraph--type--banner {
+  .banner {
+    margin: rem(30) 0;
+
+    &__background-text {
+      @include backgroundText(55px);
+      margin-bottom: rem(-20);
+      opacity: 0;
+      @include scrollAnimation(fadeInTop);
+
+      @include from-breakpoint(768px) {
+        margin-bottom: rem(-50);
+        font-size: em(110);
+      }
+
+      @include from-breakpoint(992px) {
+        font-size: em(140);
+      }
+
+      @include from-lg {
+        font-size: em(170);
+      }
+    }
+
+    &__content {
+      .banner__info {
+        z-index: 2;
+        @include col(12);
+        margin-bottom: rem(50);
+
+        @include from-breakpoint(992px) {
+          @include col(5);
+          margin-bottom: 0;
+        }
+
+        .title {
+          color: palette(text, white);
+          font-family: $font-family-chakra-petch-bold;
+          text-transform: uppercase;
+          line-height: 1.1em;
+          margin-bottom: rem(20);
+          font-size: em(36);
+
+          @include from-breakpoint(768px) {
+            font-size: em(59);
+          }
+        }
+
+        .body {
+          margin-bottom: rem(40);
+        }
+
+        .link {
+          width: fit-content;
+          opacity: 0;
+          @include scrollAnimation(fadeInBottom);
+        }
+      }
+
+      .banner__image {
+        opacity: 0;
+        @include col(12);
+        @include scrollAnimation(fadeInRight);
+
+        @include from-breakpoint(992px) {
+          @include col(7);
+        }
+
+        img {
+          @include imgFluid;
+        }
+      }
+    }
+  }
+}
+
+@include fadeIn('top', -150px);
+@include fadeIn('right', 300px);
+@include fadeIn('bottom', 50px);
+@include stopAnimation;

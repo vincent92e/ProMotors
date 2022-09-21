@@ -1,0 +1,21 @@
+uuid: f5cec00a-c0e4-49ba-b823-960b15570e41
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - paragraphs.paragraphs_type.progress_bar_with_text_and_image
+  module:
+    - text
+id: paragraph.progress_bar_with_text_and_image.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: progress_bar_with_text_and_image
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -10,17 +10,21 @@
   padding: 14px 60px;
   border-radius: 0;
   border: 2px solid palette(primary, orange);
-  @include clipStyle;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  transition: transform .3s;
+  @include clipStyle(20px);
 
 
   @include link-states {
     text-decoration: none;
+    color: palette(text, white);
   }
 
-  //&:hover {
-  //  background-color: transparent;
-  //  color: palette(primary, pink);
-  //}
+  &:hover {
+    transform: scale(1.1);
+  }
 
   &:focus, &:active {
     outline: 5px auto -webkit-focus-ring-color;

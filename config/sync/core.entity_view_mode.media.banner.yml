@@ -1,0 +1,10 @@
+uuid: 6c09b303-f2a9-415c-b3ce-142962678139
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.banner
+label: Banner
+targetEntityType: media
+cache: true

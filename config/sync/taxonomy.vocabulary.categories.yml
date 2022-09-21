@@ -1,0 +1,8 @@
+uuid: a5e4dfe3-70e3-4cdd-bf92-1197fd79463b
+langcode: en
+status: true
+dependencies: {  }
+name: Categories
+vid: categories
+description: 'Categories for promotors services'
+weight: 0

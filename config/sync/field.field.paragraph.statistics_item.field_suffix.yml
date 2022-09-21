@@ -1,0 +1,19 @@
+uuid: 4fe121b2-6a80-42de-b0ed-12859863eca5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_suffix
+    - paragraphs.paragraphs_type.statistics_item
+id: paragraph.statistics_item.field_suffix
+field_name: field_suffix
+entity_type: paragraph
+bundle: statistics_item
+label: Suffix
+description: 'Suffix for the statistics value, e.g +, % etc.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

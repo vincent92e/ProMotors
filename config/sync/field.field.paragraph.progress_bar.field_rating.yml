@@ -1,0 +1,23 @@
+uuid: 314f6a1e-0af7-4661-8d98-cf4730d694d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rating
+    - paragraphs.paragraphs_type.progress_bar
+id: paragraph.progress_bar.field_rating
+field_name: field_rating
+entity_type: paragraph
+bundle: progress_bar
+label: Percentage
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: 100
+  prefix: ''
+  suffix: ''
+field_type: integer

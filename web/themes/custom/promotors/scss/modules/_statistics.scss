@@ -1,0 +1,41 @@
+.paragraph--type--statistics {
+  .statistics {
+    padding: rem(70) 0;
+    background-color: palette(primary, black-shade2);
+
+    .field__items {
+      @include row;
+
+      .field__item {
+        margin-bottom: rem(40);
+
+        @include col(12);
+
+        @include from-md {
+          @include col(6, $component-layout: 'halves');
+          margin-bottom: 0;
+        }
+
+        @include from-lg {
+          @include col(3);
+        }
+
+        .promotors-hr {
+          margin-top: 0;
+          margin-bottom: rem(15);
+          border: 1px solid palette(greys, grey-shade2);
+        }
+
+        &:not(:last-child) {
+          .promotors-hr {
+            margin-right: 0;
+
+            @include from-lg {
+              margin-right: rem(-45);
+            }
+          }
+        }
+      }
+    }
+  }
+}

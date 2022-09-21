@@ -1,0 +1,33 @@
+.paragraph--type--progress-bar {
+  .progress-bar {
+    &__info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: rem(10);
+
+      .name {
+        font-size: em(18);
+        color: palette(text, white);
+      }
+
+      .percentage {
+        font-size: em(18);
+        font-family: $font-family-chakra-petch-bold;
+        color: palette(text, white);
+      }
+    }
+
+    &__bars {
+      height: 25px;
+      background-color: palette(greys, grey-shade2);
+      position: relative;
+
+      .orange {
+        background: palette(primary, orange);
+        position: absolute;
+        height: 25px;
+        width: 0;
+      }
+    }
+  }
+}

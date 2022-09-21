@@ -17,12 +17,12 @@ html {
   font-size: 100%;
   line-height: $ratio;
   -webkit-text-size-adjust: 100%; // Prevent font scaling in landscape while allowing user zoom //
-  font-family: $font-family-chakra-petch-regular;
+  font-family: $font-family-mulish-regular;
   font-weight: normal; // Default, unless stated
 }
 
 body {
-  background: #000000;
+  background: palette(greys, grey-shade1);
   color: palette(text, grey1);
   margin-top: 0; // Axiomatic exception
 }
@@ -56,6 +56,8 @@ h4,
 h5,
 h6 {
   font-family: $font-family-chakra-petch-bold;
+  text-transform: uppercase;
+  color: palette(text, white);
 }
 
 // Sizes
@@ -120,6 +122,26 @@ blockquote,
 %blockquote,
 .blockquote {
   @extend %lede;
+  margin: rem(21) rem(40);
+  padding: 0 rem(21);
+  text-transform: uppercase;
+  color: palette(text, white);
+
+  p {
+    &:before {
+      content: '\f10d';
+      font-family: Fontawesome;
+      margin-right: rem(10);
+      color: palette(primary, orange);
+    }
+
+    &:after {
+      content: '\f10e';
+      font-family: Fontawesome;
+      margin-left: rem(10);
+      color: palette(primary, orange);
+    }
+  }
 }
 
 
@@ -131,7 +153,7 @@ p {
   // TODO: Include margin or not? WYSIWYG component will do it
   // but not sure about <p> used elsewhere
   // margin-bottom: rem(24);
-  font-size: em(18);
+  font-size: $font-size-base;
 
   &:last-child {
     margin-bottom: 0;
@@ -148,9 +170,10 @@ p {
 
 // Default
 a {
-  color: palette(text, link);
+  color: palette(text, white);
   font-weight: bold;
-  @include link-decor; // set to underline and opposite for hover
+  @include link-decor(none);
+  transition: .4s;
 }
 
 
@@ -200,6 +223,9 @@ ul {
   list-style-type: none;
 }
 
+strong {
+  font-family: $font-family-mulish-bold;
+}
 
 // Forms
 // -------------------------

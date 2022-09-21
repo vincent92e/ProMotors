@@ -1,0 +1,14 @@
+uuid: c73b4b0d-69cf-44f0-9164-a6a07cadaefc
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_db
+id: dataa
+name: 'Database server'
+description: ''
+backend: search_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: 3
+  matching: words

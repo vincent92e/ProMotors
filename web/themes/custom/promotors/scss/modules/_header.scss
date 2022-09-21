@@ -1,0 +1,115 @@
+header {
+  .region-header {
+    display: flex;
+    justify-content: space-between;
+    padding: rem(30) 0;
+
+    #block-promotors-branding {
+      align-self: center;
+      padding: rem(8) 0;
+    }
+
+    #block-promotors-mainnavigation {
+      flex-basis: 60%;
+
+      ul#superfish-main {
+        display: flex;
+        justify-content: center;
+
+        > li {
+          &:hover {
+            > a:not(.is-active) {
+              color: palette(primary, orange);
+
+              &:after {
+                width: 100%;
+                left: 0;
+                opacity: 1;
+              }
+            }
+          }
+
+          > a {
+            text-transform: uppercase;
+            color: palette(primary, white);
+            padding: em(13) 0;
+            margin: 0 1.5em;
+            position: relative;
+            transition: .4s;
+
+            &.is-active {
+              color: palette(primary, orange);
+              border-bottom: 2px solid palette(primary, orange);
+            }
+
+            &:after {
+              background-color: palette(primary, orange);
+              bottom: 0;
+              content: "";
+              display: block;
+              height: 2px;
+              position: absolute;
+              transition: .4s;
+              width: 10px;
+              left: 100%;
+              opacity: 0;
+            }
+
+            .sf-sub-indicator {
+              opacity: unset;
+              right: -0.25em;
+
+              &:after {
+                content: "\2b";
+                font-size: em(10);
+                font-family: Fontawesome;
+                margin-top: rem(2);
+                color: palette(primary, orange);
+              }
+            }
+
+            &.sf-with-ul {
+              padding-right: 1rem;
+
+              & + ul {
+                background-color: palette(greys, grey-shade1);
+                border: 2px solid palette(greys, grey-shade2);
+                left: 1.5em;
+                top: 3.7em;
+
+                li:not(:last-child) {
+                  border-bottom: 2px solid palette(greys, grey-shade2);
+                }
+
+                > li {
+                  > a {
+                    &:hover {
+                      color: palette(text, white);
+                      background-color: palette(primary, orange);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    #block-supportinformation {
+      display: none;
+      @include from-breakpoint(1040px) {
+        display: block;
+      }
+
+      .field--name-field-contact-number {
+        border: 2px solid palette(primary, orange);
+        color: palette(primary, white);
+        padding: rem(10) rem(30);
+        line-height: 1.1em;
+        font-family: $font-family-chakra-petch-bold;
+        @include clipStyle(20px);
+      }
+    }
+  }
+}

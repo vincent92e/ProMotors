@@ -1,0 +1,17 @@
+uuid: 118387c6-a4fb-450c-8325-bd2636799bf2
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: banner_image_extra_large_1462x944_
+label: 'Banner image extra large (1462x944)'
+effects:
+  bc6c2a3b-f978-4deb-9488-253ec27e4c78:
+    uuid: bc6c2a3b-f978-4deb-9488-253ec27e4c78
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1462
+      height: 944
+      crop_type: focal_point

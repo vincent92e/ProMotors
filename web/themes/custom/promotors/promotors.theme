@@ -1,5 +1,9 @@
 <?php
 
+use Drupal\media\Entity\Media;
+use Drupal\file\Entity\File;
+use Drupal\Core\Form\FormStateInterface;
+
 /**
  * @file
  * Functions to support theming in the promotors theme.
@@ -38,14 +42,22 @@ function promotors_page_attachments_alter(array &$page) {
  * Implements hook_preprocess_page() for page.html.twig.
  */
 function promotors_preprocess_page(array &$variables) {
-
+  // Checks if sidebar is available on the page.
+  if ($variables['page']['content'] && $variables['page']['sidebar_right']) {
+    $variables['has_sidebar'] = 'with-sidebar';
+  } else {
+    $variables['has_sidebar'] = 'without-sidebar';
+  }
 }
 
 /**
  * Implements hook_theme_suggestions_page_alter().
  */
 function promotors_theme_suggestions_page_alter(array &$suggestions, array $variables) {
-
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $content_type = $node->bundle();
+    $suggestions[] = 'page__'.$content_type;
+  }
 }
 
 /**
@@ -63,7 +75,22 @@ function promotors_theme_suggestions_node_alter(array &$suggestions, array $vari
  * Implements hook_preprocess_HOOK() for Block document templates.
  */
 function promotors_preprocess_block(array &$variables) {
+  // Get the previous and next blog titles.
+  if ($variables['plugin_id'] === 'next_previous_block') {
+    if (isset($variables['content']['prev'])) {
+      $prev_url = $variables['content']['prev']['#url'];
+      $prev_nid = intval($prev_url->getRouteParameters()['node']);
+      $prev_node_title = getNode($prev_nid, 'title');
+      $variables['prev_node_title'] = $prev_node_title;
+    }
 
+    if (isset($variables['content']['next'])) {
+      $next_url = $variables['content']['next']['#url'];
+      $next_nid = intval($next_url->getRouteParameters()['node']);
+      $next_node_title = getNode($next_nid, 'title');
+      $variables['next_node_title'] = $next_node_title;
+    }
+  }
 }
 
 /**
@@ -89,8 +116,20 @@ function promotors_theme_suggestions_fieldset_alter(array &$suggestions, array $
  * Implements hook_preprocess_node().
  */
 function promotors_preprocess_node(array &$variables) {
-  // Default to turning off byline/submitted.
-  //$variables['display_submitted'] = FALSE;
+  // Get comment count for blogs in full view.
+  if ($variables['node']->bundle() === 'blog') {
+    if (isset($variables['content']['comment'])) {
+      $comment_count = $variables['content']['comment']['#items']->getValue('comment_count')[0]['comment_count'];
+      $variables['comment_count'] = formatCommentCount(intval($comment_count));
+    }
+
+    if (isset($variables['content']['field_published_date'])) {
+      // Format blog published date.
+      $published_date = date_create($variables['content']['field_published_date'][0]['#text']);
+      $published_date_formatted = date_format($published_date, 'F m, Y');
+      $variables['published_date_formatted'] = $published_date_formatted;
+    }
+  }
 }
 
 /**
@@ -142,4 +181,219 @@ function promotors_theme_suggestions_details_alter(array &$suggestions, array $v
  */
 function promotors_preprocess_menu_local_task(array &$variables) {
   //$variables['element']['#link']['url']->setOption('attributes', ['class'=>'rounded']);
+}
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function promotors_preprocess_paragraph(&$variables) {
+  if (isset($variables['content']['field_button']['0'])) {
+    $variables['button_link'] = $variables['content']['field_button']['0'];
+  }
+}
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function promotors_preprocess_paragraph__statistics(&$variables) {
+  $paragraphs = $variables['content']['field_items'];
+  $variables['statistics'] = getChildren($paragraphs);
+}
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function promotors_preprocess_paragraph__image_with_caption(&$variables) {
+  if (isset($variables['content']['field_items'])) {
+    $paragraphs = $variables['content']['field_items'];
+    $variables['items'] = getChildren($paragraphs);
+  }
+
+  if ($variables['content']['field_switch'][0]['#markup'] === 'on') {
+    foreach ($variables['items'] as $key => $item) {
+      $variables['content']['field_items'][$key]['#view_mode'] = 'team_member';
+    }
+  }
+
+  // Unset cache keys only on image fields. To be used only on image fields.
+  // unset($variables['content']['field_image']['0']['#cache']['keys']);
+}
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function promotors_preprocess_paragraph__image_with_caption_item(&$variables) {
+  if (isset($variables['content']['field_social_media'])) {
+    $paragraphs = $variables['content']['field_social_media'];
+    $variables['social_media'] = getChildren($paragraphs);
+  }
+}
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function promotors_preprocess_paragraph__services(&$variables) {
+  if (isset($variables['content']['field_service'])) {
+    $paragraphs = $variables['content']['field_service'];
+    $variables['services'] = getChildren($paragraphs);
+  }
+}
+
+/**
+ * Implements hook_preprocess_field().
+ *
+ * Creates the preprcess variable for the image/video field element.
+ */
+function promotors_preprocess_field__media__field_media_oembed_video__remote_video(&$variables, $hook) {
+  $src = $variables['items'][0]['content']['#attributes']['src'];
+  $variables['#theme_wrappers'] = [];
+
+  if (str_contains($src, 'vimeo')) {
+    $vid_cont = explode('/', $variables['element']['#items'][0]->getValue()['value']);
+    $variables['vid'] = end($vid_cont);
+    $variables['video_type'] = t('vimeo');
+  }
+
+  if (str_contains($src, 'youtube')) {
+    $vid_cont = explode('/', $variables['element']['#items'][0]->getValue()['value']);
+    $vid = explode('=', end($vid_cont));
+    $variables['vid'] = end($vid);
+    $variables['video_type'] = t('youtube');
+  }
+}
+
+/**
+ * Implements hook_preprocess_paragraph().
+ *
+ * Creates preprocess variable for the image/video paragraph type.
+ */
+function promotors_preprocess_paragraph__video_content(&$variables) {
+
+  // Check if we have a video to show.
+  $video = FALSE;
+  if (isset($variables['content']['field_video'][0])) {
+    $video = $variables['content']['field_video'][0];
+    $variables['video'] = $video;
+  }
+
+  // Check if hero image is available.
+  $hero_img = FALSE;
+  if (isset($variables['content']['field_image'][0])) {
+    $hero_img = $variables['content']['field_image'][0];
+    $variables['thumbnail'] = $hero_img;
+  }
+
+  // Use image field as thumbnail for video if both are set.
+  if ($hero_img && $video) {
+    $mid = $variables['thumbnail']['#media']->get('mid')->getValue()[0]['value'];
+    $url = getMedia($mid);
+    $variables['thumbnail_url'] = $url['url'];
+  }
+}
+
+/**
+ * Implements hook_preprocess_paragraph().
+ *
+ * Creates preprocess variable for the car brands paragraph type.
+ */
+function promotors_preprocess_paragraph__car_brands (&$variables) {
+  if (isset($variables['content']['field_car_brands'])) {
+    $paragraphs = $variables['content']['field_car_brands'];
+    $variables['car_brands'] = getChildren($paragraphs);
+  }
+}
+
+/**
+ * Implements hook_preprocess_views_view_unformatted().
+ */
+function promotors_preprocess_views_view_unformatted__search__page_1(&$variables) {
+  // Get comment count for blog teaser nodes.
+  foreach ($variables['rows'] as $key => $value) {
+    if (isset($value['content']['#row']->_entity->get('comment')->getValue()[0]['comment_count'])) {
+      $comment_count = $value['content']['#row']->_entity->get('comment')->getValue()[0]['comment_count'];
+      $variables['comment_count'][$key] = formatCommentCount(intval($comment_count));
+    }
+  }
+}
+
+/**
+ * Returns paragraph children within a multi-level paragraph component.
+ */
+function getChildren($parent) {
+  $children = [];
+
+  // Filter array children items that have integer keys only.
+  foreach ($parent as $key => $value) {
+    if (is_int($key)) {
+      $children[$key] = $value;
+    }
+  }
+
+  return $children;
+}
+
+/**
+ * Get the url & alt for a image or the size & type for a file.
+ */
+function getMedia($mid, $file = FALSE) {
+  $media = Media::load($mid);
+  if ($media) {
+    $file_size = '';
+    $file_type = '';
+
+    // If TRUE get file info else get image info.
+    if ($file == TRUE) {
+      $fid = $media->field_media_document->target_id;
+      $file = File::load($fid);
+      $url = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+      $alt = ($media->field_media_document->alt) ? $media->field_media_document->alt : '';
+      $file_size = strtolower(str_replace(' ', '', format_size($file->getSize())->render()));
+      $file_type = strtoupper(explode('.', $file->get('filename')->value)[1]);
+    }
+    else {
+      $fid = $media->field_media_image->target_id;
+      $file = File::load($fid);
+      $url = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+      $alt = $media->field_media_image->alt;
+    }
+
+    return [
+      'url' => $url,
+      'alt' => $alt,
+      'size' => $file_size,
+      'type' => $file_type,
+    ];
+  }
+
+  return '';
+}
+
+/**
+ * Get node information, e.g title etc.
+ */
+function getNode($nid, $param) {
+  $node = \Drupal::entityTypeManager()->getStorage('node')->load($nid);
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    // Return node title.
+    if ($param === 'title') {
+      return $node->getTitle();
+    }
+  }
+}
+
+/**
+ * Format node comment count.
+ */
+function formatCommentCount($count) {
+  $comment_count = '';
+
+  if ($count === 1) {
+    $comment_count = intval($count) . ' comment';
+  } elseif ($count > 1) {
+    $comment_count = intval($count) . ' comments';
+  } else {
+    $comment_count = t('No Comments');
+  }
+
+  return $comment_count;
 }

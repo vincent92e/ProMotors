@@ -1,0 +1,10 @@
+uuid: b8668808-c351-46d5-91a9-d3ea66cd8950
+langcode: en
+status: true
+dependencies: {  }
+id: price_listings
+label: 'Price listings'
+icon_uuid: null
+icon_default: null
+description: 'Price listings paragraph type'
+behavior_plugins: {  }

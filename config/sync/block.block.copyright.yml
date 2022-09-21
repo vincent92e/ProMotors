@@ -1,0 +1,25 @@
+uuid: 3166fabc-69b4-40af-8748-1f46c3bd2da4
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:1187a576-702c-4baa-93aa-3c7907b9c31d'
+  module:
+    - block_content
+  theme:
+    - promotors
+id: copyright
+theme: promotors
+region: footer_bottom
+weight: 0
+provider: null
+plugin: 'block_content:1187a576-702c-4baa-93aa-3c7907b9c31d'
+settings:
+  id: 'block_content:1187a576-702c-4baa-93aa-3c7907b9c31d'
+  label: Copyright
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

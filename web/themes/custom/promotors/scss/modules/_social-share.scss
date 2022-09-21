@@ -1,0 +1,48 @@
+.block-social-sharing-block {
+  .social-media-sharing {
+    ul {
+      li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+        width: rem(45);
+        height: rem(45);
+        background-color: palette(primary, orange);
+
+        &:not(:last-child) {
+          margin-right: rem(15);
+        }
+
+        a {
+          &.share {
+            font-family: Fontawesome;
+          }
+          &.facebook-share {
+            &:before {
+              content: '\f09a';
+            }
+          }
+
+          &.linkedin {
+            &:before {
+              content: '\f08c';
+            }
+          }
+
+          &.twitter {
+            &:before {
+              content: '\f099';
+            }
+          }
+
+          &.whatsapp {
+            &:before {
+              content: '\f232';
+            }
+          }
+        }
+      }
+    }
+  }
+}

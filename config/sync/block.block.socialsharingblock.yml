@@ -1,0 +1,28 @@
+uuid: fb0787a6-a657-4582-a8e4-4c07a83ab295
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - social_media
+  theme:
+    - promotors
+id: socialsharingblock
+theme: promotors
+region: hidden_content
+weight: -7
+provider: null
+plugin: social_sharing_block
+settings:
+  id: social_sharing_block
+  label: 'Social Sharing block'
+  label_display: '0'
+  provider: social_media
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      blog: blog

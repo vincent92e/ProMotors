@@ -1,0 +1,10 @@
+uuid: 3197dfad-bc87-4ee3-91ac-d0eae918346a
+langcode: en
+status: true
+dependencies: {  }
+id: book_your_service
+label: 'Book your service'
+icon_uuid: null
+icon_default: null
+description: 'Book your service paragraph type'
+behavior_plugins: {  }

@@ -1,0 +1,19 @@
+uuid: 514773c0-bbce-4285-91f6-da9794ad87a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.price_list_item
+id: paragraph.price_list_item.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: price_list_item
+label: Name
+description: 'Name of the list item'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

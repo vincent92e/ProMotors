@@ -1,0 +1,19 @@
+uuid: a865e323-dc85-4d69-99e7-be01ca0e9322
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_suffix
+    - paragraphs.paragraphs_type.price_list_item
+id: paragraph.price_list_item.field_suffix
+field_name: field_suffix
+entity_type: paragraph
+bundle: price_list_item
+label: 'Currency sign'
+description: 'Currency sign'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

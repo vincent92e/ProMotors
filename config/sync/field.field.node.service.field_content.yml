@@ -1,0 +1,75 @@
+uuid: 5793290b-b394-4193-933b-8efc664b55da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content
+    - node.type.service
+    - paragraphs.paragraphs_type.reviews
+    - paragraphs.paragraphs_type.services
+  module:
+    - entity_reference_revisions
+id: node.service.field_content
+field_name: field_content
+entity_type: node
+bundle: service
+label: Content
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      services: services
+      reviews: reviews
+    negate: 0
+    target_bundles_drag_drop:
+      banner:
+        weight: 14
+        enabled: false
+      call_to_action:
+        weight: 15
+        enabled: false
+      car_brands:
+        weight: 16
+        enabled: false
+      general_listings:
+        weight: 17
+        enabled: false
+      listing:
+        weight: 18
+        enabled: false
+      price_list_item:
+        weight: 20
+        enabled: false
+      price_listings:
+        weight: 19
+        enabled: false
+      review_item:
+        weight: 24
+        enabled: false
+      reviews:
+        weight: 23
+        enabled: true
+      service:
+        weight: 21
+        enabled: false
+      services:
+        weight: 22
+        enabled: true
+      statistics:
+        weight: 23
+        enabled: false
+      statistics_item:
+        weight: 24
+        enabled: false
+      video_content:
+        weight: 25
+        enabled: false
+      webform:
+        weight: 26
+        enabled: false
+field_type: entity_reference_revisions

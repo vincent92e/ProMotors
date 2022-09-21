@@ -1,0 +1,44 @@
+.paragraph--type--book-your-service {
+  position: relative;
+
+  .overlay {
+    @include overlay;
+    z-index: 2;
+  }
+
+  .book-your-service {
+    text-align: center;
+    background-image: url("#{$path-to-images}/black-rim.jpeg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: rem(74) 0;
+    display: flex;
+    z-index: 5;
+
+    & > div {
+      z-index: 5;
+    }
+
+    @include from-md {
+      padding: rem(94) 0;
+    }
+
+    @include from-lg {
+      padding: rem(154) 0;
+    }
+
+    &__title,
+    &__body {
+      margin-bottom: rem(20);
+    }
+
+    &__body {
+      color: palette(text, white);
+    }
+
+    a.button--primary {
+      width: fit-content;
+    }
+  }
+}

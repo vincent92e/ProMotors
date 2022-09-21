@@ -1,0 +1,62 @@
+.view-id-search {
+  .view-content {
+    @include row;
+
+    .views-row {
+      position: relative;
+      border-top: 1px solid palette(greys, grey-shade2);
+      padding-top: rem(30);
+      @include col(12);
+
+      @include from-md {
+        @include col(6, $component-layout: 'halves');
+      }
+
+      .views-field {
+        margin-bottom: rem(60);
+      }
+
+      .views-field-field-categories{
+        position: absolute;
+        z-index: 2;
+        color: palette(text, white);
+        font-family: $font-family-chakra-petch-bold;
+        left: rem(15);
+        top: rem(40);
+        text-transform: uppercase;
+        border-bottom: 2px solid palette(primary, orange);
+        padding-bottom: rem(3);
+      }
+
+      .views-field-field-hero-image {
+        margin-bottom: rem(20);
+
+        img {
+          @include imgFluid;
+        }
+      }
+
+      .views-field-title {
+        font-size: em(23);
+        font-family: $font-family-chakra-petch-bold;
+        text-transform: uppercase;
+        line-height: 1.2em;
+        margin-bottom: rem(15);
+      }
+
+      .views-field-field-published-date {
+        display: inline-block;
+      }
+
+      .comment_count {
+        display: inline-block;
+
+        &:before {
+          @include dot;
+          margin-left: rem(10);
+          margin-right: rem(13);
+        }
+      }
+    }
+  }
+}

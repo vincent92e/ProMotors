@@ -1,0 +1,21 @@
+uuid: ad7bf583-9c1c-425c-b2b0-90d402ddfa29
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - paragraphs.paragraphs_type.book_your_service
+  module:
+    - text
+id: paragraph.book_your_service.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: book_your_service
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

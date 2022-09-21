@@ -1,0 +1,21 @@
+uuid: 8f61f16a-c64b-410f-b37f-046e37df856f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - paragraphs.paragraphs_type.price_list_item
+  module:
+    - text
+id: paragraph.price_list_item.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: price_list_item
+label: Body
+description: 'List of services offered for the price'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

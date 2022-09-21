@@ -1,0 +1,81 @@
+uuid: d824fc7e-9287-4358-9d79-6dec2506a5f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content
+    - node.type.homepage
+    - paragraphs.paragraphs_type.call_to_action
+    - paragraphs.paragraphs_type.car_brands
+    - paragraphs.paragraphs_type.general_listings
+    - paragraphs.paragraphs_type.price_listings
+    - paragraphs.paragraphs_type.services
+    - paragraphs.paragraphs_type.statistics
+    - paragraphs.paragraphs_type.video_content
+    - paragraphs.paragraphs_type.webform
+  module:
+    - entity_reference_revisions
+id: node.homepage.field_content
+field_name: field_content
+entity_type: node
+bundle: homepage
+label: Content
+description: 'Add homepage contents.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      statistics: statistics
+      services: services
+      price_listings: price_listings
+      call_to_action: call_to_action
+      general_listings: general_listings
+      car_brands: car_brands
+      video_content: video_content
+      webform: webform
+    negate: 0
+    target_bundles_drag_drop:
+      banner:
+        weight: 4
+        enabled: false
+      call_to_action:
+        weight: 10
+        enabled: true
+      car_brands:
+        weight: 16
+        enabled: true
+      general_listings:
+        weight: 15
+        enabled: true
+      listing:
+        weight: 16
+        enabled: false
+      price_list_item:
+        weight: 10
+        enabled: false
+      price_listings:
+        weight: 9
+        enabled: true
+      service:
+        weight: 7
+        enabled: false
+      services:
+        weight: 8
+        enabled: true
+      statistics:
+        weight: 5
+        enabled: true
+      statistics_item:
+        weight: 6
+        enabled: false
+      video_content:
+        weight: 18
+        enabled: true
+      webform:
+        weight: 20
+        enabled: true
+field_type: entity_reference_revisions

@@ -1,0 +1,17 @@
+uuid: 8db9b496-e6ec-4bc6-8df4-bfd8bb5fae75
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: banner_image_small_725x353
+label: 'Banner image small (725x353)'
+effects:
+  f8a46b58-56fe-4c5f-9f23-4c410eb54631:
+    uuid: f8a46b58-56fe-4c5f-9f23-4c410eb54631
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 725
+      height: 353
+      crop_type: focal_point

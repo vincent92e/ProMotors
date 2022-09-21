@@ -1,0 +1,10 @@
+uuid: 9ea88f94-ccb6-4ba8-9496-dd4cd132c68d
+langcode: en
+status: true
+dependencies: {  }
+id: review_item
+label: 'Review item'
+icon_uuid: null
+icon_default: null
+description: 'Review item paragraph type'
+behavior_plugins: {  }

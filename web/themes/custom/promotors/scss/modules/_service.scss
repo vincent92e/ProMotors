@@ -1,0 +1,108 @@
+%service-common-style {
+  color: palette(text, white);
+  font-family: $font-family-chakra-petch-bold;
+  text-transform: uppercase;
+  line-height: 1.2em;
+}
+
+.paragraph--type--service {
+  .service {
+    margin-bottom: rem(20);
+
+    & > *:not(:last-child) {
+      margin-bottom: rem(20);
+    }
+
+    &__icon {
+      font-family: Fontawesome;
+      font-size: em(30);
+      color: palette(text, white);
+      transition: .4s;
+
+      &:hover {
+        color: palette(primary, orange);
+      }
+
+      &.brake {
+        &:after {
+          content: '\f7d9';
+        }
+      }
+
+      &.engine {
+        &:after {
+          content: '\f552';
+        }
+      }
+
+      &.tire {
+        &:after {
+          content: '\f63b';
+        }
+      }
+
+      &.cooling {
+        &:after {
+          content: '\f863';
+        }
+      }
+
+      &.battery {
+        &:after {
+          content: '\f5df';
+        }
+      }
+
+      &.steering {
+        &:after {
+          content: '\f655';
+        }
+      }
+
+      &.diagnostic {
+        &:after {
+          content: '\f0f1';
+        }
+      }
+
+      &.clutch {
+        &:after {
+          content: '\f013';
+        }
+      }
+
+      &.oil {
+        &:after {
+          content: '\f613';
+        }
+      }
+    }
+
+    &__name {
+      @extend %service-common-style;
+      font-size: em(23);
+    }
+
+    &__button {
+      @extend %service-common-style;
+      font-size: em(18);
+      display: flex;
+
+      &:before {
+        content: "\f105";
+        font-family: Fontawesome;
+        width: 32px;
+        height: 32px;
+        text-align: center;
+        background-color: palette(primary, orange);
+        line-height: 2rem;
+        margin-right: 10px;
+        @include clipStyle(7px);
+      }
+
+      & > a {
+        align-self: center;
+      }
+    }
+  }
+}

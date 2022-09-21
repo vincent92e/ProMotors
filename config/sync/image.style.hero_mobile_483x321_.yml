@@ -1,0 +1,17 @@
+uuid: 60d7ba65-0523-4a25-942c-038022ec64cc
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: hero_mobile_483x321_
+label: 'Hero mobile (483x321)'
+effects:
+  b8cc2069-888f-477d-91ef-b8957687e658:
+    uuid: b8cc2069-888f-477d-91ef-b8957687e658
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 483
+      height: 321
+      crop_type: focal_point

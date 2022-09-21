@@ -1,0 +1,21 @@
+.view-id-services {
+  .view-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(10);
+
+    .views-row {
+      padding: rem(8) rem(13);
+      text-transform: uppercase;
+      line-height: 1em;
+      color: palette(text, white);
+      background-color: palette(primary, black-shade2);
+      border: 1px solid palette(primary, black-shade2);
+      transition: all ease-out .2s;
+
+      &:hover {
+        border: 1px solid palette(primary, orange);
+      }
+    }
+  }
+}

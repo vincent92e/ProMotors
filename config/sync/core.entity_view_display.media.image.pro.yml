@@ -1,0 +1,33 @@
+uuid: bf0c0757-4c15-4789-9815-341d1c96c1e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.pro
+    - field.field.media.image.field_media_image
+    - media.type.image
+    - responsive_image.styles.progress_bar_with_text_and_image
+  module:
+    - responsive_image
+_core:
+  default_config_hash: 73xaTNkI5J6sfFcBmNYeuk070X3mQS_iwwWaPYyfG2M
+id: media.image.pro
+targetEntityType: media
+bundle: image
+mode: pro
+content:
+  field_media_image:
+    type: responsive_image
+    label: visually_hidden
+    settings:
+      responsive_image_style: progress_bar_with_text_and_image
+      image_link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

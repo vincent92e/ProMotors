@@ -1,0 +1,29 @@
+uuid: a8b4c672-1e8b-4a4a-ba2e-ea4f09e1adaa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_service_icon
+    - paragraphs.paragraphs_type.service
+    - taxonomy.vocabulary.services
+id: paragraph.service.field_service_icon
+field_name: field_service_icon
+entity_type: paragraph
+bundle: service
+label: Icon
+description: 'Select icon for the service type.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      services: services
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

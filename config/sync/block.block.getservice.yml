@@ -1,0 +1,33 @@
+uuid: b57efcb7-3952-4219-b2e4-fb7950af6a31
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:f1c31115-38a8-4e62-9ffa-92e153e70dcc'
+  module:
+    - block_content
+    - node
+  theme:
+    - promotors
+id: getservice
+theme: promotors
+region: sidebar_right
+weight: -7
+provider: null
+plugin: 'block_content:f1c31115-38a8-4e62-9ffa-92e153e70dcc'
+settings:
+  id: 'block_content:f1c31115-38a8-4e62-9ffa-92e153e70dcc'
+  label: 'Get service'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      service: service

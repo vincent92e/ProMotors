@@ -1,0 +1,21 @@
+uuid: 017d47c2-5568-4efb-8dd9-4753ec9536c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_summary
+    - node.type.author
+  module:
+    - text
+id: node.author.field_summary
+field_name: field_summary
+entity_type: node
+bundle: author
+label: Summary
+description: 'Summary for teaser view'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

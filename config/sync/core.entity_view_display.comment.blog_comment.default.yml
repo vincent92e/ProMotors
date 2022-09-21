@@ -1,0 +1,36 @@
+uuid: cfd57593-e058-4b3c-8c9c-b935ea36c9aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.blog_comment
+    - field.field.comment.blog_comment.field_comment
+    - field.field.comment.blog_comment.field_email
+    - field.field.comment.blog_comment.field_user_name
+id: comment.blog_comment.default
+targetEntityType: comment
+bundle: blog_comment
+mode: default
+content:
+  field_comment:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_user_name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_email: true

@@ -1,0 +1,10 @@
+uuid: 01b7c243-1cb2-473f-b730-87f6f162d414
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.footer_logo
+label: 'Footer logo'
+targetEntityType: media
+cache: true

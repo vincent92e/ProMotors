@@ -1,0 +1,21 @@
+uuid: 43e38f71-9352-40a4-99f4-169f85d8418d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - paragraphs.paragraphs_type.price_listings
+  module:
+    - text
+id: paragraph.price_listings.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: price_listings
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -4,21 +4,73 @@
   color: palette(text, white);
   outline: none;
   padding: rem(10) 0;
+  width: 100%;
   @include border(palette(utility, border), 2px);
 
   &:focus {
     border-color: palette(text, white);
   }
+
+  &::placeholder {
+    text-transform: capitalize;
+  }
+}
+
+%label-style {
+  font-family: $font-family-mulish-bold;
+  display: block;
+  margin-bottom: rem(15);
+  color: palette(text, white);
+  text-transform: uppercase;
 }
 
 @mixin textbox-style {
   label {
-    display: block;
-    margin-bottom: rem(15);
-    color: palette(text, white);
+    @extend %label-style;
 
     + input {
       @extend %input-base;
+
+      &::-webkit-calendar-picker-indicator {
+        display: none;
+      }
     }
+  }
+}
+
+@mixin textarea {
+  label {
+    @extend %label-style;
+  }
+
+  textarea {
+    @extend %input-base;
+    height: rem(40);
+  }
+}
+
+@mixin selectbox {
+  label {
+    @extend %label-style;
+
+    + select {
+      @extend %input-base;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      border-radius: 0;
+    }
+  }
+
+  &:before {
+    content: "\f0d7";
+    font-family: FontAwesome;
+    font-size: em(15);
+    position: absolute;
+    bottom: 0;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: rem(10);
+    pointer-events: none;
   }
 }

@@ -1,0 +1,19 @@
+uuid: b20eef92-75aa-42f4-bc12-16ff40afd003
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.progress_bar
+id: paragraph.progress_bar.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: progress_bar
+label: Color
+description: 'Colors include: orange, red, blue'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

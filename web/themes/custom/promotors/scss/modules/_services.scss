@@ -1,0 +1,155 @@
+.paragraph--type--services {
+  .services {
+    padding: rem(70) 0;
+
+    &__top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: rem(40);
+
+      .link-btn {
+        display: none;
+
+        @include from-md {
+          display: block;
+        }
+      }
+    }
+
+    .field__items {
+      @include row;
+      justify-content: space-between;
+
+      .field__item {
+        @include col(12, $use-gutter: false);
+
+        @include from-md {
+          @include col(6, $component-layout: 'halves', $use-gutter: false);
+        }
+
+        @include from-lg {
+          @include col(4, $use-gutter: false);
+        }
+
+        .service {
+          padding: rem(40) 0;
+          border-top: 3px solid palette(greys, grey-shade2);
+          transition: border 1s;
+
+          &:hover {
+            border-top-color: palette(primary, orange);
+          }
+        }
+
+        &:nth-child(1),
+        &:nth-child(7) {
+          .scroll-animation {
+            opacity: 0;
+            @include scrollAnimation(fadeInRight);
+          }
+        }
+
+        &:nth-child(2),
+        &:nth-child(8) {
+          .scroll-animation {
+            opacity: 0;
+            @include scrollAnimation(fadeInRight);
+
+            @include from-md {
+              @include scrollAnimation(fadeInRight, true, .3s);
+            }
+          }
+        }
+
+        &:nth-child(3),
+        &:nth-child(9) {
+          .scroll-animation {
+            opacity: 0;
+            @include scrollAnimation(fadeInRight);
+
+            @include from-lg {
+              @include scrollAnimation(fadeInRight, true, .6s);
+            }
+          }
+        }
+
+        &:nth-child(4) {
+          .scroll-animation {
+            opacity: 0;
+            @include scrollAnimation(fadeInRight);
+
+            @include from-md {
+              @include scrollAnimation(fadeInRight, true, .3s);
+            }
+
+            @include from-lg {
+              @include scrollAnimation(fadeInRight);
+            }
+          }
+        }
+
+        &:nth-child(5) {
+          .scroll-animation {
+            opacity: 0;
+            @include scrollAnimation(fadeInRight);
+
+            @include from-lg {
+              @include scrollAnimation(fadeInRight, true, .3s);
+            }
+          }
+        }
+
+        &:nth-child(6) {
+          .scroll-animation {
+            opacity: 0;
+            @include scrollAnimation(fadeInRight);
+
+            @include from-md {
+              @include scrollAnimation(fadeInRight, true, .3s);
+            }
+
+            @include from-lg {
+              @include scrollAnimation(fadeInRight, true, .6s);
+            }
+          }
+        }
+      }
+    }
+
+    &__content.on {
+      .field--name-field-service {
+        .field__item {
+          .paragraph--type--service {
+            .service {
+              padding: rem(30);
+              background-color: palette(primary, black-shade2);
+              border-top-color: palette(primary, black-shade2);
+
+              &:hover {
+                border-top-color: palette(primary, orange);
+              }
+
+              &__icon,
+              &__name {
+                display: inline-block;
+              }
+
+              &__icon {
+                margin-right: rem(25);
+                color: palette(primary, orange);
+                transition: transform .3s ease-in-out;
+
+                &:hover {
+                  transform: scale(1.1);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include fadeIn('right', 300px);
+@include stopAnimation;

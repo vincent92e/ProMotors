@@ -1,0 +1,76 @@
+.paragraph--type--price-listings {
+  .price-listings {
+    padding: rem(70) 0;
+
+    &__info-wrapper {
+      @include col(12);
+      margin-bottom: rem(25);
+
+      @include from-lg {
+        @include col(4);
+        margin-bottom: rem(0);
+      }
+
+      h2.title {
+        margin-bottom: rem(20);
+      }
+    }
+
+    &__content {
+      @include col(12);
+
+      @include from-lg {
+        @include col(8);
+      }
+
+      .field__items {
+        @include row;
+
+        .field__item {
+          @include col(12);
+
+          @include from-breakpoint(768px) {
+            @include col(6, $component-layout: 'halves');
+          }
+
+          .price-list-item {
+            padding: rem(50);
+            border-top: 3px solid palette(greys, grey-shade2);
+            transition: border 1s;
+
+            &:hover {
+              border-top-color: palette(primary, orange);
+            }
+          }
+
+          &:nth-child(1) {
+            .scroll-animation {
+              opacity: 0;
+              @include scrollAnimation(fadeInBottom);
+            }
+          }
+
+          &:nth-child(2) {
+            .scroll-animation {
+              opacity: 0;
+              @include scrollAnimation(fadeInBottom, true, .6s);
+            }
+          }
+
+          &:not(:last-child) {
+            ul {
+              li {
+                &:nth-last-of-type(-n+2) {
+                  color: palette(utility, border);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include fadeIn('bottom', 150px);
+@include stopAnimation;

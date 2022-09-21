@@ -1,0 +1,8 @@
+uuid: 255ed2d8-c636-43ca-a8a3-5d610c44cbd8
+langcode: en
+status: true
+dependencies: {  }
+name: Services
+vid: services
+description: 'Icons for the services offered by Promotors.'
+weight: 0

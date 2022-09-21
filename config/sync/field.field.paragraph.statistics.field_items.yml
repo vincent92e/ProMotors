@@ -1,0 +1,37 @@
+uuid: cb30bab8-8031-43a0-93ff-72dccccadbc4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_items
+    - paragraphs.paragraphs_type.statistics
+    - paragraphs.paragraphs_type.statistics_item
+  module:
+    - entity_reference_revisions
+id: paragraph.statistics.field_items
+field_name: field_items
+entity_type: paragraph
+bundle: statistics
+label: Items
+description: 'Field to add statistics items.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      statistics_item: statistics_item
+    negate: 0
+    target_bundles_drag_drop:
+      banner:
+        weight: 4
+        enabled: false
+      statistics:
+        weight: 5
+        enabled: false
+      statistics_item:
+        weight: 6
+        enabled: true
+field_type: entity_reference_revisions

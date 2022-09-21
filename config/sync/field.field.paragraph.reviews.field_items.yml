@@ -1,0 +1,73 @@
+uuid: 26cb678e-c4dd-4237-a6ee-8399f8278c25
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_items
+    - paragraphs.paragraphs_type.review_item
+    - paragraphs.paragraphs_type.reviews
+  module:
+    - entity_reference_revisions
+id: paragraph.reviews.field_items
+field_name: field_items
+entity_type: paragraph
+bundle: reviews
+label: 'Review item'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      review_item: review_item
+    negate: 0
+    target_bundles_drag_drop:
+      banner:
+        weight: 16
+        enabled: false
+      call_to_action:
+        weight: 17
+        enabled: false
+      car_brands:
+        weight: 18
+        enabled: false
+      general_listings:
+        weight: 19
+        enabled: false
+      listing:
+        weight: 20
+        enabled: false
+      price_list_item:
+        weight: 22
+        enabled: false
+      price_listings:
+        weight: 21
+        enabled: false
+      review_item:
+        weight: 24
+        enabled: true
+      reviews:
+        weight: 23
+        enabled: false
+      service:
+        weight: 25
+        enabled: false
+      services:
+        weight: 26
+        enabled: false
+      statistics:
+        weight: 27
+        enabled: false
+      statistics_item:
+        weight: 28
+        enabled: false
+      video_content:
+        weight: 29
+        enabled: false
+      webform:
+        weight: 30
+        enabled: false
+field_type: entity_reference_revisions

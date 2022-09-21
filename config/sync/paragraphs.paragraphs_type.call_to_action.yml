@@ -1,0 +1,10 @@
+uuid: 001fcabf-24df-4092-aebb-0b2a8392fb44
+langcode: en
+status: true
+dependencies: {  }
+id: call_to_action
+label: 'Call to action'
+icon_uuid: null
+icon_default: null
+description: 'Call to action paragraph type'
+behavior_plugins: {  }

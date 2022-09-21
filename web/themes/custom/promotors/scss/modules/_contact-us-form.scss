@@ -1,0 +1,38 @@
+.webform-submission-contact-us-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .js-form-item {
+    width: 100%;
+  }
+
+  .js-form-item:not(.form-item-your-message) {
+    @include from-breakpoint(768px) {
+      flex-basis: 48%;
+    }
+  }
+
+  .form-item-name,
+  .form-item-phone,
+  .form-item-select-date {
+    @include textbox-style;
+  }
+
+  .form-item-your-message {
+    @include textarea;
+  }
+
+  .form-item-select-service {
+    position: relative;
+    @include selectbox;
+  }
+
+  .form-actions {
+    width: 100%;
+
+    @include from-breakpoint(768px) {
+      width: fit-content;
+    }
+  }
+}
