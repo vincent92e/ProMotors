@@ -1,2 +1,2 @@
-"use strict";
+"use strict";!function(s,a){Drupal.behaviors.mobileMenuSlider={attach:function(i,n){function o(){s("#superfish-main-toggle",i).on("click",function(){s("#superfish-main-accordion",i).addClass("come-in"),s("#superfish-main-accordion",i).hasClass("remove-animation")&&s("#superfish-main-accordion",i).removeClass("remove-animation")}),s("#superfish-main-accordion .close-menu",i).on("click",function(){s("#superfish-main-accordion",i).removeClass("come-in sf-expanded"),s("#superfish-main-accordion",i).addClass("remove-animation"),setTimeout(function(){s("#superfish-main-accordion",i).addClass("sf-hidden")},500)})}o(),s(a).on("resize",function(){o()})}}}(jQuery,window);
 //# sourceMappingURL=mobile_menu_slider.js.map
